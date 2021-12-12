@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html  lang="en" lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Doniws</title>
+  <meta charset="UTF-8">
+    <meta name="description" content="Personal Website Article">
+    <meta name="keyword" content="Doni music">
+    <meta name="author" content="Doni Wahyu Saputra">
+    <!-- icondan impor -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- link js font -->
+    
+     <link rel="stylesheet" href="./fontawesome6/pro/css/all.css">
+      <!-- vetifikasi google -->
+          <!-- vetifikasi google -->
+      <!-- Google Analytics -->
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <!-- End Google Analytics -->
+        <meta name="google-site-verification" content="hcQgL_LQ2ZrAxns9T61ARQG3pxiS5YhZlkWrXa08N9E" />
+  <link rel="stylesheet" href="music.css">
+
+  <!-- blm di fix -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="body" id="body">
+  
+  
+  <div class="wrapper" id="wrapper">
+    <div class="top-bar">      
+       <a id="fullscr"><i class="fa-duotone fa-expand" style="--fa-primary-color: rgb(0, 4, 255); --fa-secondary-color: rgb(0, 4, 255);"></i></a>
+       <!-- untuk toggle -->
+   <span><div class="btn-container">
+     <label class="switch btn-color-mode-switch" id="toggle" onclick="toogle()">
+         <input type="checkbox" name="color_mode" id="color_mode" value="1">
+        <label for="color_mode"  data-on="Video" data-off="Music" class="btn-color-mode-switch-inner">  </label>
+        </label>
+</div>
+</span>
+      <A href="javascript:alert('Ini Adalah Music Saya, you can hear my music,music ini akan bertambah seiring berubah mood dan pikiran saya.\n\nKenapa warnanya putih dan biru?karena warna biru warna yang paling disukai sedangkan warna putih terkesan bersih.')" onclick="Darkmode()">
+      <i><img class="imghead" src="images/logoutama.webp" style="width: 50px;" ></i></A>
+    </div>
+    <div class="img-area">
+      <img src="" alt="">
+    </div>
+    <div class="song-details">
+      <p class="name"></p>
+      <p class="artist"></p>
+    </div>
+    <div class="progress-area" id="progress-area">
+      <div class="progress-bar" id="progsess-bar">
+        <audio id="main-audio" src=""></audio>
+      </div>
+      <div class="song-timer">
+        <span class="current-time">0:00</span>
+        <span class="max-duration">0:00</span>
+      </div>
+    </div>
+    <div class="controls" id="controls">
+      <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+      <i id="prev" class="material-icons">skip_previous</i>
+      <div class="play-pause">
+        <i class="material-icons play">play_arrow</i>
+      </div>
+      <i id="next" class="material-icons">skip_next</i>
+      <i id="more-music" class="material-icons">queue_music</i>
+    </div>
+    <div  id="music-list">
+      <div class="header">
+        <div class="row">
+          <i class= "list material-icons">queue_music</i>
+          <span>Music list</span>
+        </div>
+        <i id="close" class="material-icons">close</i>
+      </div>
+      <ul>
+        <!-- here li list are coming from js -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/music-list.js"></script>
+  <script src="js/script-music.js"></script>
+
+  <!-- Disini untuk java scripnya -->
+  <script>
+    // Untuk dark mode
+    function darkmode(){
+        var element = document.getElementById("about")
+        element.classList.toggle("dark-mode");
+    }
+    </script>
+
+    <!-- dark mode -->
+     <!-- untuk boody dark -->
+     <script>
+      function Darkmode() 
+            {
+            var element = document.getElementById("wrapper");
+            element.classList.toggle("wrapper-dark");
+  
+            var element = document.getElementById("body");
+            element.classList.toggle("body-dark");
+  
+            var element = document.getElementById("progress-area");
+            element.classList.toggle("progress-area-dark");
+
+         
+            }
+            // progress-area
+        </script>
+
+ <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
+ <script>
+  /*     Fullscreen btn     */
+let fullscreen;
+let fsEnter = document.getElementById('fullscr');
+fsEnter.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (!fullscreen) {
+      fullscreen = true;
+      document.documentElement.requestFullscreen();
+  }
+  else {
+      fullscreen = false;
+      document.exitFullscreen();
+      
+  }
+});
+</script> <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
+<script>
+  function toogle() {
+    var log_out = confirm;
+    var bx  = 
+    document.getElementById("toggle");
+    if  (window.open("musicvideo.html","_top"));
+    } 
+  
+  </script>
+</body>
+</html>
