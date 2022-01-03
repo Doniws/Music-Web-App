@@ -373,7 +373,7 @@
   }
   ul li .audio-duration{
     font-size: 16px;
-    color: #050542;
+    color: #ffffff;
   }
   ul li.playing{
     pointer-events: none;
@@ -385,18 +385,20 @@
       margin: 45px 0;
     }
     #wrapper{
-      width: 385px;
+      width: 400px;
       padding: 190px 30px;
       overflow: hidden;
       position: relative;
+      border-radius: 0 !important;
   
     }
     #wrapper.wrapper-dark{
     
       position: relative;
-      width: 385px;
+      width: 400px;
       padding: 190px 30px;
       overflow: hidden;
+      border-radius: 0 !important;
     }
     #controls {
       margin: 30px 0 5px 0;

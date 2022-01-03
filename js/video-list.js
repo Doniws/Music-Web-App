@@ -1,12 +1,4 @@
 
-
-//   {
-//     name: "Here is the music name",
-//     artist: "Here is the artist name",
-//     img: "image name here - remember img must be in .webp formate and it's inside the images folder of this project folder",
-//     src: "music name here - remember img must be in .mp3 formate and it's inside the songs folder of this project folder"
-//   }
-
 let allMusic = [
     {
       name: " Somewhere Only We Know",
@@ -15,62 +7,62 @@ let allMusic = [
       src: "music-1"
     },
     {
-      name: "Whatever it take",
-      artist: "Imagine Dragons",
+      name: "One More Light",
+      artist: "Linkin Park",
       img: "music-2",
       src: "music-2"
     },
     {
-      name: "Start Again ft. Logic",
-      artist: "OneRepublic",
+      name: "From The Inside",
+      artist: "Linkin Park",
       img: "music-3",
       src: "music-3"
     },
     {
-      name: " Spirits ",
-      artist: "The Strumbellas",
+      name: "In My Place",
+      artist: "Coldplay",
       img: "music-4",
       src: "music-4"
     },
     {
-      name: "Let Her Go",
-      artist: "Passenger",
+      name: "Where'd You Go",
+      artist: "Fort Minor",
       img: "music-5",
       src: "music-5"
     },
     {
-      name: "(New Music)- Monday",
-      artist: "Imagine Dragons",
+      name: "Otherside",
+      artist: "Red Hot Chili Peppers",
       img: "music-6",
       src: "music-6"
     },
     {
-      name: "Let You Down",
-      artist: "NF",
+      name: "Radioactive",
+      artist: "Imagine Dragons",
       img: "music-7",
       src: "music-7"
     },
     {
-      name: "Stressed Out ",
-      artist: "twenty one pilots",
+      name: "Paradaise",
+      artist: "Coldplay",
       img: "music-8",
       src: "music-8"
     },
     {
-      name: "Let's Hurt Tonight ",
-      artist: "OneRepublic",
+      name: "Waiting For The End",
+      artist: "Linkin Park",
       img: "music-9",
       src: "music-9"
     },
     {
-      name: "Yellow ",
-      artist: "Coldplay",
+      name: "Faint",
+      artist: "Linkin Park",
       img: "music-10",
       src: "music-10"
     },
     {
-      name: "Chlorine ",
-      artist: "twenty one pilots",
+      name: "Basket Case",
+      artist: "Green Day",
       img: "music-11",
       src: "music-11"
     },
