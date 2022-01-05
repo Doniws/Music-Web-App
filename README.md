@@ -4,12 +4,20 @@
 
 dibuat menggunakan Java script,html dan CSS
 
+Music yang di tampilkan adalah music band seperti <br>
+Imagine Dragons ,Linkin Park dan lain lainnya
+
 Masih Diperbaharui
 
-https://music-app-mobile.netlify.app/
+https://music-band-app.netlify.app/
 ```
 UI dan UX dibuat sendiri oleh saya sedangkan JS nya mencari di tuttorial
 ```
+
+UPDATE <br>
+Penambahan Fitur Music Video
+
+
 
 >Copyright © Doniws 2021
 
