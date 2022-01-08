@@ -1,4 +1,6 @@
 const wrapper = document.querySelector(".wrapper"),
+bodybg = document.querySelector("body"),
+wrapperbg = document.querySelector("#wrapper"),
 musicImg = wrapper.querySelector(".img-area img"),
 musicName = wrapper.querySelector(".song-details .name"),
 musicArtist = wrapper.querySelector(".song-details .artist"),
@@ -25,6 +27,8 @@ function loadMusic(indexNumb){
   musicArtist.innerText = allMusic[indexNumb - 1].artist;
   musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
   mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+  wrapperbg.style.background = allMusic[indexNumb - 1].bg;
+  bodybg.style.background = allMusic[indexNumb - 1].bg;
 }
 
 //play music function
@@ -178,6 +182,7 @@ const ulTag = wrapper.querySelector("ul");
 for (let i = 0; i < allMusic.length; i++) {
   //let's pass the song name, artist from the array
   let liTag = `<li li-index="${i + 1}">
+                  <img class="img-container" src="images/${allMusic[i].src}.webp">
                 <div class="row">
                   <span>${allMusic[i].name}</span>
                   <p>${allMusic[i].artist}</p>

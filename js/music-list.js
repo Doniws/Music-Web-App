@@ -10,7 +10,6 @@ let allMusic = [
   artist: "Imagine Dragons",
   img: "music-1",
   src: "music-1",
-  color:"yellow"
 },
 {
   name: "Whatever it take",

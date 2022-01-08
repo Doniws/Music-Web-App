@@ -9,19 +9,22 @@ let allMusic = [{
   name: " Somewhere Only We Know",
   artist: "keane",
   img: "music-1",
-  src: "music-1"
+  src: "music-1",
+  bg: "linear-gradient(138deg, rgb(64 133 126) 20%, rgb(23 20 20) 100%)"
 },
 {
   name: "One More Light",
   artist: "Linkin Park",
   img: "music-2",
-  src: "music-2"
+  src: "music-2",
+  bg: "linear-gradient(42deg, rgba(119,44,44,1) 21%, rgba(55,76,110,1) 100%)"
 },
 {
   name: "From The Inside",
   artist: "Linkin Park",
   img: "music-3",
-  src: "music-3"
+  src: "music-3",
+  bg: "linear-gradient(42deg, rgb(37 37 37) 21%, rgb(74 74 74) 100%)"
 },
 {
   name: "In My Place",

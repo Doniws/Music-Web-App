@@ -2,18 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gugi'
+  font-family: "Roboto-Medium";
+  -webkit-font-smoothing: antialiased;
+  text-transform: capitalize;
+  /* border: red 1px solid; */
+
 }
 
 /* ini din font bukan gugi font  */
 @font-face {
-  font-family: "Gugi";
-  src: url("fonts/Din/fonts-D-DIN-Bold.woff2") format("truetype");
+  font-family:"Roboto-Bold";
+  src: url("fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: "Gugi-thin";
-  src: url("fonts/Din/fonts-D-DIN.woff2") format("truetype");
+  font-family: "Roboto-Medium";
+  src: url("/fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 *::before,
@@ -121,7 +128,7 @@ img.imghead {
 
   font-size: 20px;
   margin-left: -3px;
-  font-family: 'Gugi';
+  font-family: "Roboto-Medium";
   color: rgb(0, 4, 255);
   font-weight: bold;
 }
@@ -151,21 +158,21 @@ img.imghead {
 }
 
 .song-details p {
-  font-family: 'Gugi';
+  font-family:"Roboto-Bold";
   color: rgb(38, 41, 196);
   color: linear-gradient(97deg, rgba(38, 41, 196, 1) 0%, rgba(38, 64, 196, 1) 9%, rgba(38, 41, 196, 1) 19%, rgba(38, 78, 196, 1) 27%, rgba(38, 90, 196, 1) 36%, rgba(38, 124, 196, 1) 50%, rgba(38, 140, 196, 1) 58%, rgba(38, 155, 196, 1) 74%, rgba(0, 134, 255, 1) 100%);
 }
 
 .song-details .name {
   font-size: 25px;
-  font-family: 'Gugi';
+  font-family:"Roboto-Bold";
 }
 
 .song-details .artist {
   font-size: 18px;
   opacity: 0.9;
   line-height: 35px;
-  font-family: 'Gugi-thin';
+  font-family:"Roboto";
   font-weight: 600;
 }
 
@@ -349,10 +356,10 @@ img.imghead {
   z-index: 5;
   padding: 50px 30px;
   border-radius: 15px;
-  background: linear-gradient(250deg, rgba(2, 0, 36, 0.548) 0%, rgb(9 9 126 / 67%) 35%, rgba(0, 104, 255, 548) 100%);
+  background: linear-gradient(250deg, rgba(2, 0, 36) 0%, rgb(9 9 126 / 67%) 35%, rgba(0, 104, 255, 548) 100%);
   box-shadow: -4px -2px 6px 0px #002fff,
       4px 2px 6px 0 #3c00ff;
-  transition: all 0.65s ease-in;
+  transition: all 0.65s ease-out;
 }
 
 #music-list.show {
@@ -381,9 +388,11 @@ img.imghead {
 
 }
 
+/* Pembatasan List music */
 #music-list ul {
   margin: 10px 0;
-  max-height: 260px;
+  /* max-height: 260px; */
+  max-height: 75vh;
   overflow: auto;
 }
 
@@ -405,6 +414,12 @@ img.imghead {
   border-bottom: 0px;
 }
 
+#music-list li .row{
+    margin-right: auto;
+    padding-left: 20px;
+
+}
+
 #music-list ul li .row span {
   font-size: 17px;
   color: #000000;
@@ -413,6 +428,10 @@ img.imghead {
 #music-list ul li .row p {
   opacity: 0.9;
   color: rgb(255, 255, 255);
+}
+
+#music-list img.img-container{
+  width: 50px;
 }
 
 ul li .audio-duration {
@@ -426,6 +445,11 @@ ul li.playing {
 }
 
 @media only screen and (max-width:440px) {
+  /* Pembatasan List music */
+#music-list ul {
+  max-height: 100vh;
+}
+
   .song-details {
       text-align: center;
       margin: 45px 0;

@@ -1,11 +1,12 @@
 const wrapper = document.querySelector(".wrapper"),
-musicImg = wrapper.querySelector(".img-area video"),
+bodybg = document.querySelector("body"),
+wrapperbg = document.querySelector("#wrapper"),
+musicVideo = wrapper.querySelector(".img-area video"),
 musicName = wrapper.querySelector(".song-details .name"),
 musicArtist = wrapper.querySelector(".song-details .artist"),
 playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
 nextBtn = wrapper.querySelector("#next"),
-// mainAudio = wrapper.querySelector("#main-audio"),
 progressArea = wrapper.querySelector(".progress-area"),
 progressBar = progressArea.querySelector(".progress-bar"),
 musicList = wrapper.querySelector("#music-list"),
@@ -20,10 +21,14 @@ window.addEventListener("load", ()=>{
   playingSong(); 
 });
 
+//String ada di belakang
 function loadMusic(indexNumb){
   musicName.innerText = allMusic[indexNumb - 1].name;
   musicArtist.innerText = allMusic[indexNumb - 1].artist;
-  musicImg.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
+  musicVideo.src = `videos/${allMusic[indexNumb - 1].img}.mp4`;
+  wrapperbg.style.background = allMusic[indexNumb - 1].bg;
+  bodybg.style.background = allMusic[indexNumb - 1].bg;
+  
 //   mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
 
@@ -31,14 +36,14 @@ function loadMusic(indexNumb){
 function playMusic(){
   wrapper.classList.add("paused");
   playPauseBtn.querySelector("i").innerText = "pause";
-  musicImg.play();
+  musicVideo.play();
 }
 
 //pause music function
 function pauseMusic(){
   wrapper.classList.remove("paused");
   playPauseBtn.querySelector("i").innerText = "play_arrow";
-  musicImg.pause();
+  musicVideo.pause();
 }
 
 //prev music function
@@ -81,7 +86,7 @@ nextBtn.addEventListener("click", ()=>{
 
 // tunggu 
 // update progress bar width according to music current time
-musicImg.addEventListener("timeupdate", (e)=>{
+musicVideo.addEventListener("timeupdate", (e)=>{
   const currentTime = e.target.currentTime; //getting playing song currentTime
   const duration = e.target.duration; //getting playing song total duration
   let progressWidth = (currentTime / duration) * 100;
@@ -89,9 +94,9 @@ musicImg.addEventListener("timeupdate", (e)=>{
 
   let musicCurrentTime = wrapper.querySelector(".current-time"),
   musicDuartion = wrapper.querySelector(".max-duration");
-  musicImg.addEventListener("loadeddata", ()=>{
+  musicVideo.addEventListener("loadeddata", ()=>{
     // update song total duration
-    let mainAdDuration = musicImg.duration;
+    let mainAdDuration = musicVideo.duration;
     let totalMin = Math.floor(mainAdDuration / 60);
     let totalSec = Math.floor(mainAdDuration % 60);
     if(totalSec < 10){ //if sec is less than 10 then add 0 before it
@@ -112,9 +117,9 @@ musicImg.addEventListener("timeupdate", (e)=>{
 progressArea.addEventListener("click", (e)=>{
   let progressWidth = progressArea.clientWidth; //getting width of progress bar
   let clickedOffsetX = e.offsetX; //getting offset x value
-  let songDuration = musicImg.duration; //getting song total duration
+  let songDuration = musicVideo.duration; //getting song total duration
   
-  musicImg.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+  musicVideo.currentTime = (clickedOffsetX / progressWidth) * songDuration;
   playMusic(); //calling playMusic function
   playingSong();
 });
@@ -140,7 +145,7 @@ repeatBtn.addEventListener("click", ()=>{
 });
 
 //code for what to do after song ended
-musicImg.addEventListener("ended", ()=>{
+musicVideo.addEventListener("ended", ()=>{
   // we'll do according to the icon means if user has set icon to
   // loop song then we'll repeat the current song and will do accordingly
   let getText = repeatBtn.innerText; //getting this tag innerText
@@ -149,7 +154,7 @@ musicImg.addEventListener("ended", ()=>{
       nextMusic(); //calling nextMusic function
       break;
     case "repeat_one":
-        musicImg.currentTime = 0; //setting audio current time to 0
+      musicVideo.currentTime = 0; //setting audio current time to 0
       loadMusic(musicIndex); //calling loadMusic function with argument, in the argument there is a index of current song
       playMusic(); //calling playMusic function
       break;
@@ -179,6 +184,7 @@ const ulTag = wrapper.querySelector("ul");
 for (let i = 0; i < allMusic.length; i++) {
   //let's pass the song name, artist from the array
   let liTag = `<li li-index="${i + 1}">
+                  <img class="img-container" src="images/${allMusic[i].src}.webp">
                 <div class="row">
                   <span>${allMusic[i].name}</span>
                   <p>${allMusic[i].artist}</p>
