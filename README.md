@@ -15,6 +15,8 @@ UI dan UX dibuat sendiri oleh saya sedangkan JS nya mencari di tuttorial
 UPDATE <br>
 Penambahan Fitur Music Video
 
+>Sedang dalam penambahan fitur
+
 
 
 >Copyright © Doniws 2021
