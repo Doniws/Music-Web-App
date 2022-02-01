@@ -2,12 +2,10 @@
 
 **MUSIC WEB APP BY DONIWS**
 
-dibuat menggunakan Java script,html dan CSS
-
 Music yang di tampilkan adalah music band seperti <br>
 Imagine Dragons ,Linkin Park dan lain lainnya
 
-Masih Diperbaharui
+Masih Diperbaharui dan penambahan fitur-fitur
 
 https://music-band-app.netlify.app/
 ```
@@ -16,6 +14,10 @@ UI dan UX dibuat sendiri oleh saya sedangkan JS nya mencari di tuttorial
 
 UPDATE <br>
 Penambahan Fitur Music Video
+<br>
+Untuk Versi Mobile dan Dekstop dalam pembuatan
+
+>Sedang dalam penambahan fitur
 
 
 
