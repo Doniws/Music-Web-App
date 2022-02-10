@@ -25,16 +25,16 @@
 </head>
 
 <body class="body" id="body">
-    <div id="preloader"></div>
+    <!-- <div id="preloader"></div> -->
     <div class="wrapper" id="wrapper">
         <div class="top-bar">
             <a id="fullscr"><i class="material-icons-outlined" class="material-icons">expand_more</i> </a>
             <!-- untuk toggle -->
             <span>
                 <div class="list-container">
-                <li><a href="">Home</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Video</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="video.html">Video</a></li>
                 </div>
                 <div class="btn-container">
                     <label class="switch btn-color-mode-switch" id="toggle" onclick="toogle()">
@@ -43,11 +43,12 @@
                     </label>
                 </div>
             </span>
-            <A href="javascript:alert('Music app by Doniws 2021-2022')" onclick="Darkmode()">
-                <i><img class="imghead" src="images/logoutama.webp" style="width: 50px;"></i></A>
+            <a href="javascript:alert('Music app by Doniws 2021-2022')" onclick="Darkmode()">
+                <i><img class="imghead" src="images/logoutama.webp" style="width: 50px;"></i></a>
         </div>
+        <main id="swup" class="transition-fade">
         <div class="flex-main">
-            <div class="flex-img-detail">
+            <div class="flex-img-detail transition-swipe">
                 <div class="img-area">
                     <img src="" alt="">
                 </div>
@@ -57,7 +58,6 @@
                     <p class="name"></p>
                     <p class="artist"></p>
                 </div>
-                
                 <div class="progress-area" id="progress-area">
                     <div class="progress-bar" id="progsess-bar">
                         <audio id="main-audio" src=""></audio>
@@ -90,19 +90,10 @@
                 </div>
             </div>
         </div>
-
+        </main>
         <script src="js/music-list.js"></script>
         <script src="js/script-music.js"></script>
-
         <!-- Disini untuk java scripnya -->
-        <script>
-            // Untuk dark mode
-            function darkmode() {
-                var element = document.getElementById("about")
-                element.classList.toggle("dark-mode");
-            }
-        </script>
-
         <!-- dark mode -->
         <!-- untuk boody dark -->
         <script>
@@ -115,7 +106,6 @@
 
                 var element = document.getElementById("progress-area");
                 element.classList.toggle("progress-area-dark");
-
             }
             // progress-area
         </script>
@@ -146,7 +136,8 @@
                 if (window.open("video.html", "_top"));
             }
         </script>
-        <script src="./js/script.js"></script>
+        <script defer src="js/all.js"></script>
+        <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
 </body>
 
 </html>

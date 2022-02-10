@@ -116,11 +116,31 @@ img.imghead {
 .top-bar span {
 
   font-size: 20px;
-  margin-left: -3px;
+  /* margin-left: -3px; */
   font-family: "Roboto-Medium";
   /* color: rgb(0, 4, 255); */
   font-weight: bold;
 }
+
+.list-container {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.list-container li {
+  list-style: none;
+}
+
+.list-container li a{
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto-Bold";
+  font-size: 20px;
+}
+
 .flex-main{
   display: flex;
     align-items: center;
@@ -322,7 +342,25 @@ img.imghead {
   position: absolute;
   color: #020f58;
 }
+
+
 #music-list {
+    position: absolute;
+    width: 40%;
+    margin-right: auto;
+    /* left: 0; */
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    padding: 50px 30px;
+    border-radius: 15px;
+    /* backdrop-filter: blur(32px); */
+    /* background: linear-gradient(250deg, rgba(2, 0, 36) 0%, rgb(9 9 126 / 67%) 35%, rgba(0, 104, 255, 548) 100%); */
+    transition: all 0.65s linear;
+    touch-action: cross-slide-y !important;
+}
+/* #music-list {
   position: absolute;
   width: 100%;
   left: 0;
@@ -333,10 +371,9 @@ img.imghead {
   padding: 50px 30px;
   border-radius: 15px;
   backdrop-filter: blur(32px);
-  /* background: linear-gradient(250deg, rgba(2, 0, 36) 0%, rgb(9 9 126 / 67%) 35%, rgba(0, 104, 255, 548) 100%); */
   transition: all 0.65s linear;
   touch-action: cross-slide-y !important;
-}
+} */
 #music-list.show {
   bottom: 0;
   opacity: 1;
@@ -414,7 +451,15 @@ ul li.playing {
   color: var(--violet);
 }
 
+
+
 @media only screen and (max-width:440px) {
+  .btn-container {
+  display: block !important;
+  }
+  .list-container{
+    display: none !important;
+  }
   .flex-main{
     height: auto !important;
     display: flex;
@@ -592,6 +637,10 @@ label {
   font-weight: 500;
 }
 
+.btn-container {
+  display: none;
+}
+
 .btn-color-mode-switch {
   display: block;
   margin: 0px;
@@ -692,4 +741,33 @@ label {
   position: fixed;
   z-index: 1000;
   background-image: url(preloader/256x256.gif);
+}
+
+
+
+/* swup */
+.transition-fade {
+  opacity: 1;
+  transition: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.transition-swipe {
+  transition: 500ms;
+  transform: translateY(0);
+}
+
+html.is-animating .transition-swipe {
+  transform: translateY(100px);
 }

@@ -5,12 +5,18 @@
     -webkit-font-smoothing: antialiased;
     text-transform: capitalize;
     color: white;
+    text-decoration: none;
+    list-style: none;
 }
 
 *::before,
 *::after {
     padding: 0;
     margin: 0;
+}
+
+html{
+    overflow-x: hidden;
 }
 
 body {
@@ -26,10 +32,10 @@ body {
     height: 100vh;
     position: fixed;
     padding: 25px 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     /* border-radius: 15px; */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .top-bar,
@@ -47,29 +53,44 @@ body {
     align-items: center;
     background: #030303;
     top: 0px;
-    justify-content: space-around;
     height: 60px;
     left: 0;
     z-index: 999;
-
+    padding: 0 20px;
     /* border-color: ; */
-    border-bottom: 0.5px solid rgb(41, 39, 39);
+    /* border-bottom: 0.5px solid rgb(41, 39, 39);  */
+    justify-content: space-between;
+    
 }
 
 .top-bar span {
     display: flex;
+    align-items: center;
+    /* display: block; */
 }
-
 .top-bar span h1 {
     font-size: 25px;
     font-family: "Roboto-Bold";
+    padding-left: 10px;
+
 }
 
+span.LINK{
+    font-family: "Roboto-Bold";
+    gap: 15px;
+    width: 25%;
+    font-size: 20px;
+}
+
+/* Pilihan Cepat  */
 .container-make-it {
     padding: 75px 0px !important;
     width: 100% !important;
+    position: relative;
 }
-
+.container-all-favorite {
+    position: relative;
+}
 h3 {
 
     font-family: "Roboto-Medium";
@@ -84,7 +105,7 @@ h3 {
     color: #aaa;
     text-transform: uppercase;
     font-size: 1em;
-    font-family: "Roboto-Medium";
+    font-family: "Roboto";
     font-weight: 450;
 }
 
@@ -111,18 +132,23 @@ h3 {
     font-size: 35px;
 }
 
-.wrapper-content-4 {
-    display: flex;
+.wrapper-content-1,.wrapper-content-2,.wrapper-content-3,.wrapper-content-4 {
+    /* display: flex; */
     /* flex-wrap: wrap; */
     flex-direction: column;
+
+    display: flex;
+    /* flex-wrap: wrap;
+    flex: 1 0 20%; */
     gap: 15px;
+
 }
 
 .scroll-overflow {
     display: flex;
     flex-direction: row;
     /* overflow-x: scroll; */
-    width: 200px;
+    width:200px;
     justify-content: flex-start;
 }
 
@@ -134,6 +160,8 @@ h3 {
     /* flex: 1 4 30%; */
     /* margin: 5px; */
     width: 400px;
+      /* flex: 1 0 21%; explanation below */
+
 
 }
 
@@ -154,12 +182,14 @@ h3 {
 
 .cepat .text p:nth-child(1) {
     font-family: "Roboto-Bold";
+    font-size: 1rem;
 }
 
 .cepat .text p:nth-child(2) {
-    font-family: "Roboto-Medium";
+    font-family: "Roboto";
     color: #aaa;
     text-transform: capitalize;
+    font-size: .875rem;
 }
 
 .middle {
@@ -180,6 +210,28 @@ h3 {
     transition: all ease-out 0.2s;
 }
 
+.bottom {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.wrapper-favorite:hover .bottom{
+    opacity: 1;
+}
+
+.wrapper-favorite .play-pause i{
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
 .cepat:hover .middle {
     opacity: 1;
 }
@@ -195,6 +247,7 @@ h3 {
 
 .hover-play img {
     border-radius: 2.5px;
+    /* width: 50px; */
 }
 
 .cepat:hover .hover-play img {
@@ -223,56 +276,97 @@ h3 {
     margin: 0 auto;
 }
 
+/* Favorite content */
+
 .favotite-Container {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .favorite {
     display: flex;
     gap: 20px;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
 }
-
+.wrapper-favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* card  */
 .favorite .music {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    background: #0c0b0b;
+    -ms-flex: 1;
+    flex: 1;
+    border-radius: 6px;
+    isolation: isolate;
+    padding-bottom: 16px;
+    position: relative;
+    -webkit-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+    width: 100%;
 }
-
+.favorite .music:hover{
+    background: #1d1a1ab6;
+}
 .music img {
-    width: 190px;
-    border-radius: 5px;
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    width: 182.5px;
+    height: 182.5px;
+    border-radius: 20px;
+    padding: 16px;
 
 }
-
-.music p {
-    font-size: 17px;
+.music p:nth-child(2) {
     font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-transform: none;
+    letter-spacing: normal;
+    text-transform: capitalize;
+    font-family: "Roboto-Bold";
 }
-
+.music p:nth-child(3){
+    font-size: .875rem;
+    font-weight: 500;
+    color: #aaa;
+    font-family: "Roboto";
+}
+/* prev next slide button */
 .swiper-button-next,
 .swiper-button-prev {
     position: absolute !important;
-    top: 50% !important;
+    /* top: 60% !important ; */
+    
     z-index: 10 !important;
     cursor: pointer !important;
     display: flex !important;
-    font-size: -10px !important;
+    font-size: 10px !important;
     align-items: center !important;
-    /* width: 20px; */
+   
     justify-content: center !important;
     color: rgb(0, 0, 0) !important;
     background: #fff;
     padding: 20px !important;
     border-radius: 50%;
-    margin-top: 0 !important;
 }
-
+.swiper-button-prev1,
+.swiper-button-next1{
+    top: 55% !important;
+}
+.swiper-button-next2,
+.swiper-button-prev2,
+.swiper-button-next3,
+.swiper-button-prev3{
+    top: 60% !important;
+}
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    font-size: 15px !important;
-    font-weight: 800;
+    font-size: 12px !important;
+    font-weight: bolder;
 }
 
 .swiper-button-next.swiper-button-disabled,
@@ -280,6 +374,18 @@ h3 {
     opacity: 0 !important;
 }
 
+.swiper-button-next2,
+.swiper-button-prev2{
+    position: absolute;
+    margin: 0 auto;
+}
+/* pagination or bullet  */
+.swiper-pagination-bullet-active {
+    background: white !important;
+}
+.swiper-pagination-bullet{
+    background: #fff !important;
+}
 :root {
     --swiper-navigation-size: 20px !important;
 }
@@ -331,5 +437,30 @@ h3 {
 
 
 
+/* swup */
+.transition-fade {
+  opacity: 1;
+  transition: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
 
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.transition-swipe {
+  transition: 500ms;
+  transform: translateY(0);
+}
+
+html.is-animating .transition-swipe {
+  transform: translateY(100px);
+}
 
