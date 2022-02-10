@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Doniws</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal Website Article">
+    <meta name="keyword" content="Doni music">
+    <meta name="author" content="Doni Wahyu Saputra">
+    <!-- icondan impor -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
+    <link rel="stylesheet" href="https://doniws.github.io/FontAwesome6Pro/pro/css/all.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="music.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+</head>
+
+<body class="body" id="body">
+    <div id="preloader"></div>
+    <div class="wrapper" id="wrapper">
+        <div class="top-bar">
+            <a id="fullscr"><i class="material-icons-outlined" class="material-icons">expand_more</i> </a>
+            <!-- untuk toggle -->
+            <span>
+                <div class="list-container">
+                <li><a href="">Home</a></li>
+                <li><a href="">Music</a></li>
+                <li><a href="">Video</a></li>
+                </div>
+                <div class="btn-container">
+                    <label class="switch btn-color-mode-switch" id="toggle" onclick="toogle()">
+                        <input type="checkbox" name="color_mode" id="color_mode" value="1">
+                        <label for="color_mode" data-on="Video" data-off="Music" class="btn-color-mode-switch-inner"> </label>
+                    </label>
+                </div>
+            </span>
+            <A href="javascript:alert('Music app by Doniws 2021-2022')" onclick="Darkmode()">
+                <i><img class="imghead" src="images/logoutama.webp" style="width: 50px;"></i></A>
+        </div>
+        <div class="flex-main">
+            <div class="flex-img-detail">
+                <div class="img-area">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="flex-progress-control">
+                <div class="song-details">
+                    <p class="name"></p>
+                    <p class="artist"></p>
+                </div>
+                
+                <div class="progress-area" id="progress-area">
+                    <div class="progress-bar" id="progsess-bar">
+                        <audio id="main-audio" src=""></audio>
+                    </div>
+                    <div class="song-timer">
+                        <span class="current-time">0:00</span>
+                        <span class="max-duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls" id="controls">
+                    <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+                    <i id="prev" class="material-icons">skip_previous</i>
+                    <div class="play-pause">
+                        <i class="material-icons play">play_arrow</i>
+                    </div>
+                    <i id="next" class="material-icons">skip_next</i>
+                    <i id="more-music" class="material-icons">queue_music</i>
+                </div>
+                <div id="music-list">
+                    <div class="header">
+                        <div class="row">
+                            <i class="list material-icons">queue_music</i>
+                            <span>Music list</span>
+                        </div>
+                        <i id="close" class="material-icons">close</i>
+                    </div>
+                    <ul>
+                        <!-- here li list are coming from js -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/music-list.js"></script>
+        <script src="js/script-music.js"></script>
+
+        <!-- Disini untuk java scripnya -->
+        <script>
+            // Untuk dark mode
+            function darkmode() {
+                var element = document.getElementById("about")
+                element.classList.toggle("dark-mode");
+            }
+        </script>
+
+        <!-- dark mode -->
+        <!-- untuk boody dark -->
+        <script>
+            function Darkmode() {
+                var element = document.getElementById("wrapper");
+                element.classList.toggle("wrapper-dark");
+
+                var element = document.getElementById("body");
+                element.classList.toggle("body-dark");
+
+                var element = document.getElementById("progress-area");
+                element.classList.toggle("progress-area-dark");
+
+            }
+            // progress-area
+        </script>
+
+        <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
+        <script>
+            /*     Fullscreen btn     */
+            let fullscreen;
+            let fsEnter = document.getElementById('fullscr');
+            fsEnter.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!fullscreen) {
+                    fullscreen = true;
+                    document.documentElement.requestFullscreen();
+                } else {
+                    fullscreen = false;
+                    document.exitFullscreen();
+
+                }
+            });
+        </script>
+        <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
+        <script>
+            function toogle() {
+                var log_out = confirm;
+                var bx =
+                    document.getElementById("toggle");
+                if (window.open("video.html", "_top"));
+            }
+        </script>
+        <script src="./js/script.js"></script>
+</body>
+
+</html>
