@@ -11,15 +11,15 @@
 /* dark mode wrapper disini */
 #wrapper.wrapper-dark {
   background: #141414bd;
-  box-shadow: -4px -2px 4px 0px #020202,
-      4px 2px 6px 0 #080808;
+  /* box-shadow: -4px -2px 4px 0px #020202,
+      4px 2px 6px 0 #080808; */
 
 }
 
 #wrapper {
   background: #ffffff66;
-  box-shadow: -4px -2px 4px 0px #ffffff,
-      4px 2px 6px 0 #dfe4ea;
+  /* box-shadow: -4px -2px 4px 0px #ffffff,
+      4px 2px 6px 0 #dfe4ea; */
 }
 
 #progress-area {
@@ -29,8 +29,6 @@
 /* dark modenya dibawah */
 #progress-area.progress-area-dark {
   background: #1a1a1a;
-  box-shadow: -4px -2px 4px 0px #020202,
-      4px 2px 6px 0 #080808;
 }
 
 #progress-area .progress-bar {
