@@ -31,16 +31,16 @@ for (let j = 0; j < FavoriteMusic.length; j++){
 
 const olTag = wrapper.querySelector('ol');
 // let create li tags according to array length for list
-for (let i = 0; i < MusicList.length; i++) {
+for (let i = 0; i < BestArtist.length; i++) {
   //let's pass the song name, artist from the array
   let liTag = `<li class="music swiper-slide" id="band-${i + 1}">  
                   <div class="wrapper-favorite">
                     <div class="hover-play">
-                        <img src="images/${BestArtist[i].src}.webp" alt="">
+                        <img src="images/${BestArtist[i].src}.webp" alt="" style="border-radius:${BestArtist[i].rds}">
                         <div class="bottom">
-                                <div class="play-pause">
-                                    <i class="material-icons-sharp play">play_arrow</i>
-                                </div>
+                              <div class="play-pause">
+                                  <i class="material-icons-sharp play">play_arrow</i>
+                              </div>
                         </div>
                     </div>
                           <p class="artist">${BestArtist[i].artist}</p>
@@ -49,6 +49,43 @@ for (let i = 0; i < MusicList.length; i++) {
                 </li>`;
   olTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
 };
+
+const dlTag = wrapper.querySelector('dl.container-all-card-float-grid');
+for (let x = 0; x < Welcome.length; x++) {
+  //let's pass the song name, artist from the array
+  let liTag = `<div class="container-card-float">
+                    <img src="images/${Welcome[x].src}.webp" alt="" width="64px">
+                    <div class="text-play">
+                        <a>${Welcome[x].artist}</a>
+                        <div class="right">
+                            <div class="play-pause">
+                                <i class="material-icons-sharp play">play_arrow</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+  dlTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
+}
+
+const ddTag = wrapper.querySelector('dl.container-all-card-float-flex');
+for (let z = 0; z < Welcome.length; z++) {
+  //let's pass the song name, artist from the array
+  let liTag = `<li class="music swiper-slide" id="band-${z + 1}">  
+                  <div class="wrapper-favorite">
+                    <div class="hover-play">
+                        <img src="images/${BestArtist[z].src}.webp" alt=""  style="border-radius:${BestArtist[z].rds}">
+                        <div class="bottom">
+                              <div class="play-pause">
+                                  <i class="material-icons-sharp play">play_arrow</i>
+                              </div>
+                        </div>
+                    </div>
+                          <p class="artist">${BestArtist[z].artist}</p>
+                          <p class="name">Artist</p>
+                    </div>
+                </li>`;
+  ddTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
+}
 
 //play music function
 function playMusic(){

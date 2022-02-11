@@ -33,6 +33,40 @@
             </span>
             <span class="material-icons-outlined">settings</span>
         </div>
+        <div class="container-Welcome" >
+            <div class="judul">
+                <h2>Welcome</h2>
+            </div>
+            <!-- list card float  -->
+            <dl class="container-all-card-float-grid">
+
+            </dl>
+            <div class="swiper4">
+            <dl class="container-all-card-float-flex swiper-wrapper ">
+                
+            </dl>
+            <div class="swiper-button-next swiper-button-next4"></div>
+                <div class="swiper-button-prev swiper-button-prev4"></div>
+            </div>
+        </div>
+
+
+        <div class="container-all-favorite">
+            <div class="favotite-container swiper2">
+                <div class="judul">
+                    <p>Lagu Favorite Mu</p>
+                    <h3>Favorite Music</h3>
+                </div>
+                <!-- list music  -->
+                <ul class="favorite swiper-wrapper">
+
+
+                </ul>
+                <div class="swiper-button-next swiper-button-next2"></div>
+                <div class="swiper-button-prev swiper-button-prev2"></div>
+
+            </div>
+        </div>
     <main id="swup" class="transition-fade">
         <div class="container-make-it swiper1">
             <div class="judul">
@@ -335,25 +369,10 @@
 
         </div>
 
-        <div class="container-all-favorite">
-            <div class="favotite-Container swiper2">
-                <div class="judul">
-                    <p>Lagu Favorite Mu</p>
-                    <h3>Favorite Music</h3>
-                </div>
-                <!-- list music  -->
-                <ul class="favorite swiper-wrapper">
-
-
-                </ul>
-                <div class="swiper-button-next swiper-button-next2"></div>
-                <div class="swiper-button-prev swiper-button-prev2"></div>
-
-            </div>
-        </div>
+        
 
         <div class="container-all-favorite">
-            <div class="favotite-Container swiper3">
+            <div class="favotite-container swiper3">
                 <div class="judul">
                     <p>Band Favorite Mu</p>
                     <h3>Best Band</h3>
@@ -379,6 +398,7 @@
     <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
     <script src="swiper/swiper-bundle.js"></script>
     <script>
+        // favorite 
         const swiper1 = new Swiper('.swiper1', {
 
             speed: 500,
@@ -427,18 +447,19 @@
         });
     </script>
     <script>
+        // card 
         const swiper2 = new Swiper('.swiper2', {
             // Navigation arrows
             navigation: {
-                nextEl: '.swiper-button-next2',
-                prevEl: '.swiper-button-prev2',
+                nextEl: '.swiper-button-next3',
+                prevEl: '.swiper-button-prev3',
             },
             freeMode: {
                 enabled: true,
                 sticky: true,
             },
             scrollbar: {
-                el: '.swiper-scrollbar2',
+                el: '.swiper-scrollbar3',
                 draggable: true,
             },
             // mousewheel: {
@@ -453,7 +474,8 @@
             breakpoints: {
                 // when window width is >= 320px
                 320: {
-                    slidesPerView: 1
+                    slidesPerView: 1,
+                    spaceBetween: 0,
                 },
                 // when window width is >= 480px
                 480: {
@@ -467,10 +489,10 @@
                     slidesPerView: 6
                 }
             },
-
         });
     </script>
     <script>
+        // card 
         const swiper3 = new Swiper('.swiper3', {
             // Navigation arrows
             navigation: {
@@ -497,7 +519,54 @@
             breakpoints: {
                 // when window width is >= 320px
                 320: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                // when window width is >= 480px
+                480: {
                     slidesPerView: 1
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 4
+                },
+                1024: {
+                    slidesPerView: 6
+                }
+            },
+
+        });
+    </script>
+         <script>
+        // card 
+        const swiper4 = new Swiper('.swiper4', {
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next4',
+                prevEl: '.swiper-button-prev4',
+            },
+            freeMode: {
+                enabled: true,
+                sticky: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar4',
+                draggable: true,
+            },
+            // mousewheel: {
+            //     invert: true
+            // },
+            freeModeFluid: true,
+            grabCursor: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            // loop:true,
+            // slideToClickedSlide: true
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
                 },
                 // when window width is >= 480px
                 480: {

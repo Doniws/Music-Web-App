@@ -204,40 +204,100 @@ let BestArtist = [
     artist: 'Imagine Dragons',
     img: 'artist-1',
     src: 'artist-1',
+    rds: '50%',
   },
   {
     artist: 'Coldplay',
     img: 'artist-2',
     src: 'artist-2',
+    rds: '50%',
   },
   {
     artist: 'Twenty One Pilot',
     img: 'artist-3',
     src: 'artist-3',
+    rds: '50%',
   },
   {
     artist: 'Linkin Park',
     img: 'artist-4',
     src: 'artist-4',
+    rds: '50%',
   },
   {
     artist: 'One Republic',
     img: 'artist-5',
     src: 'artist-5',
+    rds: '50%',
   },
   {
     artist: 'System Of A Down',
     img: 'artist-6',
     src: 'artist-6',
+    rds: '50%',
+  },
+  {
+    artist: 'Green Day',
+    img: 'artist-7',
+    src: 'artist-7',
+    rds: '50%',
+  },
+  {
+    artist: 'Red Hot Chili Peppers',
+    img: 'artist-8',
+    src: 'artist-8',
+    rds: '50%',
+  },
+];
+
+
+let Welcome = [
+  {
+    artist: 'Imagine Dragons',
+    img: 'artist-1',
+    src: 'artist-1',
+    rds: '50%'
+  },
+  {
+    artist: 'Coldplay',
+    img: 'artist-2',
+    src: 'artist-2',
+    rds: '50%'
+  },
+  {
+    artist: 'Twenty One Pilot',
+    img: 'artist-3',
+    src: 'artist-3',
+    rds: '50%'
+  },
+  {
+    artist: 'Linkin Park',
+    img: 'artist-4',
+    src: 'artist-4',
+    rds: '50%'
+  },
+  {
+    artist: 'One Republic',
+    img: 'artist-5',
+    src: 'artist-5',
+    rds: '50%'
+  },
+  {
+    artist: 'System Of A Down',
+    img: 'artist-6',
+    src: 'artist-6',
+    rds: '50%'
   },
   {
     artist: 'Imagine Dragons',
     img: 'artist-7',
     src: 'artist-7',
+    rds: '50%'
   },
   {
     artist: 'Imagine Dragons',
     img: 'artist-8',
     src: 'artist-8',
+    rds: '50%'
   },
 ];
