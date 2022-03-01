@@ -1170,7 +1170,9 @@ span.time-music {
     h3 {
         font-size: 1.55em;
     }
-
+    .judul {
+        padding-bottom: 10px;
+    }
     .judul p {
         font-size: 0.875em;
     }
