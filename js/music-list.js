@@ -11,6 +11,7 @@ let allMusic = [
     img: 'music-1',
     src: 'music-1',
     bg: '#836033',
+    id: '#music-1'
   },
   {
     name: 'Whatever it take',

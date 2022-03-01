@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="">
+    <title>Music New</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="musicnew.css">
+    <link rel="stylesheet" href="swiper/swiper-bundle.css">
+    <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+</head>
+
+<body>
+    <main class="wrapper">
+        <div class="top-bar" id="navbar">
+            <span class="logo left-nav">
+                <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
+                <img id="logo-2" class="logo-2" src="images/logoutama.webp" width="55px" alt="logo">
+                <h1 class="discover">Music</h1>
+            </span>
+            <span class="container-link center-nav">
+                <ul id="link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="music.html">Music</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="">Explore</a></li>
+                    <div class="open-input">
+                        <button type="submit"><span class="material-icons-sharp">search</span></button>
+                        <a>Search</a>
+                    </div>
+                </ul>
+                <div class="container-searchbox " id="container-searchbox">
+                    <div class="wrapper-input" id="input">
+                        <div class="wrapper-back hidden-input">
+                            <a class="material-icons-sharp back">arrow_back</a>
+                        </div>
+                        <input type="search" placeholder="Search" />
+                        <!-- <a class="material-icons-sharp clear">clear</a> -->
+                    </div>
+                </div>
+            </span>
+            <span class="right-nav account">
+                <a class="material-icons-sharp md-24">cast</a>
+                <a class="material-icons-sharp md-36">account_circle</a>
+            </span>
+        </div>
+
+        <!-- Left Container -->
+        <div class="all-flex-container">
+            <div class="all-flex-wrapper">
+                <!-- left contant  -->
+                <div class="left-live-container">
+                    <!-- hover show tool  -->
+                    <div class="wrapper-left-container">
+                        <div class="image-live-hover">
+                            <a class="container-img">
+                                <div class="wrapper-img">
+                                    <img src="" alt="Image Music">
+                                </div>
+                            </a>
+                            <div class="top">
+                                <div class="play-pause">
+                                    <a class="material-icons-sharp play">more_vert</a>
+                                </div>
+                            </div>
+                            <div class="center">
+                                <div class="play-pause">
+                                    <i class="material-icons-sharp play">play_arrow</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-live-container">
+                    <div class="wrapper-right-container">
+                        <div class="music-link-container">
+                            <div class="music-link-wrapper">
+                                <ul class="music-link">
+                                    <li class="active"><a class="active-link" href="">UP NEXT</a></li>
+                                    <li><a href="">LIRICS</a></li>
+                                    <li><a href="">RELATED</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- list music diisi js  -->
+                        <div class="music-list-container">
+                            <!-- ol is list music this write on java script  -->
+                            <ol>
+
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- bottom bar  -->
+    <div class="container-play-bottom" id="play-bottom">
+        <div class="wrap-play-bottom">
+            <div class="flex-left">
+                <div class="profile-music">
+                    <div class="profile-img">
+                        <img src="" width="50px" alt="">
+                    </div>
+                    <div class="profile-name">
+                        <a></a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="controller-music">
+                <div class="flex-center">
+                    <div class="button-play-pause">
+                        <i class="material-icons-sharp" id="repeat">repeat</i>
+                        <i class="material-icons-sharp prev" id="prev">skip_previous</i>
+                        <div class="play-pause-btn">
+                            <i class="material-icons-sharp play">play_arrow</i>
+                        </div>
+                        <i class="material-icons-sharp next" id="next">skip_next</i>
+                        <i class="material-icons-sharp" id="shuffle">shuffle</i>
+                    </div>
+                    <div class="progress-music">
+                        <span class="current-time time-music">00:00</span>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill">
+                                <audio class="main-audio-primary" src=""></audio>
+                            </div>
+                        </div>
+                        <span class="max-duration time-music">00:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-right">
+                <div class="more-control">
+                    <a id="repeat-plist" class="material-icons" title="Volume 100%">volume_up</a>
+                    <a class="material-icons-sharp">devices</a>
+                    <a class="material-icons-sharp">queue_music</a>
+                    <a class="material-icons-sharp">picture_in_picture_alt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/music-list.js"></script>
+    <script src="js/musicnew.js"></script>
+</body>
+
+</html>

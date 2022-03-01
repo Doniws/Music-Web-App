@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="">
     <title>Discover Music</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="discover.css">
-    <link rel="stylesheet" href="https://doniws.github.io/FontAwesome6Pro/pro/css/all.css">
     <link rel="stylesheet" href="swiper/swiper-bundle.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> -->
-    <link rel="stylesheet" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
+    <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
@@ -19,44 +18,50 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <main class="wrapper">
         <div class="top-bar" id="navbar">
-            <!-- <div class="top-bar-wrapper"> -->
             <span class="logo left-nav">
-                <img src="images/logoutama.webp" width="50px" alt="">
-                <h1 class="discover">Music MU</h1>
+                <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
+                <img id="logo-2" class="logo-2" src="images/logoutama.webp" width="55px" alt="logo">
+                <h1 class="discover">Music</h1>
             </span>
 
-            <span class="LINK center-nav">
-                <span id="link">
+            <span class="container-link center-nav">
+                <ul id="link">
                     <li><a class="active" href="index.html">Home</a></li>
                     <li><a href="music.html">Music</a></li>
                     <li><a href="video.html">Video</a></li>
                     <li><a href="">Explore</a></li>
-                    <div class="open-input" onclick="show() ">
+                    <div class="open-input">
                         <button type="submit"><span class="material-icons-sharp">search</span></button>
                         <a>Search</a>
                     </div>
-                </span>
-                <div class="container-searchbox ">
+                </ul>
+                <ul id="link-icon">               
+                    <li><a href="" class="material-icons-sharp active">home</a></li>
+                    <li><a href="" class="material-icons-sharp">library_music</a></li>
+                    <li><a href="" class="material-icons-sharp">video_library</a></li>
+                    <li><a href="" class="material-icons-sharp">explore</a></li>
+                    <li><a href="" class="material-icons-sharp">search</a></li>
+                </ul>
+                <div class="container-searchbox " id="container-searchbox">
                     <div class="wrapper-input" id="input">
-                        <div class="wrapper-back" onclick="hide()">
+                        <div class="wrapper-back hidden-input">
                             <a class="material-icons-sharp back">arrow_back</a>
                         </div>
                         <input type="search" placeholder="Search" />
-                        <!-- <a class="material-icons-sharp clear">clear</a> -->
                     </div>
                 </div>
             </span>
-            <span class="right-nav">
+            <span class="right-nav account">
                 <a class="material-icons-sharp md-24">cast</a>
-                <a class="material-icons-sharp md-36">account_circle</a>
+                <a class="material-icons-sharp md-24">account_circle</a>
+                <!-- <a href="" class="profile-account"><img src="images/img.png" alt="Image Profile" ></a> -->
             </span>
             <!-- </div> -->
         </div>
         <div class="container-Welcome">
 
-            <!-- <div class="background-img"><img src="./indexbg.jpg" alt=""></div> -->
             <div class="judul">
                 <h2>Happy Listen</h2>
             </div>
@@ -74,7 +79,6 @@
             <div class="swiper-button-prev swiper-button-prev4"></div> -->
         </div>
 
-        <main id="swup" class="transition-fade">
             <div class="container-make-it swiper1">
                 <div class="flex-top">
                     <div class="judul">
@@ -111,14 +115,14 @@
 
             </div>
 
-            <div class="container-all-favorite">
-                <div class="favotite-container swiper3">
+            <div class="container-all-card">
+                <div class="card-container swiper3">
                     <div class="judul">
                         <p>Band Favorite Mu</p>
                         <h3>Best Band</h3>
                     </div>
                     <!-- list music  -->
-                    <ol class="favorite swiper-wrapper">
+                    <ol class="card swiper-wrapper">
 
                     </ol>
                     <div class="swiper-button-next swiper-button-next3"></div>
@@ -127,14 +131,14 @@
                 </div>
             </div>
 
-            <div class="container-all-favorite">
-                <div class="favotite-container swiper2">
+            <div class="container-all-card">
+                <div class="card-container swiper2">
                     <div class="judul">
                         <p>Lagu Favorite Mu</p>
                         <h3>Favorite Music</h3>
                     </div>
                     <!-- list music  -->
-                    <ul class="favorite swiper-wrapper">
+                    <ul class="card swiper-wrapper">
 
                     </ul>
                     <div class="swiper-button-next swiper-button-next2"></div>
@@ -144,12 +148,11 @@
             </div>
 
             <!-- footer area  -->
-    
 
-    </div>
+    </main>
 
     <!-- bottom bar  -->
-    <div class="container-play-bottom">
+    <div class="container-play-bottom" id="play-bottom">
         <div class="wrap-play-bottom">
             <div class="flex-left">
                 <div class="profile-music">
@@ -165,42 +168,39 @@
             <div class="controller-music">
                 <div class="flex-center">
                     <div class="button-play-pause">
-                        <i class="material-icons-sharp">repeat</i>
+                        <i class="material-icons-sharp" id="repeat">repeat</i>
                         <i class="material-icons-sharp prev" id="prev">skip_previous</i>
-                        <div class="play-pause">
-                            <i onclick="playpause()" class="material-icons-sharp play">play_arrow</i>
+                        <div class="play-pause-btn">
+                            <i class="material-icons-sharp play">play_arrow</i>
                         </div>
                         <i class="material-icons-sharp next" id="next">skip_next</i>
-                        <i class="material-icons-sharp">shuffle</i>
+                        <i class="material-icons-sharp" id="shuffle">shuffle</i>
                     </div>
                     <div class="progress-music">
                         <span class="current-time time-music">00:00</span>
                         <div class="progress-bar">
-                            <div class="progress-bar-fill"></div>
-                            <audio class="main-audio-primary" src="" ></audio>
+                            <div class="progress-bar-fill">
+                                <audio class="main-audio-primary" src=""></audio>
+                            </div>
                         </div>
-                        <span class="duration time-music">00:00</span>
+                        <span class="max-duration time-music">00:00</span>
                     </div>
                 </div>
             </div>
             <div class="flex-right">
-                <!-- <div class="more-control-wrapper"> -->
                 <div class="more-control">
-                    <!-- <div class="button-volume"> -->
-                    <a class="material-icons-sharp volume" onclick="soundcontrol()">volume_up</a>
-                    <!-- </div> -->
+                    <a id="repeat-plist" class="material-icons" title="Volume 100%">volume_up</a>
                     <a class="material-icons-sharp">devices</a>
                     <a class="material-icons-sharp">queue_music</a>
                     <a class="material-icons-sharp">picture_in_picture_alt</a>
                 </div>
-                <!-- </div> -->
             </div>
         </div>
     </div>
 
-    </main>
+
     <script defer src="js/all.js"></script>
-    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <!-- <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> -->
     <script src="js/discover-list.js"></script>
     <script src="js/script-discover.js"></script>
     <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
@@ -208,7 +208,8 @@
     <script>
         // favorite 
         const swiper1 = new Swiper('.swiper1', {
-            speed: 700,
+            slidesPerView: 3,
+            speed: 200,
             // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next1',
@@ -229,6 +230,7 @@
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
+                clickable: true
             },
             freeModeFluid: true,
             grabCursor: true,
@@ -246,13 +248,29 @@
                 },
                 // when window width is >= 640px
                 640: {
-                    slidesPerView: 3
+                    slidesPerView: 1,
+                    watchOverflow : false,
+                    freeMode: {
+                        enabled: true,
+                        sticky: false,
+                    },
+                },
+                935: {
+                    slidesPerView: 2,
+                    freeMode: {
+                        enabled: true,
+                        sticky: false,
+                    },
+                },
+                // when window width is >= 768px
+                1366: {
+                    slidesPerView: 3,
                 }
             },
         });
     </script>
     <script>
-        // card 
+        // card favorite
         const swiper2 = new Swiper('.swiper2', {
             // Navigation arrows
             navigation: {
@@ -273,7 +291,7 @@
             freeModeFluid: true,
             grabCursor: true,
             slidesPerView: 1,
-            spaceBetween: 10,
+            // spaceBetween: 10,
             // loop:true,
             // slideToClickedSlide: true
             breakpoints: {
@@ -318,7 +336,7 @@
             freeModeFluid: true,
             grabCursor: true,
             slidesPerView: 1,
-            spaceBetween: 10,
+            // spaceBetween: 10,
             // loop:true,
             // slideToClickedSlide: true
             breakpoints: {
@@ -386,52 +404,6 @@
             },
         });
     </script>
-    <script>
-        // var play_pause = document.getElementsByClassName("play-pause");
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.borderBottom = "none";
-            } else {
-                document.getElementById("navbar").style.borderBottom = "0.5px solid rgb(41, 39, 39)";
-            }
-            prevScrollpos = currentScrollPos;
-        };
-    </script>
-    <script>
-        function show() {
-            var hide = document.getElementById("input");
-            if (hide.style.display === "none") {
-                hide.style.display = "flex";
-            } else {
-                hide.style.display = "flex";
-            }
-            var link = document.getElementById("link");
-            if (link.style.display === "flex") {
-                link.style.display = "none";
-            } else {
-                link.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        function hide() {
-            var hide = document.getElementById("input");
-            if (hide.style.display === "flex") {
-                hide.style.display = "none";
-            } else {
-                hide.style.display = "none";
-            }
-            var link = document.getElementById("link");
-            if (link.style.display === "none") {
-                link.style.display = "flex";
-            } else {
-                link.style.display = "flex";
-            }
-        }
-    </script>
-
 </body>
 
 </html>

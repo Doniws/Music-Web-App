@@ -348,15 +348,14 @@ img.imghead {
     position: absolute;
     width: 40%;
     margin-right: auto;
-    /* left: 0; */
-    bottom: -55%;
+    /* bottom: -55%; */
+    
     opacity: 0;
     pointer-events: none;
     z-index: 5;
     padding: 50px 30px;
     border-radius: 15px;
-    /* backdrop-filter: blur(32px); */
-    /* background: linear-gradient(250deg, rgba(2, 0, 36) 0%, rgb(9 9 126 / 67%) 35%, rgba(0, 104, 255, 548) 100%); */
+    height: 100%;
     transition: all 0.65s linear;
     touch-action: cross-slide-y !important;
 }
@@ -375,9 +374,10 @@ img.imghead {
   touch-action: cross-slide-y !important;
 } */
 #music-list.show {
-  bottom: 0;
+  /* bottom: 0; */
   opacity: 1;
   pointer-events: auto;
+  left: 0;
 }
 
 .header .row {
@@ -577,9 +577,16 @@ ul li.playing {
   }
 
   #music-list {
-      padding: 175px 30px;
       top: 0;
-      border-radius: 0;
+        left: -55%;
+
+    display: flex;
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
   }
 }
 

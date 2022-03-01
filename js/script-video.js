@@ -13,6 +13,7 @@ const wrapper = document.querySelector(".wrapper"),
   moreMusicBtn = wrapper.querySelector("#more-music"),
   closemoreMusic = musicList.querySelector("#close");
 
+
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 isMusicPaused = true;
 
@@ -21,15 +22,13 @@ window.addEventListener("load", ()=>{
   playingSong(); 
 });
 
-//String ada di belakang
-function loadMusic(indexNumb){
+function loadMusic(indexNumb) {
   musicName.innerText = allMusic[indexNumb - 1].name;
   musicArtist.innerText = allMusic[indexNumb - 1].artist;
   musicVideo.src = `videos/${allMusic[indexNumb - 1].img}.mp4`;
   wrapperbg.style.background = allMusic[indexNumb - 1].bg;
   bodybg.style.background = allMusic[indexNumb - 1].bg;
   
-//   mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
 
 //play music function
@@ -84,7 +83,6 @@ nextBtn.addEventListener("click", ()=>{
   nextMusic();
 });
 
-// tunggu 
 // update progress bar width according to music current time
 musicVideo.addEventListener("timeupdate", (e)=>{
   const currentTime = e.target.currentTime; //getting playing song currentTime
