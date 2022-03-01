@@ -1,5 +1,5 @@
 /**
- * Swiper 8.0.3
+ * Swiper 8.0.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: February 3, 2022
+ * Released on: February 10, 2022
  */
 
 (function (global, factory) {
@@ -1393,6 +1393,7 @@
       } = _ref;
       const window = getWindow();
       let observer = null;
+      let animationFrame = null;
 
       const resizeHandler = () => {
         if (!swiper || swiper.destroyed || !swiper.initialized) return;
@@ -1403,31 +1404,37 @@
       const createObserver = () => {
         if (!swiper || swiper.destroyed || !swiper.initialized) return;
         observer = new ResizeObserver(entries => {
-          const {
-            width,
-            height
-          } = swiper;
-          let newWidth = width;
-          let newHeight = height;
-          entries.forEach(_ref2 => {
-            let {
-              contentBoxSize,
-              contentRect,
-              target
-            } = _ref2;
-            if (target && target !== swiper.el) return;
-            newWidth = contentRect ? contentRect.width : (contentBoxSize[0] || contentBoxSize).inlineSize;
-            newHeight = contentRect ? contentRect.height : (contentBoxSize[0] || contentBoxSize).blockSize;
-          });
+          animationFrame = window.requestAnimationFrame(() => {
+            const {
+              width,
+              height
+            } = swiper;
+            let newWidth = width;
+            let newHeight = height;
+            entries.forEach(_ref2 => {
+              let {
+                contentBoxSize,
+                contentRect,
+                target
+              } = _ref2;
+              if (target && target !== swiper.el) return;
+              newWidth = contentRect ? contentRect.width : (contentBoxSize[0] || contentBoxSize).inlineSize;
+              newHeight = contentRect ? contentRect.height : (contentBoxSize[0] || contentBoxSize).blockSize;
+            });
 
-          if (newWidth !== width || newHeight !== height) {
-            resizeHandler();
-          }
+            if (newWidth !== width || newHeight !== height) {
+              resizeHandler();
+            }
+          });
         });
         observer.observe(swiper.el);
       };
 
       const removeObserver = () => {
+        if (animationFrame) {
+          window.cancelAnimationFrame(animationFrame);
+        }
+
         if (observer && observer.unobserve && swiper.el) {
           observer.unobserve(swiper.el);
           observer = null;
@@ -3657,6 +3664,17 @@
           stopIndex = i;
           groupSize = slidesGrid[slidesGrid.length - 1] - slidesGrid[slidesGrid.length - 2];
         }
+      }
+
+      let rewindFirstIndex = null;
+      let rewindLastIndex = null;
+
+      if (params.rewind) {
+        if (swiper.isBeginning) {
+          rewindLastIndex = swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
+        } else if (swiper.isEnd) {
+          rewindFirstIndex = 0;
+        }
       } // Find current slide size
 
 
@@ -3671,11 +3689,17 @@
         }
 
         if (swiper.swipeDirection === 'next') {
-          if (ratio >= params.longSwipesRatio) swiper.slideTo(stopIndex + increment);else swiper.slideTo(stopIndex);
+          if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment);else swiper.slideTo(stopIndex);
         }
 
         if (swiper.swipeDirection === 'prev') {
-          if (ratio > 1 - params.longSwipesRatio) swiper.slideTo(stopIndex + increment);else swiper.slideTo(stopIndex);
+          if (ratio > 1 - params.longSwipesRatio) {
+            swiper.slideTo(stopIndex + increment);
+          } else if (rewindLastIndex !== null && ratio < 0 && Math.abs(ratio) > params.longSwipesRatio) {
+            swiper.slideTo(rewindLastIndex);
+          } else {
+            swiper.slideTo(stopIndex);
+          }
         }
       } else {
         // Short swipes
@@ -3688,11 +3712,11 @@
 
         if (!isNavButtonTarget) {
           if (swiper.swipeDirection === 'next') {
-            swiper.slideTo(stopIndex + increment);
+            swiper.slideTo(rewindFirstIndex !== null ? rewindFirstIndex : stopIndex + increment);
           }
 
           if (swiper.swipeDirection === 'prev') {
-            swiper.slideTo(stopIndex);
+            swiper.slideTo(rewindLastIndex !== null ? rewindLastIndex : stopIndex);
           }
         } else if (e.target === swiper.navigation.nextEl) {
           swiper.slideTo(stopIndex + increment);
@@ -10372,4 +10396,3 @@
     return Swiper;
 
 }));
-//# sourceMappingURL=swiper-bundle.js.map
