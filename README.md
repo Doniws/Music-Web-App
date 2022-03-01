@@ -20,6 +20,7 @@ Untuk Versi Mobile dan Dekstop dalam pembuatan
 >Sedang dalam penambahan fitur
 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/39ed2052-726d-468e-aa22-604431cb46bf/deploy-status)](https://app.netlify.com/sites/music-band-app/deploys)
 
 >Copyright © Doniws 2021
 
