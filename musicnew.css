@@ -12,6 +12,11 @@
     user-select: none;
 }
 
+::selection {
+    background: #ffffff00;
+    color: rgba(0, 0, 0, 0);
+}
+
 *::before,
 *::after {
     padding: 0;
@@ -677,7 +682,8 @@ ol:hover::-webkit-scrollbar-thumb{
 
 .cepat .audio-duration {
     /* padding-right: 70px; */
-    opacity: 1;
+    opacity: 1; 
+    font-family: "Roboto",sans-serif;
     font-size: 16px;
     color: #aaa;
     line-height: 1.2;
@@ -919,16 +925,55 @@ span.time-music {
     margin: 0 auto;
 }
 
-
-
+/* responsive btm nav  */
+@media only screen and (max-width: 765px) {
+    .container-play-bottom {
+        padding: 0 10px;
+    }
+    .flex-right {
+        display: none;
+    }
+    .progress-bar {
+    height: 2px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    cursor: pointer;
+    background: rgb(83, 83, 83);
+    border-radius: 0px;
+    left: 0;
+}
+    span.time-music {
+        display: none;
+    }
+    .flex-center {
+        /* width: 40%; */
+        display: block;
+        /* margin-right: auto; */
+        /* margin: 0 auto 0 0 ; */
+    }
+    .controller-music {
+        width: auto;
+    }
+    .flex-left {
+        width: 60%;
+    }
+    #repeat , #shuffle{
+        display: none;
+    }
+    .profile-name a {
+        font-size: 14px;
+    }
+    .hover-play {
+        margin-bottom: 8px;
+    }
+}
 
 
 /* 
 /* reposive for navbar  */
 @media only screen and (max-width: 935px) {
-    .controller-music {
-        width: 100%;
-    }
+    
     #link {
         display: none;
     }
