@@ -180,7 +180,7 @@
     display: flex;
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
-    touch-action: pan-y;
+    /* touch-action: pan-y; */
     flex-direction: column;
     justify-content: center;
 }

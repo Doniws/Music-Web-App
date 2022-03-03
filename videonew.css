@@ -59,3 +59,8 @@
 
 
 
+@media only screen and  (max-width: 440px) {
+    .wrapper-left-container {
+    height: 100%;
+    }
+}
