@@ -524,7 +524,7 @@ span.time-music {
     .progress-bar {
         height: 2px;
         position: absolute;
-        top: -2px;
+        top: 0px;
         width: 100%;
         cursor: pointer;
         background: rgb(83, 83, 83);

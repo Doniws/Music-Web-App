@@ -402,10 +402,13 @@ ol:hover::-webkit-scrollbar-thumb {
     }
 
     .music-list-container {
-        height: 82%;
+        height: 80%;
     }
 
     ol::-webkit-scrollbar {
-        width: 4px;
+        width: 8px;
+    }
+    ol:hover::-webkit-scrollbar {
+        width: 8px;
     }
 }
