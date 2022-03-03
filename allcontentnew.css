@@ -55,7 +55,7 @@
     border-radius: 50%;
     transition: all 0.2s;
     cursor: pointer;
-    font-size: 75px;
+    font-size: 55px;
     animation-name: scale;
     animation-duration: .3s;
 }
