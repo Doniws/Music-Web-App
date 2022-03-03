@@ -1,5 +1,5 @@
 const wrapper = document.querySelector('.wrapper'),
-	imageMusic = document.querySelector('.wrapper-img img'),
+	imageMusic = document.querySelector('.wrapper-img video'),
 	musicImg = document.querySelector('.profile-img img'),
 	musicName = document.querySelector('.profile-name a'),
 	musicArtist = document.querySelector('.profile-name p'),
@@ -14,7 +14,6 @@ const wrapper = document.querySelector('.wrapper'),
 	topFull = document.querySelector('.top .play-pause .full'),
 	topMini = document.querySelector('.top .play-pause .mini-play');
 
-
 // navbar bottom
 
 let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
@@ -25,17 +24,13 @@ window.addEventListener('load', () => {
 	playingSong();
 });
 
-
-
 function loadMusic(indexNumb) {
 	musicName.innerText = allMusic[indexNumb - 1].name;
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
-	imageMusic.src = `images/${allMusic[indexNumb - 1].src}.webp`;
+	imageMusic.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+	// mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
-
-
 
 const ulTag = wrapper.querySelector('ol');
 // let create li tags according to array length for list
@@ -43,7 +38,9 @@ for (let i = 0; i < allMusic.length; i++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<li class="cepat" li-index="${i + 1}" id="main-${i + 1}">
                     <div class="hover-play">
-                        <img src="images/${allMusic[i].src}.webp" alt="" width="40px">
+                        <img src="images/${
+													allMusic[i].src
+												}.webp" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -54,34 +51,35 @@ for (let i = 0; i < allMusic.length; i++) {
                         <p class="name">${allMusic[i].name}</p>
                         <p class="artist">${allMusic[i].artist}</p>
                     </span>
-                    <span id="${allMusic[i].src}" class="audio-duration">0:00</span>
+                    <span id="${
+											allMusic[i].src
+										}" class="audio-duration">0:00</span>
 					<span class="material-icons-outlined more"> more_vert </span>
-					<audio  class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
+					<audio  class="${allMusic[i].src}" src="videos/${allMusic[i].src}.mp4"></audio>
                 </li>`;
 	ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
-	
-	  let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
-		let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
-		liAudioTag.addEventListener('loadeddata', () => {
-			let duration = liAudioTag.duration;
-			let totalMin = Math.floor(duration / 60);
-			let totalSec = Math.floor(duration % 60);
-			if (totalSec < 10) {
-				//if sec is less than 10 then add 0 before it
-				totalSec = `0${totalSec}`;
-			}
-			liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-			liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
-		});
+
+	let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
+	let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+	liAudioTag.addEventListener('loadeddata', () => {
+		let duration = liAudioTag.duration;
+		let totalMin = Math.floor(duration / 60);
+		let totalSec = Math.floor(duration % 60);
+		if (totalSec < 10) {
+			//if sec is less than 10 then add 0 before it
+			totalSec = `0${totalSec}`;
+		}
+		liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
+		liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
+	});
 }
 
 // proses error
 // var LoadMusic = document.querySelector(`main-${i + 1}`);
-// LoadMusic.addEventListener('loaddedata', () => { 
+// LoadMusic.addEventListener('loaddedata', () => {
 // 	playMusic();
 // 	loadMusic(index);
 // });
-
 
 // if click li play music
 //play particular song from the list onclick of li tag
@@ -93,7 +91,6 @@ function playingSong() {
 		let paused = allLiTag[j].querySelector('.play');
 		let Bright = allLiTag[j].querySelector('.middle');
 		let imagePlay = allLiTag[j].querySelector('.hover-play img');
-
 
 		if (allLiTag[j].classList.contains('playing')) {
 			allLiTag[j].classList.remove('playing');
@@ -109,27 +106,22 @@ function playingSong() {
 			allLiTag[j].classList.add('playing');
 			audioTag.innerText = 'Playing';
 			paused.innerText = 'pause';
-			Bright.style.opacity = "1";
-			imagePlay.style.opacity = "0.5";
+			Bright.style.opacity = '1';
+			imagePlay.style.opacity = '0.5';
 		}
-
 
 		allLiTag[j].setAttribute('onclick', 'clicked(this)');
 	}
 }
 
 //particular li clicked function
-function clicked(element){
-  let getLiIndex = element.getAttribute("li-index");
-  musicIndex = getLiIndex; //updating current song index with clicked li index
-  loadMusic(musicIndex);
-  playMusic();
-  playingSong();
+function clicked(element) {
+	let getLiIndex = element.getAttribute('li-index');
+	musicIndex = getLiIndex; //updating current song index with clicked li index
+	loadMusic(musicIndex);
+	playMusic();
+	playingSong();
 }
-
-
-
-
 
 // play pause music
 
@@ -139,7 +131,7 @@ function playMusic() {
 	wrapper.classList.add('paused');
 	playPauseBtn.querySelector('i').innerText = 'pause';
 	centerPlayPause.querySelector('i').innerText = 'pause';
-	mainAudio.play();
+	imageMusic.play();
 }
 
 //pause music function
@@ -147,7 +139,7 @@ function pauseMusic() {
 	wrapper.classList.remove('paused');
 	playPauseBtn.querySelector('i').innerText = 'play_arrow';
 	centerPlayPause.querySelector('i').innerText = 'play_arrow';
-	mainAudio.pause();
+	imageMusic.pause();
 }
 
 // play or pause button event onclick function
@@ -165,17 +157,14 @@ imageMusic.addEventListener('click', function () {
 centerPlayPause.addEventListener('click', function () {
 	isMusicPlay = wrapper.classList.contains('paused');
 	isMusicPlay ? pauseMusic() : playMusic();
-	
 });
-// next prev button area 
+// next prev button area
 // next prev music area
 //prev music function
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1
-		? (musicIndex = allMusic.length)
-		: (musicIndex = musicIndex);
+	musicIndex < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -185,9 +174,7 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > allMusic.length
-		? (musicIndex = 1)
-		: (musicIndex = musicIndex);
+	musicIndex > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -203,29 +190,26 @@ nextBtn.addEventListener('click', () => {
 	nextMusic();
 });
 
-
-
-
 // more play pause
 
 var isPlaying = false;
 
 function PlayPauseNow() {
-	isPlaying ? mainAudio.pause() : mainAudio.play();
+	isPlaying ? imageMusic.pause() : imageMusic.play();
 }
 
-mainAudio.onplaying = function () {
+imageMusic.onplaying = function () {
 	isPlaying = true;
 };
-mainAudio.onpause = function () {
+imageMusic.onpause = function () {
 	isPlaying = false;
 };
 
-// imageMusic.addEventListener('click', () => { 
+// imageMusic.addEventListener('click', () => {
 // 	PlayPauseNow();
 // });
 // Proggress bar update by audio timeupdate event
-mainAudio.addEventListener('timeupdate', (e) => {
+imageMusic.addEventListener('timeupdate', (e) => {
 	const currentTimes = e.target.currentTime;
 	const duration = e.target.duration;
 	let progressWidth = (currentTimes / duration) * 100;
@@ -233,9 +217,9 @@ mainAudio.addEventListener('timeupdate', (e) => {
 
 	let musicCurrentTime = document.querySelector('.current-time'),
 		musicDuartion = document.querySelector('.max-duration');
-	mainAudio.addEventListener('loadeddata', () => {
+	imageMusic.addEventListener('loadeddata', () => {
 		// update song total duration
-		let mainAdDuration = mainAudio.duration;
+		let mainAdDuration = imageMusic.duration;
 		let totalMin = Math.floor(mainAdDuration / 60);
 		let totalSec = Math.floor(mainAdDuration % 60);
 		if (totalSec < 10) {
@@ -258,9 +242,9 @@ mainAudio.addEventListener('timeupdate', (e) => {
 progressArea.addEventListener('click', (e) => {
 	let progressWidth = progressArea.clientWidth; //getting width of progress bar
 	let clickedOffsetX = e.offsetX; //getting offset x value
-	let songDuration = mainAudio.duration; //getting song total duration
+	let songDuration = imageMusic.duration; //getting song total duration
 
-	mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+	imageMusic.currentTime = (clickedOffsetX / progressWidth) * songDuration;
 	playMusic(); //calling playMusic function
 	playingSong();
 });
@@ -281,14 +265,14 @@ repeatBtn.addEventListener('click', () => {
 	}
 });
 // ended repeat listener
-mainAudio.addEventListener('ended', () => {
+imageMusic.addEventListener('ended', () => {
 	let getText = repeatBtn.innerText;
 	switch (getText) {
 		case 'repeat':
 			nextMusic(); //calling nextMusic function
 			break;
 		case 'repeat_one':
-			mainAudio.currentTime = 0; //setting audio current time to 0
+			imageMusic.currentTime = 0; //setting audio current time to 0
 			loadMusic(musicIndex); //calling loadMusic function with argument, in the argument there is a index of current song
 			playMusic(); //calling playMusic function
 			break;
@@ -306,7 +290,6 @@ shuffleBtn.addEventListener('click', () => {
 	playingSong();
 });
 
-
 // volume change button and add listener
 const volumeBtn = document.querySelector('#repeat-plist');
 volumeBtn.addEventListener('click', () => {
@@ -315,27 +298,26 @@ volumeBtn.addEventListener('click', () => {
 		case 'volume_up':
 			volumeBtn.innerText = 'volume_down';
 			volumeBtn.setAttribute('title', 'Volume 50%');
-			mainAudio.volume = 0.7;
+			imageMusic.volume = 0.7;
 			break;
 		case 'volume_mute':
 			volumeBtn.innerText = 'volume_off';
 			volumeBtn.setAttribute('title', 'Muted');
-			mainAudio.volume = 0;
+			imageMusic.volume = 0;
 			break;
 		case 'volume_down':
 			volumeBtn.innerText = 'volume_mute';
 			volumeBtn.setAttribute('title', 'volume 0%');
-			// mainAudio.muted = true;
-			mainAudio.volume = 0.3;
+			// imageMusic.muted = true;
+			imageMusic.volume = 0.3;
 			break;
 		case 'volume_off':
 			volumeBtn.innerText = 'volume_up';
 			volumeBtn.setAttribute('title', 'Volume 100%');
-			mainAudio.volume = 1;
+			imageMusic.volume = 1;
 			break;
 	}
 });
-
 
 // show search box and hidden link
 var showSrc = document.querySelector('.hidden-input');
@@ -406,6 +388,7 @@ window.onscroll = function () {
 
 
 
+
 topFull.addEventListener('click', () => {
 	if (imageMusic.requestFullscreen) {
 		imageMusic.requestFullscreen();
@@ -419,11 +402,11 @@ topFull.addEventListener('click', () => {
 });
 
 topMini.addEventListener('click', () => {
-	if (document.pictureInPictureElement) {
-		document.exitPictureInPicture();
-	} else {
-		if (document.pictureInPictureEnabled) {
-			imageMusic.requestPictureInPicture();
-		}
-	}
+    if (document.pictureInPictureElement) {
+        document.exitPictureInPicture();
+    } else {
+        if (document.pictureInPictureEnabled) {
+            imageMusic.requestPictureInPicture();
+        }
+    }
 });
