@@ -37,7 +37,7 @@
 }
 
 html {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     align-items: center;
 }
 
