@@ -3,7 +3,7 @@ const wrapper = document.querySelector('.wrapper'),
 	musicImg = document.querySelector('.profile-img img'),
 	musicName = document.querySelector('.profile-name a'),
 	musicArtist = document.querySelector('.profile-name p'),
-	mainAudio = document.querySelector('.main-audio-primary'),
+	// mainAudio = document.querySelector('.main-audio-primary'),
 	playPauseBtn = document.querySelector('.play-pause-btn'),
 	nextBtn = document.querySelector('#next'),
 	prevBtn = document.querySelector('#prev'),
@@ -29,7 +29,7 @@ function loadMusic(indexNumb) {
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
 	imageMusic.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	// mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+	// mainAudio.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 }
 
 const ulTag = wrapper.querySelector('ol');

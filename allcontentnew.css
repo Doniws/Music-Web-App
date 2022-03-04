@@ -160,7 +160,7 @@
     height: 48px;
     font-size: 14px;
     font-weight: 500;
-    overflow: hidden;
+    /* overflow: hidden; */
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -175,7 +175,7 @@
     position: relative;
     height: 100%;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     -ms-flex: 1 1 auto;
     display: flex;
     -webkit-flex: 1 1 auto;
