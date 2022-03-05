@@ -1,3 +1,13 @@
+body {
+    height: 150vh !important;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: none ;
+    display: none;
+}
+
 /* Left Container Area  */
 
 /* hover tool  */

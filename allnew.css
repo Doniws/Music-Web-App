@@ -48,6 +48,7 @@ body {
     align-content: center;
     overflow-x: hidden;
     align-items: center;
+    height: 100%;
 }
 
 .wrapper {
