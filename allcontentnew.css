@@ -1,5 +1,7 @@
+/* Css For Video And Music  */
+
 body {
-    height: 150vh !important;
+    height: 100vh !important;
 }
 
 body::-webkit-scrollbar {
@@ -206,7 +208,7 @@ body::-webkit-scrollbar {
     color: rgb(255, 255, 255);
 }
 
-.music-link li {
+.music-link a {
     height: 100%;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
@@ -230,24 +232,22 @@ body::-webkit-scrollbar {
 
 
 /* content link */
-.music-link li a {
+.music-link a {
     cursor: pointer;
     color: rgb(255, 255, 255, 0.5);
 }
 
-li.active {
+a.active {
     border-bottom: #fff solid 1px;
     color: white;
 }
 
-a.active-link {
-    color: white !important;
-}
 
 
 /* list music  */
 .hover-play {
     position: relative;
+    margin: 0 !important;
 }
 
 .hover-play img {
@@ -281,6 +281,8 @@ a.active-link {
 /* next  */
 .music-list-container {
     height: 95%;
+        /* display: none !important; */
+
 }
 
 ol {
@@ -291,22 +293,22 @@ ol {
     height: 100%;
 }
 
-ol::-webkit-scrollbar-thumb {
+ol::-webkit-scrollbar-thumb,.lyrics-wrapper::-webkit-scrollbar-thumb {
     background: transparent;
     /* Optional: just make scrollbar invisible */
 }
 
-ol::-webkit-scrollbar {
+ol::-webkit-scrollbar,.lyrics-wrapper::-webkit-scrollbar {
     width: 12px;
     /* Optional: just make scrollbar invisible */
     background: transparent;
 }
 
-ol:hover::-webkit-scrollbar {
+ol:hover::-webkit-scrollbar,.lyrics-wrapper:hover::-webkit-scrollbar {
     width: 12px;
 }
 
-ol:hover::-webkit-scrollbar-thumb {
+ol:hover::-webkit-scrollbar-thumb,.lyrics-wrapper:hover::-webkit-scrollbar-thumb  {
     background-color: rgb(117, 117, 117);
 }
 
@@ -393,6 +395,38 @@ ol:hover::-webkit-scrollbar-thumb {
     display: block;
 }
 
+/* lyrics slide 2  */
+.lyrics-container {
+    height: 95%;
+}
+
+.lyrics-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    overflow-y: scroll;
+    height: 100%;
+    /* user-select: auto !important; */
+}
+
+.lyrics-content {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+}
+
+
+
+/* slide control  */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
 @media only screen and (max-width: 765px) {
     .all-flex-wrapper {
         flex-direction: column;
@@ -411,14 +445,14 @@ ol:hover::-webkit-scrollbar-thumb {
         margin: 0 0 0 0;
     }
 
-    .music-list-container {
+    .music-list-container,.lyrics-container {
         height: 80%;
     }
 
-    ol::-webkit-scrollbar {
+    ol::-webkit-scrollbar,.lyrics-wrapper::-webkit-scrollbar {
         width: 8px;
     }
-    ol:hover::-webkit-scrollbar {
+    ol:hover::-webkit-scrollbar,.lyrics-wrapper:hover::-webkit-scrollbar {
         width: 8px;
     }
 }

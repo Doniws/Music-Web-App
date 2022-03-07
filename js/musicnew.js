@@ -12,7 +12,8 @@ const wrapper = document.querySelector('.wrapper'),
 	shuffleBtn = document.querySelector('#shuffle'),
 	centerPlayPause = document.querySelector('.center .play-pause'),
 	topFull = document.querySelector('.top .play-pause .full'),
-	topMini = document.querySelector('.top .play-pause .mini-play');
+	topMini = document.querySelector('.top .play-pause .mini-play'),
+	lyricsMusic = document.querySelector('.lyrics-content');
 
 
 // navbar bottom
@@ -33,11 +34,12 @@ function loadMusic(indexNumb) {
 	imageMusic.src = `images/${allMusic[indexNumb - 1].src}.webp`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
 	mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
 }
 
 
-
-const ulTag = wrapper.querySelector('ol');
+// This Music List of all music in the array
+const ulTag = wrapper.querySelector('.music-list-container ol');
 // let create li tags according to array length for list
 for (let i = 0; i < allMusic.length; i++) {
 	//let's pass the song name, artist from the array
@@ -426,4 +428,15 @@ topMini.addEventListener('click', () => {
 			imageMusic.requestPictureInPicture();
 		}
 	}
+});
+
+// Jquery Tab / Slide 
+$(document).ready(function () {
+	$('.music-link a').click(function () {
+		$('.music-link a').removeClass('active');
+		$(this).addClass('active');
+		var id = $(this).data('id');
+		$('.tab-content').hide();
+		$(`[data-content=${id}]`).fadeIn(200);
+	});
 });

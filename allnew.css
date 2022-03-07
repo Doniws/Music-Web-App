@@ -1,8 +1,8 @@
+/* Css For All Content Index , Video And Music */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
     text-transform: capitalize;
     color: white;
     text-decoration: none;
@@ -10,11 +10,15 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
     background: #ffffff00;
-    color: rgba(0, 0, 0, 0);
+    /* color: rgba(0, 0, 0, 0); */
+    background: #fff;
+    color: rgb(0, 0, 0);
 }
 
 *::before,
@@ -160,7 +164,7 @@ img#logo-2 {
     justify-content: center;
     margin: 0 auto;
     align-items: center;
-    width: 50% !important;
+    width: 100% !important;
     position: relative;
     font-size: 20px;
     gap: 35px;
@@ -168,6 +172,7 @@ img#logo-2 {
 
 span.container-link .active {
     color: rgb(255, 255, 255);
+    border: none !important;
 }
 
 span.container-link a {
@@ -343,6 +348,9 @@ span.container-link a:hover {
         display: block;
         width: auto;
     }
+    .center-nav {
+        width: 100%;
+    }
 
     #link-icon {
         gap: 20px;
@@ -354,7 +362,8 @@ span.container-link a:hover {
 
     img#logo-1,
     img#logo-2 {
-        width: 34px !important;
+        width: 40px !important;
+        height: auto;
     }
 
     .top-bar span h1 {
@@ -448,6 +457,10 @@ span.time-music {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.profile-img {
+    display: inline-flex;
 }
 
 .profile-img img {

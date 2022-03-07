@@ -19,6 +19,22 @@
 </head>
 
 <body>
+    <!-- Network Status  -->
+    <div class="wrapper-network">
+        <div class="toast-network">
+            <div class="content-network">
+                <div class="icon-network">
+                    <!-- <i class="uil uil-wifi"></i> -->
+                    <i class="material-icons-sharp wifi">wifi</i>
+                </div>
+                <div class="details-network">
+                    <span class="stats-network">You're online now</span>
+                    <p class="description-network">Hurray! Internet is connected.</p>
+                </div>
+            </div>
+            <div class="close-icon"><i class="material-icons-sharp close">close</i></div>
+        </div>
+    </div>
     <main class="wrapper">
         <nav class="top-bar" id="navbar">
             <span class="logo left-nav">
@@ -30,8 +46,8 @@
             <span class="container-link center-nav">
                 <ul id="link">
                     <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="music.html">Music</a></li>
-                    <li><a href="video.html">Video</a></li>
+                    <li><a href="musicnew.html">Music</a></li>
+                    <li><a href="videonew.html">Video</a></li>
                     <li><a href="">Explore</a></li>
                     <div class="open-input">
                         <button type="submit"><span class="material-icons-sharp">search</span></button>
@@ -240,14 +256,13 @@
                 320: {
                     slidesPerView: 1,
                     freeMode: {
-                enabled: true,
-                sticky: false,
-            },
+                        enabled: true,
+                        sticky: false,
+                    },
                 },
                 // when window width is >= 480px
                 480: {
                     slidesPerView: 2,
-                    
                 },
                 // when window width is >= 640px
                 640: {

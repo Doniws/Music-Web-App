@@ -12,7 +12,8 @@ const wrapper = document.querySelector('.wrapper'),
 	shuffleBtn = document.querySelector('#shuffle'),
 	centerPlayPause = document.querySelector('.center .play-pause'),
 	topFull = document.querySelector('.top .play-pause .full'),
-	topMini = document.querySelector('.top .play-pause .mini-play');
+	topMini = document.querySelector('.top .play-pause .mini-play'),
+	lyricsMusic = document.querySelector('.lyrics-content');
 
 // navbar bottom
 
@@ -29,6 +30,7 @@ function loadMusic(indexNumb) {
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
 	imageMusic.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
+	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
 	// mainAudio.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 }
 
@@ -409,4 +411,15 @@ topMini.addEventListener('click', () => {
             imageMusic.requestPictureInPicture();
         }
     }
+});
+
+// Jquery Tab / Slide 
+$(document).ready(function () {
+	$('.music-link a').click(function () {
+		$('.music-link a').removeClass('active');
+		$(this).addClass('active');
+		var id = $(this).data('id');
+		$('.tab-content').hide();
+		$(`[data-content=${id}]`).fadeIn(200);
+	});
 });

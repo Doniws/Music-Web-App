@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="">
+    <meta name="description" content="Music New Page">
     <title>Music New</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="allcontentnew.css">
@@ -14,9 +14,7 @@
     <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
 </head>
 
 <body>
@@ -30,9 +28,9 @@
 
             <span class="container-link center-nav">
                 <ul id="link">
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="music.html">Music</a></li>
-                    <li><a href="video.html">Video</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="musicnew.html">Music</a></li>
+                    <li><a href="videonew.html">Video</a></li>
                     <li><a href="">Explore</a></li>
                     <div class="open-input">
                         <button type="submit"><span class="material-icons-sharp">search</span></button>
@@ -95,20 +93,32 @@
                         <div class="music-link-container">
                             <div class="music-link-wrapper">
                                 <ul class="music-link">
-                                    <li class="active"><a class="active-link" href="">UP NEXT</a></li>
-                                    <li><a href="">LIRICS</a></li>
-                                    <li><a href="">RELATED</a></li>
+                                    <a data-id='1' class="active" >UP NEXT</a>
+                                    <a data-id='2'>LIRICS</a>
+                                    <a data-id='3'>RELATED</a>
                                 </ul>
                             </div>
                         </div>
 
+                        <!-- slide ke 1  -->
                         <!-- list music diisi js  -->
-                        <div class="music-list-container">
+                        <div class="tab-content active music-list-container" data-content='1' >
                             <!-- ol is list music this write on java script  -->
                             <ol>
 
                             </ol>
                         </div>
+
+                        <!-- slide ke 2 -->
+                        <!-- Lyrics diisi js  -->
+                        <div class="tab-content lyrics-container" data-content='2'>
+                            <span class="lyrics-wrapper">
+                                <p class="lyrics-content">
+                                    
+                                </p>
+                            </span>
+                        </div>
+
 
                     </div>
                 </div>
@@ -162,6 +172,7 @@
             </div>
         </div>
     </div>
+    <script src="jquery/jquery.js"></script>
     <script src="js/music-list.js"></script>
     <script src="js/musicnew.js"></script>
 </body>
