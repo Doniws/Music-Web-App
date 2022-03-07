@@ -455,4 +455,11 @@ ol:hover::-webkit-scrollbar-thumb,.lyrics-wrapper:hover::-webkit-scrollbar-thumb
     ol:hover::-webkit-scrollbar,.lyrics-wrapper:hover::-webkit-scrollbar {
         width: 8px;
     }
+    .cepat .text p:nth-child(1) {
+        font-size: 14px;
+        font-family: "Roboto-Medium", sans-serif;
+    }
+    .cepat .text p:nth-child(2) {
+        font-size: 14px;
+    }
 }
