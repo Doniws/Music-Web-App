@@ -171,7 +171,7 @@ img#logo-2 {
 }
 
 span.container-link .active {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
     border: none !important;
 }
 

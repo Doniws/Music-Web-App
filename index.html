@@ -8,6 +8,7 @@
     <title>Discover Music</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="allnew.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="discover.css">
     <link rel="stylesheet" href="swiper/swiper-bundle.css">
     <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
@@ -36,6 +37,35 @@
         </div>
     </div>
     <main class="wrapper">
+        <!-- Space Perancannaan Pembuatan navbar baru untuk mobile responsive -->
+        
+        <nav class="top-bar-responsive">
+            <div class="logo-responsive">
+                <a href="index.html">
+                    <img src="images/loadersuper.png" alt="" width="50px">
+                </a>
+                <p>Music</p>
+            </div>
+            <div class="menu-responsive">
+                <div class="menu-icon-responsive">
+                    <a class="material-icons-sharp">cast</a>
+                    <a class="material-icons-sharp">search</a>
+                    <a class="material-icons-sharp md-30">account_circle</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Bullet Choose  -->
+        <div class="bullet-mood-container">
+            <div class="wrapper-mood">
+                <a href="#">Sleep</a>
+                <a href="#">Relax</a>
+                <a href="#">Bored</a>
+                <a href="#">Happy</a>
+                <a href="#">Cool</a>
+            </div>
+        </div>
+        
+        <!-- Nabar untuk Dekstop/Top dan Mobile/Bottom -->
         <nav class="top-bar" id="navbar">
             <span class="logo left-nav">
                 <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
@@ -55,11 +85,26 @@
                     </div>
                 </ul>
                 <ul id="link-icon">
-                    <li><a href="" class="material-icons-sharp active">home</a></li>
-                    <li><a href="musicnew.html" class="material-icons-sharp">library_music</a></li>
-                    <li><a href="videonew.html" class="material-icons-sharp">video_library</a></li>
-                    <li><a href="" class="material-icons-sharp">explore</a></li>
-                    <li><a href="" class="material-icons-sharp">search</a></li>
+                    <li>   
+                        <a href="" class="material-icons-sharp active">home</a>
+                        <p class="active">Home</p>
+                    </li>
+                    <li>
+                        <a href="musicnew.html" class="material-icons-sharp">library_music</a>
+                        <p>Music</p>
+                    </li>
+                    <li>
+                        <a href="videonew.html" class="material-icons-sharp">video_library</a>
+                        <p>Video</p>
+                    </li>
+                    <li>
+                        <a href="" class="material-icons-sharp">explore</a>
+                        <p>Explore</p>
+                    </li>
+                    <li>
+                        <a href="" class="material-icons-sharp">search</a>
+                        <p>Search</p>
+                    </li>
                 </ul>
                 <div class="container-searchbox " id="container-searchbox">
                     <div class="wrapper-input" id="input">

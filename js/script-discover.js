@@ -625,3 +625,30 @@ window.onload = ()=>{
         ajax();
     }, 100);
 }
+
+// scroll for hide navbar 
+var lastScrollTop;
+navbar = document.querySelector('.top-bar-responsive');
+window.addEventListener('scroll', ()=> {
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	if (scrollTop > lastScrollTop) {
+		navbar.style.top = '-80px';
+		navbar.style.opacity = '0.7';
+	} else {
+		navbar.style.top = '0';
+		navbar.style.opacity = '1';
+	}
+	lastScrollTop = scrollTop;
+});
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+	var moodNav = document.querySelector('.bullet-mood-container');
+	var currentScrollPos = window.pageYOffset;
+	if (prevScrollpos > currentScrollPos) {
+		moodNav.style.top = '60px';
+	} else {
+		moodNav.style.top = '0px';
+	}
+	prevScrollpos = currentScrollPos;
+};
