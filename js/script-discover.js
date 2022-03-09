@@ -639,23 +639,23 @@ window.onscroll = function () {
 	prevScrollpos = currentScrollPos;
 };
 
-// disable context menu 
-function absorbEvent_(event) {
-	var e = event || window.event;
-	e.preventDefault && e.preventDefault();
-	e.stopPropagation && e.stopPropagation();
-	e.cancelBubble = true;
-	e.returnValue = false;
-	return false;
-}
+// disable context menu
+// function init() {
+// 	blockContextMenu();
+// }
 
-function preventLongPressMenu(node) {
-	node.ontouchstart = absorbEvent_;
-	node.ontouchmove = absorbEvent_;
-	node.ontouchend = absorbEvent_;
-	node.ontouchcancel = absorbEvent_;
-}
-
-wrapper.addEventListener( 'onload', () => {
-	preventLongPressMenu(document.querySelector('img'));
+wrapper.addEventListener(onload, () => { 
+	blockContextMenu();
 });
+
+//It's not necessary, but don't show others options from context menu
+function blockContextMenu() {
+	document.addEventListener(
+		'contextmenu',
+		function (e) {
+			e.preventDefault();
+			return false;
+		},
+		false
+	);
+}
