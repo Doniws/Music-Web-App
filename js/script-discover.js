@@ -640,13 +640,9 @@ window.onscroll = function () {
 };
 
 // disable context menu
-// function init() {
-// 	blockContextMenu();
-// }
-
-wrapper.addEventListener(onload, () => { 
+function init() {
 	blockContextMenu();
-});
+}
 
 //It's not necessary, but don't show others options from context menu
 function blockContextMenu() {
