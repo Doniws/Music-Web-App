@@ -640,18 +640,11 @@ window.onscroll = function () {
 };
 
 // disable context menu
-function init() {
-	blockContextMenu();
-}
-
-//It's not necessary, but don't show others options from context menu
-function blockContextMenu() {
-	document.addEventListener(
-		'contextmenu',
-		function (e) {
-			e.preventDefault();
-			return false;
-		},
-		false
-	);
-}
+window.addEventListener(
+	'contextmenu',
+	function (e) {
+		document.body.innerHTML += '<p>Right-click is disabled</p>';
+		e.preventDefault();
+	},
+	false
+);
