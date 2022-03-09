@@ -1,7 +1,6 @@
 // Daftar Untuk Halaman Index 
 
-let MusicList = [
-  {
+let MusicList = [{
     name: ' #1',
     artist: 'Imagine Dragons',
     img: 'music-1',
@@ -129,8 +128,7 @@ let MusicList = [
 
 
 
-let FavoriteMusic = [
-  {
+let FavoriteMusic = [{
     name: ' #1',
     artist: 'Imagine Dragons',
     img: 'music-1',
@@ -201,8 +199,7 @@ let FavoriteMusic = [
 ];
 
 
-let BestArtist = [
-  {
+let BestArtist = [{
     artist: 'Imagine Dragons',
     img: 'artist-1',
     src: 'artist-1',
@@ -253,72 +250,58 @@ let BestArtist = [
 ];
 
 
-let Welcome = [
-	{
-		name: ' Fairly Local ',
-		artist: 'twenty one pilots',
-		img: 'music-19',
-		src: 'music-19',
-	},
-	{
-		artist: 'Coldplay',
-		aud: 'music-2',
-		src: 'artist-2',
-		rds: '50%',
-	},
-	{
-		name: "Let's Hurt Tonight ",
-		artist: 'OneRepublic',
-		aud: 'music-3',
-		src: 'music-9',
-	},
-	{
-		name: 'Yellow ',
-		artist: 'Coldplay',
-		aud: 'music-4',
-		src: 'music-10',
-	},
-	{
-		name: 'Chlorine ',
-		artist: 'twenty one pilots',
-		aud: 'music-5',
-		src: 'music-11',
-	},
-	{
-		name: 'CASTLE OF GLASS ',
-		artist: 'Linkin Park ',
-		aud: 'music-6',
-		src: 'music-12',
-	},
-	{
-		artist: 'System Of A Down',
-		aud: 'music-7',
-		src: 'artist-6',
-		rds: '50%',
-	},
-	{
-		artist: 'Green Day',
-		aud: 'music-8',
-		src: 'artist-7',
-		rds: '50%',
-	},
-	{
-		artist: 'Red Hot Chili Peppers',
-		aud: 'music-9',
-		src: 'artist-8',
-		rds: '50%',
-	},
+let Welcome = [{
+    name: ' Fairly Local ',
+    artist: 'twenty one pilots',
+    img: 'music-19',
+    src: 'music-19',
+  },
+  {
+    artist: 'Coldplay',
+    aud: 'music-2',
+    src: 'artist-2',
+    rds: '50%',
+  },
+  {
+    name: "Let's Hurt Tonight ",
+    artist: 'OneRepublic',
+    aud: 'music-3',
+    src: 'music-9',
+  },
+  {
+    name: 'Yellow ',
+    artist: 'Coldplay',
+    aud: 'music-4',
+    src: 'music-10',
+  },
+  {
+    name: 'Chlorine ',
+    artist: 'twenty one pilots',
+    aud: 'music-5',
+    src: 'music-11',
+  },
+  {
+    name: 'CASTLE OF GLASS ',
+    artist: 'Linkin Park ',
+    aud: 'music-6',
+    src: 'music-12',
+  },
+  {
+    artist: 'System Of A Down',
+    aud: 'music-7',
+    src: 'artist-6',
+    rds: '50%',
+  },
+  {
+    artist: 'Green Day',
+    aud: 'music-8',
+    src: 'artist-7',
+    rds: '50%',
+  },
+  {
+    artist: 'Red Hot Chili Peppers',
+    aud: 'music-9',
+    src: 'artist-8',
+    rds: '50%',
+  },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,472 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="">
-    <title>Discover Music</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="allnew.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="discover.css">
-    <link rel="stylesheet" href="swiper/swiper-bundle.css">
-    <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="">
+        <title>Discover Music</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="allnew.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="swiper/swiper-bundle.css">
+        <link rel="stylesheet" crossorigin="anonymous" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+    </head>
 
-<body>
-    <!-- Network Status  -->
-    <div class="wrapper-network">
-        <div class="toast-network">
-            <div class="content-network">
-                <div class="icon-network">
-                    <!-- <i class="uil uil-wifi"></i> -->
-                    <i class="material-icons-sharp wifi">wifi</i>
-                </div>
-                <div class="details-network">
-                    <span class="stats-network">You're online now</span>
-                    <p class="description-network">Hurray! Internet is connected.</p>
-                </div>
-            </div>
-            <div class="close-icon"><i class="material-icons-sharp close">close</i></div>
-        </div>
-    </div>
-    <main class="wrapper">
-        <!-- Space Perancannaan Pembuatan navbar baru untuk mobile responsive -->
-        
-        <nav class="top-bar-responsive">
-            <div class="logo-responsive">
-                <a href="index.html">
-                    <img src="images/loadersuper.png" alt="" width="50px">
-                </a>
-                <p>Music</p>
-            </div>
-            <div class="menu-responsive">
-                <div class="menu-icon-responsive">
-                    <a class="material-icons-sharp">cast</a>
-                    <a class="material-icons-sharp">search</a>
-                    <a class="material-icons-sharp md-30">account_circle</a>
-                </div>
-            </div>
-        </nav>
-        <!-- Bullet Choose  -->
-        <div class="bullet-mood-container">
-            <div class="wrapper-mood">
-                <a href="#">Sleep</a>
-                <a href="#">Relax</a>
-                <a href="#">Bored</a>
-                <a href="#">Happy</a>
-                <a href="#">Cool</a>
-            </div>
-        </div>
-        
-        <!-- Nabar untuk Dekstop/Top dan Mobile/Bottom -->
-        <nav class="top-bar" id="navbar">
-            <span class="logo left-nav">
-                <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
-                <img id="logo-2" class="logo-2" src="images/logoutama.webp" width="55px" alt="logo">
-                <h1 class="discover">Music</h1>
-            </span>
-
-            <span class="container-link center-nav">
-                <ul id="link">
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="musicnew.html">Music</a></li>
-                    <li><a href="videonew.html">Video</a></li>
-                    <li><a href="">Explore</a></li>
-                    <div class="open-input">
-                        <button type="submit"><span class="material-icons-sharp">search</span></button>
-                        <a>Search</a>
+    <body>
+        <!-- Network Status  -->
+        <div class="wrapper-network">
+            <div class="toast-network">
+                <div class="content-network">
+                    <div class="icon-network">
+                        <!-- <i class="uil uil-wifi"></i> -->
+                        <i class="material-icons-sharp wifi">wifi</i>
                     </div>
-                </ul>
-                <ul id="link-icon">
-                    <li>   
-                        <a href="" class="material-icons-sharp active">home</a>
-                        <p class="active">Home</p>
-                    </li>
-                    <li>
-                        <a href="musicnew.html" class="material-icons-sharp">library_music</a>
-                        <p>Music</p>
-                    </li>
-                    <li>
-                        <a href="videonew.html" class="material-icons-sharp">video_library</a>
-                        <p>Video</p>
-                    </li>
-                    <li>
-                        <a href="" class="material-icons-sharp">explore</a>
-                        <p>Explore</p>
-                    </li>
-                    <li>
-                        <a href="" class="material-icons-sharp">search</a>
-                        <p>Search</p>
-                    </li>
-                </ul>
-                <div class="container-searchbox " id="container-searchbox">
-                    <div class="wrapper-input" id="input">
-                        <div class="wrapper-back hidden-input">
-                            <a class="material-icons-sharp back">arrow_back</a>
+                    <div class="details-network">
+                        <span class="stats-network">You're online now</span>
+                        <p class="description-network">Hurray! Internet is connected.</p>
+                    </div>
+                </div>
+                <div class="close-icon"><i class="material-icons-sharp close">close</i></div>
+            </div>
+        </div>
+        <main class="wrapper">
+            <!-- Space Perancannaan Pembuatan navbar baru untuk mobile responsive -->
+            <nav class="top-bar-responsive">
+                <div class="logo-responsive">
+                    <a href="index.html">
+                        <img src="images/loadersuper.png" alt="" width="50px">
+                    </a>
+                    <p>Music</p>
+                </div>
+                <div class="menu-responsive">
+                    <div class="menu-icon-responsive">
+                        <a class="material-icons-sharp">cast</a>
+                        <a class="material-icons-sharp">search</a>
+                        <a class="material-icons-sharp md-30">account_circle</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Bullet Choose  -->
+            <div class="bullet-mood-container   swiper5">
+                <div class="wrapper-mood swiper-wrapper">
+                    <a class="swiper-slide" href="#">Sleep</a>
+                    <a class="swiper-slide" href="#">Relax</a>
+                    <a class="swiper-slide" href="#">Bored</a>
+                    <a class="swiper-slide" href="#">Happy</a>
+                    <a class="swiper-slide" href="#">Cool</a>
+                </div>
+            </div>
+            <!-- Nabar untuk Dekstop/Top dan Mobile/Bottom -->
+            <nav class="top-bar" id="navbar">
+                <span class="logo left-nav">
+                    <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
+                    <img id="logo-2" class="logo-2" src="images/logoutama.webp" width="55px" alt="logo">
+                    <h1 class="discover">Music</h1>
+                </span>
+                <span class="container-link center-nav">
+                    <ul id="link">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="musicnew.html">Music</a></li>
+                        <li><a href="videonew.html">Video</a></li>
+                        <li><a href="">Explore</a></li>
+                        <div class="open-input">
+                            <button type="submit"><span class="material-icons-sharp">search</span></button>
+                            <a>Search</a>
                         </div>
-                        <input type="search" placeholder="Search" />
-                    </div>
-                </div>
-            </span>
-            <span class="right-nav account">
-                <a class="material-icons-sharp md-24">cast</a>
-                <a class="material-icons-sharp md-24">account_circle</a>
-            </span>
-        </nav>
-        <div class="container-Welcome">
-
-            <div class="judul">
-                <h2>Happy Listen</h2>
-            </div>
-            <!-- list card float  -->
-            <dl class="container-all-card-float-grid">
-
-            </dl>
-            <div class="swiper4">
-                <dl class="container-all-card-float-flex swiper-wrapper ">
-
-                </dl>
-
-            </div>
-            <!-- <div class="swiper-button-next swiper-button-next4"></div>
-            <div class="swiper-button-prev swiper-button-prev4"></div> -->
-        </div>
-
-        <div class="container-make-it swiper1">
-            <div class="flex-top">
-                <div class="judul">
-                    <p>Pilih Cepat Music Mu</p>
-                    <h3>Pilihan Cepat</h3>
-                </div>
-                <a>Lihat Semua</a>
-            </div>
-            <!-- <div class="container-swiper"> -->
-            <div class="scroll-overflow swiper-wrapper">
-                <!-- Diisi Oleh Loop Dan Array Java Script  -->
-                <!-- Wrapper Kesatu  -->
-                <div class="wrapper-content-1  swiper-slide">
-
-                </div>
-                <!-- Wrapper Kedua  -->
-                <div class="wrapper-content-2  swiper-slide">
-
-                </div>
-                <!-- Wrapper Ketiga -->
-                <div class="wrapper-content-3  swiper-slide">
-
-                </div>
-                <div class="wrapper-content-4  swiper-slide">
-
-                </div>
-
-            </div>
-
-            <div class="swiper-button-prev swiper-button-prev1"></div>
-            <div class="swiper-button-next swiper-button-next1"></div>
-            <div class="swiper-pagination"></div>
-            <!-- </div>                     -->
-
-        </div>
-
-        <div class="container-all-card">
-            <div class="card-container swiper3">
-                <div class="judul">
-                    <p>Band Favorite Mu</p>
-                    <h3>Best Band</h3>
-                </div>
-                <!-- list music  -->
-                <ol class="card swiper-wrapper">
-
-                </ol>
-                <div class="swiper-button-next swiper-button-next3"></div>
-                <div class="swiper-button-prev swiper-button-prev3"></div>
-
-            </div>
-        </div>
-
-        <div class="container-all-card">
-            <div class="card-container swiper2">
-                <div class="judul">
-                    <p>Lagu Favorite Mu</p>
-                    <h3>Favorite Music</h3>
-                </div>
-                <!-- list music  -->
-                <ul class="card swiper-wrapper">
-
-                </ul>
-                <div class="swiper-button-next swiper-button-next2"></div>
-                <div class="swiper-button-prev swiper-button-prev2"></div>
-
-            </div>
-        </div>
-
-        <!-- footer area  -->
-
-    </main>
-
-    <!-- bottom bar  -->
-    <div class="container-play-bottom" id="play-bottom">
-        <div class="wrap-play-bottom">
-            <div class="flex-left">
-                <div class="profile-music">
-                    <div class="profile-img">
-                        <img src="" width="50px" alt="">
-                    </div>
-                    <div class="profile-name">
-                        <a></a>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-            <div class="controller-music">
-                <div class="flex-center">
-                    <div class="button-play-pause">
-                        <i class="material-icons-sharp" id="repeat">repeat</i>
-                        <i class="material-icons-sharp prev" id="prev">skip_previous</i>
-                        <div class="play-pause-btn">
-                            <i class="material-icons-sharp play">play_arrow</i>
-                        </div>
-                        <i class="material-icons-sharp next" id="next">skip_next</i>
-                        <i class="material-icons-sharp" id="shuffle">shuffle</i>
-                    </div>
-                    <div class="progress-music">
-                        <span class="current-time time-music">00:00</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill">
-                                <audio class="main-audio-primary" src=""></audio>
+                    </ul>
+                    <ul id="link-icon">
+                        <li>
+                            <a href="" class="material-icons-sharp active">home</a>
+                            <p class="active">Home</p>
+                        </li>
+                        <li>
+                            <a href="musicnew.html" class="material-icons-sharp">library_music</a>
+                            <p>Music</p>
+                        </li>
+                        <li>
+                            <a href="videonew.html" class="material-icons-sharp">video_library</a>
+                            <p>Video</p>
+                        </li>
+                        <li>
+                            <a href="" class="material-icons-sharp">explore</a>
+                            <p>Explore</p>
+                        </li>
+                        <li>
+                            <a href="" class="material-icons-sharp">search</a>
+                            <p>Search</p>
+                        </li>
+                    </ul>
+                    <div class="container-searchbox " id="container-searchbox">
+                        <div class="wrapper-input" id="input">
+                            <div class="wrapper-back hidden-input">
+                                <a class="material-icons-sharp back">arrow_back</a>
                             </div>
+                            <input type="search" placeholder="Search" />
                         </div>
-                        <span class="max-duration time-music">00:00</span>
+                    </div>
+                </span>
+                <span class="right-nav account">
+                    <a class="material-icons-sharp md-24">cast</a>
+                    <a class="material-icons-sharp md-24">account_circle</a>
+                </span>
+            </nav>
+            <div class="container-Welcome">
+                <div class="judul">
+                    <h2>Happy Listen</h2>
+                </div>
+                <!-- list card float  -->
+                <dl class="container-all-card-float-grid">
+                </dl>
+                <div class="swiper4">
+                    <dl class="container-all-card-float-flex swiper-wrapper ">
+                    </dl>
+                </div>
+                <!-- <div class="swiper-button-next swiper-button-next4"></div>
+        <div class="swiper-button-prev swiper-button-prev4"></div> -->
+            </div>
+            <div class="container-make-it swiper1">
+                <div class="flex-top">
+                    <div class="judul">
+                        <p>Quick Picks Your Music</p>
+                        <h3>Quick picks</h3>
+                    </div>
+                    <a>Show all</a>
+                </div>
+                <!-- <div class="container-swiper"> -->
+                <div class="scroll-overflow swiper-wrapper">
+                    <!-- Diisi Oleh Loop Dan Array Java Script  -->
+                    <!-- Wrapper Kesatu  -->
+                    <div class="wrapper-content-1  swiper-slide">
+                    </div>
+                    <!-- Wrapper Kedua  -->
+                    <div class="wrapper-content-2  swiper-slide">
+                    </div>
+                    <!-- Wrapper Ketiga -->
+                    <div class="wrapper-content-3  swiper-slide">
+                    </div>
+                    <div class="wrapper-content-4  swiper-slide">
+                    </div>
+                </div>
+                <div class="swiper-button-prev swiper-button-prev1"></div>
+                <div class="swiper-button-next swiper-button-next1"></div>
+                <div class="swiper-pagination"></div>
+                <!-- </div>                     -->
+            </div>
+            <div class="container-all-card">
+                <div class="card-container swiper3">
+                    <div class="judul">
+                        <p>Your Favorite Band</p>
+                        <h3>Best Band</h3>
+                    </div>
+                    <!-- list music  -->
+                    <ol class="card swiper-wrapper">
+                    </ol>
+                    <div class="swiper-button-next swiper-button-next3"></div>
+                    <div class="swiper-button-prev swiper-button-prev3"></div>
+                </div>
+            </div>
+            <div class="container-all-card">
+                <div class="card-container swiper2">
+                    <div class="judul">
+                        <p>Your Favorite Music</p>
+                        <h3>Favorite Music</h3>
+                    </div>
+                    <!-- list music  -->
+                    <ul class="card swiper-wrapper">
+                    </ul>
+                    <div class="swiper-button-next swiper-button-next2"></div>
+                    <div class="swiper-button-prev swiper-button-prev2"></div>
+                </div>
+            </div>
+            <!-- footer area  -->
+        </main>
+        <!-- bottom bar  -->
+        <div class="container-play-bottom" id="play-bottom">
+            <div class="wrap-play-bottom">
+                <div class="flex-left">
+                    <div class="profile-music">
+                        <div class="profile-img">
+                            <img src="" width="50px" alt="">
+                        </div>
+                        <div class="profile-name">
+                            <a></a>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="controller-music">
+                    <div class="flex-center">
+                        <div class="button-play-pause">
+                            <i class="material-icons-sharp" id="repeat">repeat</i>
+                            <i class="material-icons-sharp prev" id="prev">skip_previous</i>
+                            <div class="play-pause-btn">
+                                <i class="material-icons-sharp play">play_arrow</i>
+                            </div>
+                            <i class="material-icons-sharp next" id="next">skip_next</i>
+                            <i class="material-icons-sharp" id="shuffle">shuffle</i>
+                        </div>
+                        <div class="progress-music">
+                            <span class="current-time time-music">00:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill">
+                                    <audio class="main-audio-primary" src=""></audio>
+                                </div>
+                            </div>
+                            <span class="max-duration time-music">00:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-right">
+                    <div class="more-control">
+                        <a id="repeat-plist" class="material-icons" title="Volume 100%">volume_up</a>
+                        <a class="material-icons-sharp">devices</a>
+                        <a class="material-icons-sharp">queue_music</a>
+                        <a class="material-icons-sharp">picture_in_picture_alt</a>
                     </div>
                 </div>
             </div>
-            <div class="flex-right">
-                <div class="more-control">
-                    <a id="repeat-plist" class="material-icons" title="Volume 100%">volume_up</a>
-                    <a class="material-icons-sharp">devices</a>
-                    <a class="material-icons-sharp">queue_music</a>
-                    <a class="material-icons-sharp">picture_in_picture_alt</a>
-                </div>
-            </div>
         </div>
-    </div>
-
-    <script defer src="js/all.js"></script>
-    <!-- <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> -->
-    <script src="js/discover-list.js"></script>
-    <script src="js/script-discover.js"></script>
-    <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
-    <script src="swiper/swiper-bundle.js"></script>
-    <script>
-        // favorite 
-        const swiper1 = new Swiper('.swiper1', {
-            slidesPerView: 3,
-            speed: 200,
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next1',
-                prevEl: '.swiper-button-prev1',
-            },
-            freeMode: {
-                enabled: true,
-                sticky: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar1',
-                draggable: true,
-            },
-            // mousewheel: {
-            //     invert: true
-            // },
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true
-            },
-            freeModeFluid: true,
-            grabCursor: true,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    freeMode: {
-                        enabled: true,
-                        sticky: false,
+        <script defer src="js/all.js"></script>
+        <!-- <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> -->
+        <script src="js/discover-list.js"></script>
+        <script src="js/script-discover.js"></script>
+        <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+        <script src="swiper/swiper-bundle.js"></script>
+        <script>
+            // favorite 
+            const swiper1 = new Swiper('.swiper1', {
+                slidesPerView: 3,
+                speed: 200,
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next1',
+                    prevEl: '.swiper-button-prev1',
+                },
+                freeMode: {
+                    enabled: true,
+                    sticky: true,
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar1',
+                    draggable: true,
+                },
+                // mousewheel: {
+                //     invert: true
+                // },
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true
+                },
+                freeModeFluid: true,
+                grabCursor: true,
+                slidesPerView: 3,
+                spaceBetween: 30,
+                // Responsive breakpoints
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+                        freeMode: {
+                            enabled: true,
+                            sticky: false,
+                        },
                     },
-                },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 2,
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 1,
-                    watchOverflow: false,
-                    freeMode: {
-                        enabled: true,
-                        sticky: false,
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 2,
                     },
-                },
-                935: {
-                    slidesPerView: 2,
-                    freeMode: {
-                        enabled: true,
-                        sticky: false,
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 1,
+                        watchOverflow: false,
+                        freeMode: {
+                            enabled: true,
+                            sticky: false,
+                        },
                     },
+                    935: {
+                        slidesPerView: 2,
+                        freeMode: {
+                            enabled: true,
+                            sticky: false,
+                        },
+                    },
+                    // when window width is >= 768px
+                    1200: {
+                        slidesPerView: 3,
+                    }
                 },
-                // when window width is >= 768px
-                1200: {
-                    slidesPerView: 3,
-                }
-            },
-        });
-    </script>
-    <script>
-        // card favorite
-        const swiper2 = new Swiper('.swiper2', {
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next2',
-                prevEl: '.swiper-button-prev2',
-            },
-            freeMode: {
-                enabled: true,
-                sticky: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar3',
-                draggable: true,
-            },
-            // mousewheel: {
-            //     invert: true
-            // },
-            freeModeFluid: true,
-            grabCursor: true,
-            slidesPerView: 1,
-            // spaceBetween: 10,
-            // loop:true,
-            // slideToClickedSlide: true
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
+            });
+        </script>
+        <script>
+            // card favorite
+            const swiper2 = new Swiper('.swiper2', {
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
                 },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 1
+                freeMode: {
+                    enabled: true,
+                    sticky: true,
                 },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 4
+                scrollbar: {
+                    el: '.swiper-scrollbar3',
+                    draggable: true,
                 },
-                1024: {
-                    slidesPerView: 6
-                }
-            },
-        });
-    </script>
-    <script>
-        // card 
-        const swiper3 = new Swiper('.swiper3', {
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next3',
-                prevEl: '.swiper-button-prev3',
-            },
-            freeMode: {
-                enabled: true,
-                sticky: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar3',
-                draggable: true,
-            },
-            // mousewheel: {
-            //     invert: true
-            // },
-            freeModeFluid: true,
-            grabCursor: true,
-            slidesPerView: 1,
-            // spaceBetween: 10,
-            // loop:true,
-            // slideToClickedSlide: true
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
+                // mousewheel: {
+                //     invert: true
+                // },
+                freeModeFluid: true,
+                grabCursor: true,
+                slidesPerView: 1,
+                // spaceBetween: 10,
+                // loop:true,
+                // slideToClickedSlide: true
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 2.2,
+                    },
+                    380: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 0,
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 3
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 4
+                    },
+                    1024: {
+                        slidesPerView: 6
+                    }
                 },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 1
+            });
+        </script>
+        <script>
+            // card Artist / Band
+            const swiper3 = new Swiper('.swiper3', {
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next3',
+                    prevEl: '.swiper-button-prev3',
                 },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 4
+                freeMode: {
+                    enabled: true,
+                    sticky: true,
                 },
-                1024: {
-                    slidesPerView: 6
-                }
-            },
-        });
-    </script>
-    <script>
-        // card 
-        const swiper4 = new Swiper('.swiper4', {
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next4',
-                prevEl: '.swiper-button-prev4',
-            },
-            freeMode: {
-                enabled: true,
-                sticky: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar4',
-                draggable: true,
-            },
-            // mousewheel: {
-            //     invert: true
-            // },
-            freeModeFluid: true,
-            grabCursor: true,
-            slidesPerView: 1,
-            spaceBetween: 10,
-            // loop:true,
-            // slideToClickedSlide: true
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
+                scrollbar: {
+                    el: '.swiper-scrollbar3',
+                    draggable: true,
                 },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 1
+                // mousewheel: {
+                //     invert: true
+                // },
+                freeModeFluid: true,
+                grabCursor: true,
+                slidesPerView: 1,
+                // spaceBetween: 10,
+                // loop:true,
+                // slideToClickedSlide: true
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 2.2,
+                    },
+                    380: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 0,
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 3
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 4
+                    },
+                    1024: {
+                        slidesPerView: 6
+                    }
                 },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 4
+            });
+        </script>
+        <script>
+            // card Welcome
+            const swiper4 = new Swiper('.swiper4', {
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next4',
+                    prevEl: '.swiper-button-prev4',
                 },
-                1024: {
-                    slidesPerView: 6
-                }
-            },
-        });
-    </script>
-</body>
+                freeMode: {
+                    enabled: true,
+                    sticky: true,
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar4',
+                    draggable: true,
+                },
+                // mousewheel: {
+                //     invert: true
+                // },
+                freeModeFluid: true,
+                grabCursor: true,
+                slidesPerView: 1,
+                spaceBetween: 10,
+                // loop:true,
+                // slideToClickedSlide: true
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 2.2,
+                    },
+                    380: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 0,
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 3
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 4
+                    },
+                    1024: {
+                        slidesPerView: 6
+                    }
+                },
+            });
+        </script>
+        <!-- Mood Slide  -->
+        <script>
+            const swiper5 = new Swiper('.swiper5', {
+                freeMode: {
+                    enabled: true,
+                    sticky: false,
+                },
+                freeModeFluid: true,
+                grabCursor: true,
+                slidesPerView: 4.5,
+            });
+        </script>
+    </body>
 
 </html>

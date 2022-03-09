@@ -6,7 +6,7 @@ body {
 
 body::-webkit-scrollbar {
     width: 0px;
-    background: none ;
+    background: none;
     display: none;
 }
 
@@ -93,8 +93,8 @@ body::-webkit-scrollbar {
     }
 }
 
-.image-live-hover video ,
-.image-live-hover img{
+.image-live-hover video,
+.image-live-hover img {
     border-radius: 2.5px;
     /* width: 50px; */
 }
@@ -116,7 +116,7 @@ body::-webkit-scrollbar {
 }
 
 .left-live-container {
-        width: 50%;
+    width: 50%;
     /* padding: 50%; */
     flex: 1;
     height: 100%;
@@ -126,7 +126,8 @@ body::-webkit-scrollbar {
 }
 
 /* untuk mengatur width dan height image */
-.wrapper-img video , .wrapper-img img{
+.wrapper-img video,
+.wrapper-img img {
     height: 100%;
     left: 0;
     object-fit: cover;
@@ -281,7 +282,7 @@ a.active {
 /* next  */
 .music-list-container {
     height: 95%;
-        /* display: none !important; */
+    /* display: none !important; */
 
 }
 
@@ -293,22 +294,26 @@ ol {
     height: 100%;
 }
 
-ol::-webkit-scrollbar-thumb,.lyrics-wrapper::-webkit-scrollbar-thumb {
+ol::-webkit-scrollbar-thumb,
+.lyrics-wrapper::-webkit-scrollbar-thumb {
     background: transparent;
     /* Optional: just make scrollbar invisible */
 }
 
-ol::-webkit-scrollbar,.lyrics-wrapper::-webkit-scrollbar {
+ol::-webkit-scrollbar,
+.lyrics-wrapper::-webkit-scrollbar {
     width: 12px;
     /* Optional: just make scrollbar invisible */
     background: transparent;
 }
 
-ol:hover::-webkit-scrollbar,.lyrics-wrapper:hover::-webkit-scrollbar {
+ol:hover::-webkit-scrollbar,
+.lyrics-wrapper:hover::-webkit-scrollbar {
     width: 12px;
 }
 
-ol:hover::-webkit-scrollbar-thumb,.lyrics-wrapper:hover::-webkit-scrollbar-thumb  {
+ol:hover::-webkit-scrollbar-thumb,
+.lyrics-wrapper:hover::-webkit-scrollbar-thumb {
     background-color: rgb(117, 117, 117);
 }
 
@@ -421,12 +426,13 @@ ol:hover::-webkit-scrollbar-thumb,.lyrics-wrapper:hover::-webkit-scrollbar-thumb
 
 /* slide control  */
 .tab-content {
-  display: none;
+    display: none;
 }
 
 .tab-content.active {
     display: block;
 }
+
 @media only screen and (max-width: 765px) {
     .all-flex-wrapper {
         flex-direction: column;
@@ -445,20 +451,26 @@ ol:hover::-webkit-scrollbar-thumb,.lyrics-wrapper:hover::-webkit-scrollbar-thumb
         margin: 0 0 0 0;
     }
 
-    .music-list-container,.lyrics-container {
+    .music-list-container,
+    .lyrics-container {
         height: 80%;
     }
 
-    ol::-webkit-scrollbar,.lyrics-wrapper::-webkit-scrollbar {
+    ol::-webkit-scrollbar,
+    .lyrics-wrapper::-webkit-scrollbar {
         width: 8px;
     }
-    ol:hover::-webkit-scrollbar,.lyrics-wrapper:hover::-webkit-scrollbar {
+
+    ol:hover::-webkit-scrollbar,
+    .lyrics-wrapper:hover::-webkit-scrollbar {
         width: 8px;
     }
+
     .cepat .text p:nth-child(1) {
         font-size: 14px;
         font-family: "Roboto-Medium", sans-serif;
     }
+
     .cepat .text p:nth-child(2) {
         font-size: 14px;
     }

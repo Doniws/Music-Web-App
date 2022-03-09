@@ -3,12 +3,10 @@ const wrapper = document.querySelector('.wrapper'),
 	musicName = document.querySelector('.profile-name a'),
 	musicArtist = document.querySelector('.profile-name p'),
 	mainAudio = document.querySelector('.main-audio-primary'),
-
 	musicImg2 = document.querySelector('.profile-img2 img'),
 	musicName2 = document.querySelector('.profile-name2 a'),
 	musicArtist2 = document.querySelector('.profile-name2 p'),
 	mainAudio2 = document.querySelector('.main-audio-secondary'),
-
 	playPauseBtn = document.querySelector('.play-pause-btn'),
 	nextBtn = document.querySelector('#next'),
 	prevBtn = document.querySelector('#prev'),
@@ -37,9 +35,7 @@ for (let j = 0; j < FavoriteMusic.length; j++) {
                             </div>
                             <div class="bottom">
                                 <div class="play-pause "  >
-                                    <i  playing-click="${
-																			j + 1
-																		}" class="material-icons-sharp play">play_arrow</i>
+                                    <i  playing-click="${j + 1}" class="material-icons-sharp play">play_arrow</i>
                                 </div>
                             </div>
                         </div>
@@ -62,6 +58,7 @@ function playingSong() {
 		allLiTag[j].setAttribute('onclick', 'clicked(this)');
 	}
 }
+
 function playingSong2() {
 	const allLiTag2 = dlTag.querySelectorAll('div');
 
@@ -101,12 +98,6 @@ function clicked2(element2) {
 	}
 }
 
-
-
-
-
-
-
 const olTag = wrapper.querySelector('ol');
 // let create li tags according to array length for list
 for (let i = 0; i < BestArtist.length; i++) {
@@ -116,11 +107,7 @@ for (let i = 0; i < BestArtist.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img circle-shadow">
-                                	<img src="images/${
-																		BestArtist[i].src
-																	}.webp" alt="" style="border-radius:${
-		BestArtist[i].rds
-	}">
+                                	<img src="images/${BestArtist[i].src}.webp" alt="" style="border-radius:${BestArtist[i].rds}">
 								</div>
                             </a>
                             <div class="bottom">
@@ -130,41 +117,46 @@ for (let i = 0; i < BestArtist.length; i++) {
                             </div>
                         </div>
 						<div class="text-card">
-                        	<p class="artist">${BestArtist[i].artist}</p>
-                        	<p class="name">Artist</p>
+                        	<p class="artist" style="text-align:center;">${BestArtist[i].artist}</p>
+                        	<p class="name" style="text-align:center;">Artist</p>
 						</div>
                     </div>
                 </li>`;
 	olTag.insertAdjacentHTML('beforeend', liTag);
 }
 
-// error 
 const ddTag = wrapper.querySelector('dl.container-all-card-float-flex');
 for (let z = 0; z < Welcome.length; z++) {
 	//let's pass the song name, artist from the array
-	let liTag = `<li class="music swiper-slide" id="band-${z + 1}">
+	let liTag = `<li class="music swiper-slide" li-index="${z + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
-								<div class= "wrapper-img circle-shadow">
-                                	<img src="images/${
-																		Welcome[z].src
-																	}.webp" alt="" style="border-radius:${
-		Welcome[z].rds
-	}">
+								<div class= "wrapper-img  circle-shadow">
+									<img src="images/${Welcome[z].src}.webp" alt="${
+		Welcome[z].name
+	}" style="border-radius:${Welcome[z].rds}">
 								</div>
                             </a>
-                            <div class="bottom">
+                            <div class="top">
                                 <div class="play-pause">
-                                    <i class="material-icons-sharp play">play_arrow</i>
+                                    <a class="material-icons-sharp play">more_vert</a>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="play-pause "  >
+                                    <i  playing-click="${
+																			z + 1
+																		}" class="material-icons-sharp play">play_arrow</i>
                                 </div>
                             </div>
                         </div>
 						<div class="text-card">
                         	<p class="artist">${Welcome[z].artist}</p>
-                        	<p class="name">Artist</p>
+							<p class="name">${Welcome[z].name}</p>
 						</div>
                     </div>
+                    
                 </li>`;
 	ddTag.insertAdjacentHTML('beforeend', liTag);
 }
@@ -186,8 +178,7 @@ for (let x = 0; x < Welcome.length; x++) {
 	dlTag.insertAdjacentHTML('beforeend', liTag);
 }
 
-
-
+// Quick Speed Play
 const doTag = wrapper.querySelector('div.wrapper-content-1');
 for (let l = 0; l < 4 && l < FavoriteMusic.length; l++) {
 	//let's pass the song name, artist from the array
@@ -203,7 +194,7 @@ for (let l = 0; l < 4 && l < FavoriteMusic.length; l++) {
                     <span class="text">
                         <p class="name">${FavoriteMusic[l].name}</p>
                         <p class="artist">
-						    <span class="material-icons-sharp">sensors</span>
+							<span class="material-icons-sharp">sensors</span>
 							<a>${FavoriteMusic[l].artist} • ${FavoriteMusic[l].abm}</a>
 						</p>
                     </span>
@@ -213,7 +204,7 @@ for (let l = 0; l < 4 && l < FavoriteMusic.length; l++) {
 }
 
 const dxTag = wrapper.querySelector('div.wrapper-content-2');
-for ( let p = 4 ; p < 8 && p < FavoriteMusic.length; p++) {
+for (let p = 4; p < 8 && p < FavoriteMusic.length; p++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
@@ -304,7 +295,6 @@ function playMusic2() {
 	mainAudio2.play();
 }
 
-
 //pause music function
 function pauseMusic() {
 	wrapper.classList.remove('paused');
@@ -338,9 +328,9 @@ mainAudio.onpause = function () {
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1
-		? (musicIndex = FavoriteMusic.length)
-		: (musicIndex = musicIndex);
+	musicIndex < 1 ?
+		(musicIndex = FavoriteMusic.length) :
+		(musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -350,9 +340,9 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > FavoriteMusic.length
-		? (musicIndex = 1)
-		: (musicIndex = musicIndex);
+	musicIndex > FavoriteMusic.length ?
+		(musicIndex = 1) :
+		(musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -390,14 +380,13 @@ function loadMusic(indexNumb) {
 	musicImg.src = `images/${FavoriteMusic[indexNumb - 1].src}.webp`;
 	mainAudio.src = `songs/${FavoriteMusic[indexNumb - 1].src}.mp3`;
 }
+
 function loadMusic2(indexNumb2) {
 	musicName.innerText = Welcome[indexNumb2 - 1].name;
 	musicArtist.innerText = Welcome[indexNumb2 - 1].artist;
 	musicImg.src = `images/${Welcome[indexNumb2 - 1].src}.webp`;
 	mainAudio2.aud = `songs/${Welcome[indexNumb2 - 1].src}.mp3`;
 }
-
-
 
 // Proggress bar update by audio timeupdate event
 mainAudio.addEventListener('timeupdate', (e) => {
@@ -510,7 +499,6 @@ volumeBtn.addEventListener('click', () => {
 	}
 });
 
-
 // show search box and hidden link
 var showSrc = document.querySelector('.hidden-input');
 showSrc.addEventListener('click', () => {
@@ -528,7 +516,7 @@ showSrc.addEventListener('click', () => {
 	}
 });
 
-// show search link and hidden box 
+// show search link and hidden box
 var hiddenSrc = document.querySelector('.open-input');
 hiddenSrc.addEventListener('click', () => {
 	var hide = document.getElementById('input');
@@ -545,27 +533,20 @@ hiddenSrc.addEventListener('click', () => {
 	}
 });
 
-// hidden show logo 
+// hidden show logo
 var logo1 = document.querySelector('#logo-1');
 var logo2 = document.querySelector('#logo-2');
-logo1.addEventListener(
-	'click',
-	() => {
-		logo1.style.display = 'none';
-		logo2.style.display = 'block';
-	}
-);
-logo2.addEventListener(
-	'click',
-	() => {
-		logo1.style.display = 'block';
-		logo2.style.display = 'none';
-	}
-);
-
+logo1.addEventListener('click', () => {
+	logo1.style.display = 'none';
+	logo2.style.display = 'block';
+});
+logo2.addEventListener('click', () => {
+	logo1.style.display = 'block';
+	logo2.style.display = 'none';
+});
 
 // navbar border scroll  var prevScrollpos = window.pageYOffset;
- var prevScrollpos = window.pageYOffset;
+var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
 	var currentScrollPos = window.pageYOffset;
 	if (prevScrollpos > currentScrollPos) {
@@ -577,59 +558,64 @@ window.onscroll = function () {
 	prevScrollpos = currentScrollPos;
 };
 
- // Selecting all required elements Network Status
-const wrapper_network = document.querySelector(".wrapper-network"),
-toast = wrapper_network.querySelector(".toast-network"),
-title = toast.querySelector(".stats-network"),
-subTitle = toast.querySelector(".description-network"),
-wifiIcon = toast.querySelector(".icon-network i"),
-closeIcon = toast.querySelector(".close-icon");
+// Selecting all required elements Network Status
+const wrapper_network = document.querySelector('.wrapper-network'),
+	toast = wrapper_network.querySelector('.toast-network'),
+	title = toast.querySelector('.stats-network'),
+	subTitle = toast.querySelector('.description-network'),
+	wifiIcon = toast.querySelector('.icon-network i'),
+	closeIcon = toast.querySelector('.close-icon');
 
-window.onload = ()=>{
-    function ajax(){
-        let xhr = new XMLHttpRequest(); //creating new XML object
-        xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true); //sending get request on this URL
-        xhr.onload = ()=>{ //once ajax loaded
-            //if ajax status is equal to 200 or less than 300 that mean user is getting data from that provided url
-            //or his/her response status is 200 that means he/she is online
-            if(xhr.status == 200 && xhr.status < 300){
-                toast.classList.remove("offline");
-                title.innerText = "You're online now";
-                subTitle.innerText = "Hurray! Internet is connected.";
-                wifiIcon.innerText = 'wifi';
-                closeIcon.onclick = ()=>{ //hide toast notification on close icon click
-                    wrapper_network.classList.add("hide");
-                }
-                setTimeout(()=>{ //hide the toast notification automatically after 5 seconds
-                    wrapper_network.classList.add("hide");
-                },4000);
-            }else{
-                offline(); //calling offline function if ajax status is not equal to 200 or not less that 300
-            }
-        }
-        xhr.onerror = ()=>{
-            offline(); ////calling offline function if the passed url is not correct or returning 404 or other error
-        }
-        xhr.send(); //sending get request to the passed url
-    }
+window.onload = () => {
+	function ajax() {
+		let xhr = new XMLHttpRequest(); //creating new XML object
+		xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true); //sending get request on this URL
+		xhr.onload = () => {
+			//once ajax loaded
+			//if ajax status is equal to 200 or less than 300 that mean user is getting data from that provided url
+			//or his/her response status is 200 that means he/she is online
+			if (xhr.status == 200 && xhr.status < 300) {
+				toast.classList.remove('offline');
+				title.innerText = "You're online now";
+				subTitle.innerText = 'Hurray! Internet is connected.';
+				wifiIcon.innerText = 'wifi';
+				closeIcon.onclick = () => {
+					//hide toast notification on close icon click
+					wrapper_network.classList.add('hide');
+				};
+				setTimeout(() => {
+					//hide the toast notification automatically after 5 seconds
+					wrapper_network.classList.add('hide');
+				}, 4000);
+			} else {
+				offline(); //calling offline function if ajax status is not equal to 200 or not less that 300
+			}
+		};
+		xhr.onerror = () => {
+			offline(); ////calling offline function if the passed url is not correct or returning 404 or other error
+		};
+		xhr.send(); //sending get request to the passed url
+	}
 
-    function offline(){ //function for offline
-        wrapper_network.classList.remove("hide");
-        toast.classList.add("offline");
-        title.innerText = "You're offline now";
-        subTitle.innerText = "Opps! Internet is disconnected.";
-        wifiIcon.innerText = 'wifi_off';
-    }
+	function offline() {
+		//function for offline
+		wrapper_network.classList.remove('hide');
+		toast.classList.add('offline');
+		title.innerText = "You're offline now";
+		subTitle.innerText = 'Opps! Internet is disconnected.';
+		wifiIcon.innerText = 'wifi_off';
+	}
 
-    setInterval(()=>{ //this setInterval function call ajax frequently after 100ms
-        ajax();
-    }, 100);
-}
+	setInterval(() => {
+		//this setInterval function call ajax frequently after 100ms
+		ajax();
+	}, 100);
+};
 
-// scroll for hide navbar 
+// scroll for hide navbar
 var lastScrollTop;
 navbar = document.querySelector('.top-bar-responsive');
-window.addEventListener('scroll', ()=> {
+window.addEventListener('scroll', () => {
 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	if (scrollTop > lastScrollTop) {
 		navbar.style.top = '-80px';

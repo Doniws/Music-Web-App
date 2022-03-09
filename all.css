@@ -11,13 +11,15 @@
 
 /* ini din font bukan gugi font  */
 @font-face {
-  font-family:"Roboto-Bold";
+  font-family: "Roboto-Bold";
   src: url("fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Roboto-Medium";
   src: url("/fonts/Roboto/Roboto-Medium.ttf");
 }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Regular.ttf") format("truetype");
@@ -36,13 +38,14 @@
 
 html {
   scroll-behavior: smooth;
-   overflow: hidden;
+  overflow: hidden;
 }
 
-body{
+body {
   overflow: hidden;
 
 }
+
 /* dark body dsini   */
 #body {
   display: flex;
@@ -52,7 +55,8 @@ body{
   overflow-y: hidden;
 }
 
-#wrapper,#wrapper.wrapper-dark {
+#wrapper,
+#wrapper.wrapper-dark {
   width: 100%;
   height: 100vh;
   padding: 25px 30px;
@@ -61,8 +65,8 @@ body{
   /* border-radius: 15px; */
   overflow-y: hidden;
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #wrapper i {
@@ -86,8 +90,8 @@ body{
   background: #f5f6f700;
 
   box-shadow: -4px -2px 4px 0px #ffffff00,
-      /* -4 ini untuk efek di sebelah kiri*/
-      4px 2px 6px 0 #dfe4ea00;
+    /* -4 ini untuk efek di sebelah kiri*/
+    4px 2px 6px 0 #dfe4ea00;
   transition: all 0.15s ease-out;
   font-size: 30px;
 
@@ -97,7 +101,7 @@ body{
 }
 
 /* icon fullscreen  */
-i.material-icons-outlined{
+i.material-icons-outlined {
   font-size: 35px;
   color: #fff;
   display: block;
@@ -110,10 +114,12 @@ img.imghead {
   width: 50px;
 
 }
+
 .top-bar i:first-child {
   margin-left: -0px;
 
 }
+
 /* ini untuk my music */
 .top-bar span {
 
@@ -125,39 +131,42 @@ img.imghead {
 }
 
 .list-container {
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .list-container li {
   list-style: none;
 }
 
-.list-container li a{
+.list-container li a {
   text-decoration: none;
   color: #fff;
   font-family: "Roboto-Bold";
   font-size: 20px;
 }
 
-.flex-main{
+.flex-main {
   display: flex;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    height: 100vh;
-    
-    justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  height: 100vh;
+
+  justify-content: space-around;
 }
-.flex-progress-control{
+
+.flex-progress-control {
   width: 40%;
 }
-.flex-img-detail{
+
+.flex-img-detail {
   width: 40%;
 }
+
 /* disini tempat untuk mengatur gambar */
 .img-area {
   width: 100%;
@@ -168,11 +177,13 @@ img.imghead {
   /* yang di box shadow tenga bisa membuat effect seperti 3 dimeasi karena shadow mnya kebawah*/
 
 }
-.img-area video , .img-area img{
+
+.img-area video,
+.img-area img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-      
+
 
 }
 
@@ -183,35 +194,39 @@ img.imghead {
 }
 
 .song-details p {
-  font-family:"Roboto-Bold";
+  font-family: "Roboto-Bold";
   color: rgb(255, 255, 255);
   color: linear-gradient(97deg, rgba(38, 41, 196, 1) 0%, rgba(38, 64, 196, 1) 9%, rgba(38, 41, 196, 1) 19%, rgba(38, 78, 196, 1) 27%, rgba(38, 90, 196, 1) 36%, rgba(38, 124, 196, 1) 50%, rgba(38, 140, 196, 1) 58%, rgba(38, 155, 196, 1) 74%, rgba(0, 134, 255, 1) 100%);
 }
 
 .song-details .name {
   font-size: 25px;
-  font-family:"Roboto-Bold";
+  font-family: "Roboto-Bold";
 }
 
 .song-details .artist {
   font-size: 18px;
   opacity: 0.9;
   line-height: 35px;
-  font-family:"Roboto";
+  font-family: "Roboto";
   font-weight: 600;
 }
-#progress-area,#progress-area.progress-area-dark {
+
+#progress-area,
+#progress-area.progress-area-dark {
   height: 3px;
   width: 100%;
   border-radius: 50px;
   cursor: pointer;
 }
+
 #progress-area .progress-bar {
   height: inherit;
   width: 0%;
   position: relative;
   border-radius: inherit;
 }
+
 .progress-bar::before {
   content: "";
   position: absolute;
@@ -227,8 +242,9 @@ img.imghead {
   pointer-events: auto;
   transform: translateY(-50%);
   background: inherit;
-  transition:  0.2s ease;
+  transition: 0.2s ease;
 }
+
 #progress-area:hover .progress-bar::before {
   opacity: 1;
   pointer-events: auto;
@@ -244,6 +260,7 @@ img.imghead {
   color: #ffffff;
   font-weight: bolder;
 }
+
 #controls {
   margin: 45px 0 5px 0;
 }
@@ -258,6 +275,7 @@ img.imghead {
   -webkit-text-fill-color: transparent;
 
 }
+
 /* icon next */
 #controls i:nth-child(2),
 #controls i:nth-child(4) {
@@ -270,6 +288,7 @@ img.imghead {
   -webkit-text-fill-color: transparent;
 
 }
+
 #controls i#more-music {
   font-size: 35px;
   user-select: none;
@@ -280,6 +299,7 @@ img.imghead {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* ni buat loop */
 #controls i#repeat-plist {
   font-size: 35px;
@@ -292,10 +312,12 @@ img.imghead {
   -webkit-text-fill-color: transparent;
 
 }
+
 #controls i:nth-child(2),
 #controls i:nth-child(4) {
   font-size: 40px;
 }
+
 /* pengatur jarak */
 #controls #prev {
   margin-right: -14px;
@@ -305,6 +327,7 @@ img.imghead {
   margin-left: -14px;
 
 }
+
 /* ini buat play pause */
 #controls .play-pause {
   height: 65px;
@@ -318,6 +341,7 @@ img.imghead {
   transition: all ease 0.5s;
   background: rgba(0, 0, 0, 0);
 }
+
 .play-pause::before {
   position: absolute;
   content: "";
@@ -347,20 +371,21 @@ img.imghead {
 
 
 #music-list {
-    position: absolute;
-    width: 40%;
-    margin-right: auto;
-    /* bottom: -55%; */
-    
-    opacity: 0;
-    pointer-events: none;
-    z-index: 5;
-    padding: 50px 30px;
-    border-radius: 15px;
-    height: 100%;
-    transition: all 0.65s linear;
-    touch-action: cross-slide-y !important;
+  position: absolute;
+  width: 40%;
+  margin-right: auto;
+  /* bottom: -55%; */
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  padding: 50px 30px;
+  border-radius: 15px;
+  height: 100%;
+  transition: all 0.65s linear;
+  touch-action: cross-slide-y !important;
 }
+
 /* #music-list {
   position: absolute;
   width: 100%;
@@ -400,6 +425,7 @@ img.imghead {
   font-size: 30px;
 
 }
+
 /* Pembatasan List music */
 #music-list ul {
   margin: 10px 0;
@@ -424,9 +450,9 @@ img.imghead {
   border-bottom: 0px;
 }
 
-#music-list li .row{
-    margin-right: auto;
-    padding-left: 10px;
+#music-list li .row {
+  margin-right: auto;
+  padding-left: 10px;
 
 }
 
@@ -436,13 +462,14 @@ img.imghead {
 
 #music-list ul li .row p {
   opacity: 0.9;
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 
 }
 
-#music-list img.img-container{
+#music-list img.img-container {
   width: 50px;
 }
+
 ul li .audio-duration {
   font-size: 16px;
   color: #ffffff;
@@ -457,12 +484,14 @@ ul li.playing {
 
 @media only screen and (max-width:440px) {
   .btn-container {
-  display: block !important;
+    display: block !important;
   }
-  .list-container{
+
+  .list-container {
     display: none !important;
   }
-  .flex-main{
+
+  .flex-main {
     height: auto !important;
     display: flex;
     flex-direction: column;
@@ -470,26 +499,30 @@ ul li.playing {
     justify-content: center;
     align-content: center;
   }
-  .flex-img-detail,.flex-progress-control {
+
+  .flex-img-detail,
+  .flex-progress-control {
     width: 100%;
   }
+
   /* Pembatasan List music */
   #music-list ul {
-      max-height: 75vh;
+    max-height: 75vh;
   }
 
   .song-details {
-      text-align: center;
-      margin: 45px 0;
+    text-align: center;
+    margin: 45px 0;
   }
 
-  #wrapper, #wrapper.wrapper-dark {
-      width: 100%;
-      padding: 50% 30px;
-      overflow: hidden;
-      position: absolute;
-      border-radius: 0 !important;
-      display: flex;
+  #wrapper,
+  #wrapper.wrapper-dark {
+    width: 100%;
+    padding: 50% 30px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 0 !important;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 
@@ -497,90 +530,90 @@ ul li.playing {
 
   #wrapper.wrapper-dark {
 
-      position: relative;
-      width: 400px;
-      padding: 200px 30px;
-      overflow: hidden;
-      border-radius: 0 !important;
+    position: relative;
+    width: 400px;
+    padding: 200px 30px;
+    overflow: hidden;
+    border-radius: 0 !important;
   }
 
   #controls {
-      margin: 30px 0 5px 0;
+    margin: 30px 0 5px 0;
 
   }
 
   #controls #prev {
-      margin-right: -4px;
+    margin-right: -4px;
   }
 
   #controls #next {
-      margin-left: -4px;
+    margin-left: -4px;
 
   }
 
   /* icon next */
   #controls i:nth-child(2),
   #controls i:nth-child(4) {
-      font-size: 40px;
-      user-select: none;
-      border-radius: 50%;
-      /* tunggu */
+    font-size: 40px;
+    user-select: none;
+    border-radius: 50%;
+    /* tunggu */
 
   }
 
   /* ni buat loop */
   #controls i#repeat-plist {
-      font-size: 35px;
-      user-select: none;
-      border-radius: 20%;
-      /* tunggu */
+    font-size: 35px;
+    user-select: none;
+    border-radius: 20%;
+    /* tunggu */
 
   }
 
   #controls i#more-music {
-      font-size: 35px;
-      user-select: none;
-      border-radius: 20%;
-      /* tunggu */
+    font-size: 35px;
+    user-select: none;
+    border-radius: 20%;
+    /* tunggu */
 
   }
 
   .top-bar {
     margin-top: 0px;
-      /* padding: 0px 10px 0px 10px; */
+    /* padding: 0px 10px 0px 10px; */
   }
 
   #progress-area .song-timer {
-      margin-top: 0px;
+    margin-top: 0px;
   }
 
   #controls i {
-      font-size: 39px;
+    font-size: 39px;
 
   }
 
   .img-area {
-      margin-top: 55px;
-      box-shadow: 5px 5px 15px rgb(0 0 0 / 69%);
-      width: 100%;
-      height: 300px;
+    margin-top: 55px;
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 69%);
+    width: 100%;
+    height: 300px;
   }
 
   #controls .play-pause {
-      box-shadow: 5px 5px 15px rgb(0 0 0 / 49%);
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 49%);
   }
 
   #progress-area {
-      margin-top: -30px;
+    margin-top: -30px;
   }
 
   .song-timer span {
-      font-size: 14.5px;
+    font-size: 14.5px;
   }
 
   #music-list {
-      top: 0;
-        left: -55%;
+    top: 0;
+    left: -55%;
 
     display: flex;
     border-radius: 0;
@@ -594,28 +627,28 @@ ul li.playing {
 
 @media only screen and (max-width:340px) {
   #wrapper {
-      width: 335px;
-      padding: 175px 30px;
-      overflow: hidden;
-      position: relative;
+    width: 335px;
+    padding: 175px 30px;
+    overflow: hidden;
+    position: relative;
   }
 
   /* dark mode wrapper disini */
   #wrapper.wrapper-dark {
 
-      position: relative;
-      width: 335px;
-      padding: 175px 30px;
-      overflow: hidden;
+    position: relative;
+    width: 335px;
+    padding: 175px 30px;
+    overflow: hidden;
   }
 
   /* pengatur jarak */
   #controls #prev {
-      margin-right: -25px;
+    margin-right: -25px;
   }
 
   #controls #next {
-      margin-left: -25px;
+    margin-left: -25px;
 
   }
 
@@ -637,6 +670,7 @@ ul li.playing {
   color: rgb(255, 255, 255);
   display: block;
 }
+
 /* toggle  */
 
 
@@ -696,7 +730,7 @@ label {
 
 .btn-color-mode-switch>.alert {
   display: none;
-    background: #fff;
+  background: #fff;
   border: none;
   color: #fff;
 }
@@ -721,7 +755,7 @@ label {
 .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
   content: attr(data-on);
   /* left: 68px; */
-    background: #1612124a;
+  background: #1612124a;
   right: 0px;
 }
 
@@ -734,7 +768,7 @@ label {
 
 .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
   display: block;
-} 
+}
 
 
 /*mode preview*/

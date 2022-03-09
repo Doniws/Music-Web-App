@@ -404,13 +404,13 @@ topFull.addEventListener('click', () => {
 });
 
 topMini.addEventListener('click', () => {
-    if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-    } else {
-        if (document.pictureInPictureEnabled) {
-            imageMusic.requestPictureInPicture();
-        }
-    }
+	if (document.pictureInPictureElement) {
+		document.exitPictureInPicture();
+	} else {
+		if (document.pictureInPictureEnabled) {
+			imageMusic.requestPictureInPicture();
+		}
+	}
 });
 
 // Jquery Tab / Slide 

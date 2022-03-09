@@ -61,20 +61,20 @@ for (let i = 0; i < allMusic.length; i++) {
 					<audio  class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
                 </li>`;
 	ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
-	
-	  let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
-		let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
-		liAudioTag.addEventListener('loadeddata', () => {
-			let duration = liAudioTag.duration;
-			let totalMin = Math.floor(duration / 60);
-			let totalSec = Math.floor(duration % 60);
-			if (totalSec < 10) {
-				//if sec is less than 10 then add 0 before it
-				totalSec = `0${totalSec}`;
-			}
-			liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-			liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
-		});
+
+	let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
+	let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+	liAudioTag.addEventListener('loadeddata', () => {
+		let duration = liAudioTag.duration;
+		let totalMin = Math.floor(duration / 60);
+		let totalSec = Math.floor(duration % 60);
+		if (totalSec < 10) {
+			//if sec is less than 10 then add 0 before it
+			totalSec = `0${totalSec}`;
+		}
+		liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
+		liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
+	});
 }
 
 // proses error
@@ -121,12 +121,12 @@ function playingSong() {
 }
 
 //particular li clicked function
-function clicked(element){
-  let getLiIndex = element.getAttribute("li-index");
-  musicIndex = getLiIndex; //updating current song index with clicked li index
-  loadMusic(musicIndex);
-  playMusic();
-  playingSong();
+function clicked(element) {
+	let getLiIndex = element.getAttribute("li-index");
+	musicIndex = getLiIndex; //updating current song index with clicked li index
+	loadMusic(musicIndex);
+	playMusic();
+	playingSong();
 }
 
 
@@ -167,7 +167,7 @@ imageMusic.addEventListener('click', function () {
 centerPlayPause.addEventListener('click', function () {
 	isMusicPlay = wrapper.classList.contains('paused');
 	isMusicPlay ? pauseMusic() : playMusic();
-	
+
 });
 // next prev button area 
 // next prev music area
@@ -175,9 +175,9 @@ centerPlayPause.addEventListener('click', function () {
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1
-		? (musicIndex = allMusic.length)
-		: (musicIndex = musicIndex);
+	musicIndex < 1 ?
+		(musicIndex = allMusic.length) :
+		(musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -187,9 +187,9 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > allMusic.length
-		? (musicIndex = 1)
-		: (musicIndex = musicIndex);
+	musicIndex > allMusic.length ?
+		(musicIndex = 1) :
+		(musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
