@@ -128,7 +128,7 @@ for (let i = 0; i < BestArtist.length; i++) {
 const ddTag = wrapper.querySelector('dl.container-all-card-float-flex');
 for (let z = 0; z < Welcome.length; z++) {
 	//let's pass the song name, artist from the array
-	let liTag = `<li class="music swiper-slide" li-index="${z + 1}">
+	let liTag = `<dd class="music swiper-slide" li-index="${z + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
@@ -157,7 +157,7 @@ for (let z = 0; z < Welcome.length; z++) {
 						</div>
                     </div>
                     
-                </li>`;
+                </dd>`;
 	ddTag.insertAdjacentHTML('beforeend', liTag);
 }
 
