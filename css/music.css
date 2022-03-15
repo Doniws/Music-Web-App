@@ -1,49 +1,47 @@
 /* dark body dsini   */
 #body.body-dark {
-  background: #181717;
+	background: #181717;
 }
 
 #body {
-  background: var(--background);
+	background: var(--background);
 }
 
 /* dark mode wrapper disini */
 #wrapper.wrapper-dark {
-  background: #030303;
-  /* box-shadow: -4px -2px 4px 0px #020202,
+	background: #030303;
+	/* box-shadow: -4px -2px 4px 0px #020202,
       4px 2px 6px 0 #080808; */
-
 }
 
 #wrapper {
-  background: #030303;
-  /* box-shadow: -4px -2px 4px 0px #ffffff,
+	background: #030303;
+	/* box-shadow: -4px -2px 4px 0px #ffffff,
       4px 2px 6px 0 #dfe4ea; */
 }
 
 #progress-area {
-  background: #c4c4c4;
+	background: #c4c4c4;
 }
 
 /* dark modenya dibawah */
 #progress-area.progress-area-dark {
-  background: #1a1a1a;
+	background: #1a1a1a;
 }
 
 #progress-area .progress-bar {
-  background: rgb(255, 255, 255);
+	background: rgb(255, 255, 255);
 }
 
 .header .row {
-  color: #ffffff;
+	color: #ffffff;
 }
 
 /* Pembatasan List music */
 #music-list ul li {
-  color: #005eff;
-
+	color: #005eff;
 }
 
 #music-list ul li .row span {
-  color: #ffffff;
+	color: #ffffff;
 }

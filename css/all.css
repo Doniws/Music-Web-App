@@ -1,0 +1,794 @@
+/* Css For Old Video And Music  */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto-Medium';
+	-webkit-font-smoothing: antialiased;
+	text-transform: capitalize;
+}
+
+/* ini din font bukan gugi font  */
+@font-face {
+	font-family: 'Roboto-Bold';
+	src: url('fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url('/fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--background: #e0e5ec;
+	--gray: #797d7f;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow: hidden;
+}
+
+body {
+	overflow: hidden;
+}
+
+/* dark body dsini   */
+#body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	overflow-y: hidden;
+}
+
+#wrapper,
+#wrapper.wrapper-dark {
+	width: 100%;
+	height: 100vh;
+	padding: 25px 30px;
+	overflow: hidden;
+	position: relative;
+	/* border-radius: 15px; */
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#wrapper i {
+	cursor: pointer;
+}
+
+.top-bar,
+#progress-area .song-timer,
+#controls,
+#music-list .header,
+#music-list ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* icon di atas / fontawesome */
+
+.top-bar i.fa-expand {
+	border-radius: 5%;
+	background: #f5f6f700;
+
+	box-shadow: -4px -2px 4px 0px #ffffff00,
+		/* -4 ini untuk efek di sebelah kiri*/ 4px 2px 6px 0 #dfe4ea00;
+	transition: all 0.15s ease-out;
+	font-size: 30px;
+
+	color: rgb(255, 255, 255);
+	/* color: linear-gradient(97deg, rgba(38, 41, 196, 1) 0%, rgba(38, 64, 196, 1) 9%, rgba(38, 41, 196, 1) 19%, rgba(38, 78, 196, 1) 27%, rgba(38, 90, 196, 1) 36%, rgba(38, 124, 196, 1) 50%, rgba(38, 140, 196, 1) 58%, rgba(38, 155, 196, 1) 74%, rgba(0, 134, 255, 1) 100%); */
+}
+
+/* icon fullscreen  */
+i.material-icons-outlined {
+	font-size: 35px;
+	color: #fff;
+	display: block;
+}
+
+img.imghead {
+	transition: all 1s ease-out;
+	height: auto;
+	display: block;
+	width: 50px;
+}
+
+.top-bar i:first-child {
+	margin-left: -0px;
+}
+
+/* ini untuk my music */
+.top-bar span {
+	font-size: 20px;
+	/* margin-left: -3px; */
+	font-family: 'Roboto-Medium';
+	/* color: rgb(0, 4, 255); */
+	font-weight: bold;
+}
+
+.list-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.list-container li {
+	list-style: none;
+}
+
+.list-container li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Roboto-Bold';
+	font-size: 20px;
+}
+
+.flex-main {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	flex-wrap: nowrap;
+	height: 100vh;
+
+	justify-content: space-around;
+}
+
+.flex-progress-control {
+	width: 40%;
+}
+
+.flex-img-detail {
+	width: 40%;
+}
+
+/* disini tempat untuk mengatur gambar */
+.img-area {
+	width: 100%;
+	height: 60vh;
+	overflow: hidden;
+	margin-top: 25px;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.685);
+	/* yang di box shadow tenga bisa membuat effect seperti 3 dimeasi karena shadow mnya kebawah*/
+}
+
+.img-area video,
+.img-area img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.song-details {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.song-details p {
+	font-family: 'Roboto-Bold';
+	color: rgb(255, 255, 255);
+	color: linear-gradient(
+		97deg,
+		rgba(38, 41, 196, 1) 0%,
+		rgba(38, 64, 196, 1) 9%,
+		rgba(38, 41, 196, 1) 19%,
+		rgba(38, 78, 196, 1) 27%,
+		rgba(38, 90, 196, 1) 36%,
+		rgba(38, 124, 196, 1) 50%,
+		rgba(38, 140, 196, 1) 58%,
+		rgba(38, 155, 196, 1) 74%,
+		rgba(0, 134, 255, 1) 100%
+	);
+}
+
+.song-details .name {
+	font-size: 25px;
+	font-family: 'Roboto-Bold';
+}
+
+.song-details .artist {
+	font-size: 18px;
+	opacity: 0.9;
+	line-height: 35px;
+	font-family: 'Roboto';
+	font-weight: 600;
+}
+
+#progress-area,
+#progress-area.progress-area-dark {
+	height: 3px;
+	width: 100%;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+#progress-area .progress-bar {
+	height: inherit;
+	width: 0%;
+	position: relative;
+	border-radius: inherit;
+}
+
+.progress-bar::before {
+	content: '';
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	top: 50%;
+	right: -5px;
+	z-index: 2;
+	opacity: 0;
+	/* pointer-events: none; */
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(-50%);
+	background: inherit;
+	transition: 0.2s ease;
+}
+
+#progress-area:hover .progress-bar::before {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#progress-area .song-timer {
+	margin-top: 10px;
+}
+
+.song-timer span {
+	margin-top: 10px;
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: bolder;
+}
+
+#controls {
+	margin: 45px 0 5px 0;
+}
+
+#controls i {
+	font-size: 40px;
+	user-select: none;
+	/* tunggu */
+	background: #ffffff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* icon next */
+#controls i:nth-child(2),
+#controls i:nth-child(4) {
+	font-size: 40px;
+	user-select: none;
+	border-radius: 50%;
+	/* tunggu */
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#controls i#more-music {
+	font-size: 35px;
+	user-select: none;
+	border-radius: 20%;
+	/* tunggu */
+	background: #ffffff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* ni buat loop */
+#controls i#repeat-plist {
+	font-size: 35px;
+	user-select: none;
+	border-radius: 20%;
+	/* tunggu */
+	background: #ffffff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#controls i:nth-child(2),
+#controls i:nth-child(4) {
+	font-size: 40px;
+}
+
+/* pengatur jarak */
+#controls #prev {
+	margin-right: -14px;
+}
+
+#controls #next {
+	margin-left: -14px;
+}
+
+/* ini buat play pause */
+#controls .play-pause {
+	height: 65px;
+	width: 65px;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	box-shadow: 1.5px 1.5px 15px rgb(0 0 0 / 48%);
+	transition: all ease 0.5s;
+	background: rgba(0, 0, 0, 0);
+}
+
+.play-pause::before {
+	position: absolute;
+	content: '';
+	height: 43px;
+	width: 43px;
+	border-radius: inherit;
+	align-items: center;
+	justify-content: center;
+	/* disini */
+	background: rgba(33, 33, 34, 0.178);
+}
+
+/* ikon nya  */
+.play-pause i {
+	height: 43px;
+	width: 43px;
+	line-height: 43px;
+	text-align: center;
+	background: inherit;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: absolute;
+	color: #020f58;
+}
+
+#music-list {
+	position: absolute;
+	width: 40%;
+	margin-right: auto;
+	/* bottom: -55%; */
+
+	opacity: 0;
+	pointer-events: none;
+	z-index: 5;
+	padding: 50px 30px;
+	border-radius: 15px;
+	height: 100%;
+	transition: all 0.65s linear;
+	touch-action: cross-slide-y !important;
+}
+
+/* #music-list {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -55%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  padding: 50px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(32px);
+  transition: all 0.65s linear;
+  touch-action: cross-slide-y !important;
+} */
+#music-list.show {
+	/* bottom: 0; */
+	opacity: 1;
+	pointer-events: auto;
+	left: 0;
+}
+
+.header .row {
+	display: flex;
+	align-items: center;
+	font-size: 19px;
+}
+
+.header .row i {
+	cursor: default;
+}
+
+.header .row span {
+	margin-left: 5px;
+}
+
+.header #close {
+	font-size: 30px;
+}
+
+/* Pembatasan List music */
+#music-list ul {
+	margin: 10px 0;
+	/* max-height: 260px; */
+	max-height: 75vh;
+	overflow: auto;
+}
+
+#music-list ul::-webkit-scrollbar {
+	width: 0px;
+}
+
+#music-list ul li {
+	list-style: none;
+	display: flex;
+	cursor: pointer;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+
+#music-list ul li:last-child {
+	border-bottom: 0px;
+}
+
+#music-list li .row {
+	margin-right: auto;
+	padding-left: 10px;
+}
+
+#music-list ul li .row span {
+	font-size: 17px;
+}
+
+#music-list ul li .row p {
+	opacity: 0.9;
+	color: rgb(255, 255, 255);
+}
+
+#music-list img.img-container {
+	width: 50px;
+}
+
+ul li .audio-duration {
+	font-size: 16px;
+	color: #ffffff;
+}
+
+ul li.playing {
+	pointer-events: none;
+	color: var(--violet);
+}
+
+@media only screen and (max-width: 440px) {
+	.btn-container {
+		display: block !important;
+	}
+
+	.list-container {
+		display: none !important;
+	}
+
+	.flex-main {
+		height: auto !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.flex-img-detail,
+	.flex-progress-control {
+		width: 100%;
+	}
+
+	/* Pembatasan List music */
+	#music-list ul {
+		max-height: 75vh;
+	}
+
+	.song-details {
+		text-align: center;
+		margin: 45px 0;
+	}
+
+	#wrapper,
+	#wrapper.wrapper-dark {
+		width: 100%;
+		padding: 50% 30px;
+		overflow: hidden;
+		position: absolute;
+		border-radius: 0 !important;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	#wrapper.wrapper-dark {
+		position: relative;
+		width: 400px;
+		padding: 200px 30px;
+		overflow: hidden;
+		border-radius: 0 !important;
+	}
+
+	#controls {
+		margin: 30px 0 5px 0;
+	}
+
+	#controls #prev {
+		margin-right: -4px;
+	}
+
+	#controls #next {
+		margin-left: -4px;
+	}
+
+	/* icon next */
+	#controls i:nth-child(2),
+	#controls i:nth-child(4) {
+		font-size: 40px;
+		user-select: none;
+		border-radius: 50%;
+		/* tunggu */
+	}
+
+	/* ni buat loop */
+	#controls i#repeat-plist {
+		font-size: 35px;
+		user-select: none;
+		border-radius: 20%;
+		/* tunggu */
+	}
+
+	#controls i#more-music {
+		font-size: 35px;
+		user-select: none;
+		border-radius: 20%;
+		/* tunggu */
+	}
+
+	.top-bar {
+		margin-top: 0px;
+		/* padding: 0px 10px 0px 10px; */
+	}
+
+	#progress-area .song-timer {
+		margin-top: 0px;
+	}
+
+	#controls i {
+		font-size: 39px;
+	}
+
+	.img-area {
+		margin-top: 55px;
+		box-shadow: 5px 5px 15px rgb(0 0 0 / 69%);
+		width: 100%;
+		height: 300px;
+	}
+
+	#controls .play-pause {
+		box-shadow: 5px 5px 15px rgb(0 0 0 / 49%);
+	}
+
+	#progress-area {
+		margin-top: -30px;
+	}
+
+	.song-timer span {
+		font-size: 14.5px;
+	}
+
+	#music-list {
+		top: 0;
+		left: -55%;
+
+		display: flex;
+		border-radius: 0;
+		backdrop-filter: blur(10px);
+		width: 100%;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	#wrapper {
+		width: 335px;
+		padding: 175px 30px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	/* dark mode wrapper disini */
+	#wrapper.wrapper-dark {
+		position: relative;
+		width: 335px;
+		padding: 175px 30px;
+		overflow: hidden;
+	}
+
+	/* pengatur jarak */
+	#controls #prev {
+		margin-right: -25px;
+	}
+
+	#controls #next {
+		margin-left: -25px;
+	}
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 35px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	/* display: inline-block; */
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	color: rgb(255, 255, 255);
+	display: block;
+}
+
+/* toggle  */
+
+label {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 500;
+}
+
+.btn-container {
+	display: none;
+}
+
+.btn-color-mode-switch {
+	display: block;
+	margin: 0px;
+	position: relative;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner {
+	margin: 0px;
+	width: 140px;
+	height: 37px;
+	left: 5px;
+	background: #1d1b1b4f;
+	border-radius: 26px;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s ease;
+	display: block;
+}
+
+/* disini untuk mengatur font nya  */
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+	content: attr(data-on);
+	position: absolute;
+	font-size: 15px;
+	font-weight: 500;
+	top: 10px;
+	right: 20px;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+	content: attr(data-off);
+	width: 70px;
+	background: #1d1b1b12;
+	border-radius: 26px;
+	position: absolute;
+	/* left: 2px;
+  top: 2px; */
+	text-align: center;
+	transition: all 0.3s ease;
+	box-shadow: 0px 0px 6px -2px #111;
+	padding: 10px 0px;
+}
+
+.btn-color-mode-switch > .alert {
+	display: none;
+	background: #fff;
+	border: none;
+	color: #fff;
+}
+
+.btn-color-mode-switch input[type='checkbox'] {
+	cursor: pointer;
+	width: 50px;
+	height: 25px;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	margin: 0px;
+}
+
+.btn-color-mode-switch
+	input[type='checkbox']:checked
+	+ label.btn-color-mode-switch-inner {
+	background: #1d1b1b4f;
+	color: #fff;
+}
+
+/* disini untuk mengut toggle bution dark  dan juga warna */
+.btn-color-mode-switch
+	input[type='checkbox']:checked
+	+ label.btn-color-mode-switch-inner:after {
+	content: attr(data-on);
+	/* left: 68px; */
+	background: #1612124a;
+	right: 0px;
+}
+
+/* disini untuk mengatur font  */
+.btn-color-mode-switch
+	input[type='checkbox']:checked
+	+ label.btn-color-mode-switch-inner:before {
+	content: attr(data-off);
+	right: auto;
+	left: 20px;
+}
+
+.btn-color-mode-switch input[type='checkbox']:checked ~ .alert {
+	display: block;
+}
+
+/*mode preview*/
+
+/* untuk preload  */
+
+#preloader {
+	background: #000000af no-repeat center center;
+	background-size: 20%;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+	background-image: url(preloader/256x256.gif);
+}
+
+/* swup */
+.transition-fade {
+	opacity: 1;
+	transition: 500ms;
+	transform: translateX(0);
+	transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+	opacity: 1;
+	transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+	opacity: 0;
+	transform: translateX(0);
+}
+
+.transition-swipe {
+	transition: 500ms;
+	transform: translateY(0);
+}
+
+html.is-animating .transition-swipe {
+	transform: translateY(100px);
+}
