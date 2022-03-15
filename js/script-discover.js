@@ -15,17 +15,19 @@ const wrapper = document.querySelector('.wrapper'),
 	shuffleBtn = document.querySelector('#shuffle');
 
 // Loop Area for
-// Lagu Favorite
-const ulTag = wrapper.querySelector('ul.card');
-// let create li tags according to array length for list
-for (let j = 0; j < FavoriteMusic.length; j++) {
-	//let's pass the song name, artist from the array j + 1
-	let liTag = `<li class="music swiper-slide" li-index="${j + 1}">
+
+//Lagu Popular
+const ulTagPopular = document.querySelector('ul.popular-music-list');
+for (let i = 0; i < Popular.length; i++) {
+	let liTag = `
+		<li class="music swiper-slide" li-index="${i + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img">
-									<img src="images/${FavoriteMusic[j].src}.webp" alt="${FavoriteMusic[j].name}">
+									<img src="images/${Popular[i].src}.webp" alt="${
+		Popular[i].name
+	}" loading="lazy">
 								</div>
                             </a>
                             <div class="top">
@@ -35,37 +37,128 @@ for (let j = 0; j < FavoriteMusic.length; j++) {
                             </div>
                             <div class="bottom">
                                 <div class="play-pause "  >
-                                    <i  playing-click="${j + 1}" class="material-icons-sharp play">play_arrow</i>
+                                    <i  playing-click="${
+																			i + 1
+																		}" class="material-icons-sharp play">play_arrow</i>
                                 </div>
                             </div>
                         </div>
 						<div class="text-card">
-                        	<p class="name">${FavoriteMusic[j].name}</p>
-                        	<p class="artist">${FavoriteMusic[j].artist}</p>
+                        	<p class="name">${Popular[i].name}</p>
+                        	<p class="artist">${Popular[i].artist}</p>
 						</div>
                     </div>
                     
                 </li>`;
-	ulTag.insertAdjacentHTML('beforeend', liTag);
+	ulTagPopular.insertAdjacentHTML('beforeend', liTag);
+}
+
+// error json local
+// function popularmusic() {
+// 	$.ajax({
+// 		url: 'json/index.json',
+// 		dataType: 'json',
+// 		success: function (data) {
+// 			// console.log(data);
+// 			let music = data.music;
+// 			console.log(data);
+// 			$.each(music, function (index, data){
+
+// 				$('ul.popular-music-list').append(
+// 					`<li class="music swiper-slide">
+// 						<div class="wrapper-card">
+// 							<div class="hover-play">
+// 								<a class="container-img">
+// 									<div class= "wrapper-img">
+// 										<img src="images/` +
+// 						data.src +
+// 						`.webp" alt="">
+// 									</div>
+// 								</a>
+// 								<div class="top">
+// 									<div class="play-pause">
+// 										<a class="material-icons-sharp play">more_vert</a>
+// 									</div>
+// 								</div>
+// 								<div class="bottom">
+// 									<div class="play-pause "  >
+// 										<i  playing-click="" class="material-icons-sharp play">play_arrow</i>
+// 									</div>
+// 								</div>
+// 							</div>
+// 							<div class="text-card">
+// 								<p class="name">` +
+// 						data.name +
+// 						`</p>
+// 								<p class="artist">` +
+// 						data.artist +
+// 						`</p>
+// 							</div>
+// 						</div>
+// 					</li>`
+// 				);
+// 			});
+// 		},
+// 	});
+// }
+
+// popularmusic();
+
+// Lagu Favorite
+const ulTagFavorite = wrapper.querySelector('ul.favorite-music-list');
+// let create li tags according to array length for list
+for (let i = 0; i < FavoriteMusic.length; i++) {
+	//let's pass the song name, artist from the array i + 1
+	let liTag = `<li class="music swiper-slide" li-index="${i + 1}">
+                    <div class="wrapper-card">
+                        <div class="hover-play">
+                            <a class="container-img">
+								<div class= "wrapper-img">
+									<img src="images/${FavoriteMusic[i].src}.webp" alt="${
+		FavoriteMusic[i].name
+	}" loading="lazy">
+								</div>
+                            </a>
+                            <div class="top">
+                                <div class="play-pause">
+                                    <a class="material-icons-sharp play">more_vert</a>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="play-pause "  >
+                                    <i  playing-click="${
+																			i + 1
+																		}" class="material-icons-sharp play">play_arrow</i>
+                                </div>
+                            </div>
+                        </div>
+						<div class="text-card">
+                        	<p class="name">${FavoriteMusic[i].name}</p>
+                        	<p class="artist">${FavoriteMusic[i].artist}</p>
+						</div>
+                    </div>
+                    
+                </li>`;
+	ulTagFavorite.insertAdjacentHTML('beforeend', liTag);
 }
 
 // click to play a card
 //play particular song from the list onclick of li tag
 function playingSong() {
-	const allLiTag = ulTag.querySelectorAll('li');
+	const allLiTag = ulTagFavorite.querySelectorAll('li');
 
 	for (let j = 0; j < allLiTag.length; j++) {
 		allLiTag[j].setAttribute('onclick', 'clicked(this)');
 	}
 }
+// tunngu
+// function playingSong2() {
+// 	const allLiTag2 = dlTag.querySelectorAll('div');
 
-function playingSong2() {
-	const allLiTag2 = dlTag.querySelectorAll('div');
-
-	for (let i = 0; i < allLiTag2.length; i++) {
-		allLiTag2[i].setAttribute('onclick', 'clicked2(this)');
-	}
-}
+// 	for (let i = 0; i < allLiTag2.length; i++) {
+// 		allLiTag2[i].setAttribute('onclick', 'clicked2(this)');
+// 	}
+// }
 
 //particular li clicked function
 function clicked(element) {
@@ -82,21 +175,23 @@ function clicked(element) {
 		hide.style.display = 'block';
 	}
 }
-//particular li clicked function
-function clicked2(element2) {
-	let getLiIndex = element2.getAttribute('li-index-float');
-	musicIndex = getLiIndex; //updating current song index with clicked li index
-	loadMusic2(musicIndex2);
-	playMusic2();
-	playingSong2();
-	var hide = document.querySelector('.container-play-bottom');
 
-	if (hide.style.display === 'none') {
-		hide.style.display = 'block';
-	} else {
-		hide.style.display = 'block';
-	}
-}
+// tunggu
+//particular li clicked function
+// function clicked2(element2) {
+// 	let getLiIndex = element2.getAttribute('li-index-float');
+// 	musicIndex = getLiIndex; //updating current song index with clicked li index
+// 	loadMusic2(musicIndex2);
+// 	playMusic2();
+// 	playingSong2();
+// 	var hide = document.querySelector('.container-play-bottom');
+
+// 	if (hide.style.display === 'none') {
+// 		hide.style.display = 'block';
+// 	} else {
+// 		hide.style.display = 'block';
+// 	}
+// }
 
 const olTag = wrapper.querySelector('ol');
 // let create li tags according to array length for list
@@ -107,7 +202,11 @@ for (let i = 0; i < BestArtist.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img circle-shadow">
-                                	<img src="images/${BestArtist[i].src}.webp" alt="" style="border-radius:${BestArtist[i].rds}">
+                                	<img src="images/${
+																		BestArtist[i].src
+																	}.webp" alt="" style="border-radius:${
+		BestArtist[i].rds
+	}" loading="lazy">
 								</div>
                             </a>
                             <div class="bottom">
@@ -117,7 +216,9 @@ for (let i = 0; i < BestArtist.length; i++) {
                             </div>
                         </div>
 						<div class="text-card">
-                        	<p class="artist" style="text-align:center;">${BestArtist[i].artist}</p>
+                        	<p class="artist" style="text-align:center;">${
+														BestArtist[i].artist
+													}</p>
                         	<p class="name" style="text-align:center;">Artist</p>
 						</div>
                     </div>
@@ -135,7 +236,7 @@ for (let z = 0; z < Welcome.length; z++) {
 								<div class= "wrapper-img  circle-shadow">
 									<img src="images/${Welcome[z].src}.webp" alt="${
 		Welcome[z].name
-	}" style="border-radius:${Welcome[z].rds}">
+	}" style="border-radius:${Welcome[z].rds}" loading="lazy">
 								</div>
                             </a>
                             <div class="top">
@@ -165,7 +266,9 @@ const dlTag = wrapper.querySelector('dl.container-all-card-float-grid');
 for (let x = 0; x < Welcome.length; x++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="container-card-float" li-index-float="${x + 1}">
-                    <img src="images/${Welcome[x].src}.webp" alt="" width="64px">
+                    <img src="images/${
+											Welcome[x].src
+										}.webp" alt="" width="64px" loading="lazy">
                     <div class="text-play"> 
                         <a>${Welcome[x].artist}</a>
                         <div class="right">
@@ -184,7 +287,7 @@ for (let l = 0; l < 4 && l < FavoriteMusic.length; l++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                     <div class="hover-play  hover-cepat">
-                        <img src="images/${FavoriteMusic[l].src}.webp" alt="" width="50px">
+                        <img src="images/${FavoriteMusic[l].src}.webp" alt="" width="50px" loading="lazy">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -208,7 +311,7 @@ for (let p = 4; p < 8 && p < FavoriteMusic.length; p++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[p].src}.webp" alt="" width="50px">
+                            <img src="images/${FavoriteMusic[p].src}.webp" alt="" width="50px" loading="lazy">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -230,11 +333,11 @@ for (let p = 4; p < 8 && p < FavoriteMusic.length; p++) {
 }
 
 const dcTag = wrapper.querySelector('div.wrapper-content-3');
-for (let v = 7; v < 12 && v < FavoriteMusic.length; v++) {
+for (let v = 5; v < 10 && v < FavoriteMusic.length; v++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[v].src}.webp" alt="" width="50px">
+                            <img src="images/${FavoriteMusic[v].src}.webp" alt="" width="50px" loading="lazy">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -260,7 +363,7 @@ for (let t = 0; t < 4 && t < FavoriteMusic.reverse().length; t++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[t].src}.webp" alt="" width="50px">
+                            <img src="images/${FavoriteMusic[t].src}.webp" alt="" width="50px" loading="lazy">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -289,11 +392,12 @@ function playMusic() {
 	mainAudio.play();
 }
 
-function playMusic2() {
-	wrapper.classList.add('paused');
-	playPauseBtn.querySelector('i').innerText = 'pause';
-	mainAudio2.play();
-}
+// TUNGGU
+// function playMusic2() {
+// 	wrapper.classList.add('paused');
+// 	playPauseBtn.querySelector('i').innerText = 'pause';
+// 	mainAudio2.play();
+// }
 
 //pause music function
 function pauseMusic() {
@@ -328,9 +432,9 @@ mainAudio.onpause = function () {
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1 ?
-		(musicIndex = FavoriteMusic.length) :
-		(musicIndex = musicIndex);
+	musicIndex < 1
+		? (musicIndex = FavoriteMusic.length)
+		: (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -340,9 +444,9 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > FavoriteMusic.length ?
-		(musicIndex = 1) :
-		(musicIndex = musicIndex);
+	musicIndex > FavoriteMusic.length
+		? (musicIndex = 1)
+		: (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -361,7 +465,7 @@ nextBtn.addEventListener('click', () => {
 // navbar bottom
 
 let musicIndex = Math.floor(Math.random() * FavoriteMusic.length + 1);
-let musicIndex2 = Math.floor(Math.random() * Welcome.length + 1);
+// let musicIndex2 = Math.floor(Math.random() * Welcome.length + 1);
 isMusicPaused = true;
 
 window.addEventListener('load', () => {
@@ -369,10 +473,11 @@ window.addEventListener('load', () => {
 	playingSong();
 });
 
-window.addEventListener('load', () => {
-	loadMusic2(musicIndex2);
-	playingSong();
-});
+// Tunggu
+// window.addEventListener('load', () => {
+// 	loadMusic2(musicIndex2);
+// 	playingSong();
+// });
 
 function loadMusic(indexNumb) {
 	musicName.innerText = FavoriteMusic[indexNumb - 1].name;
@@ -381,12 +486,13 @@ function loadMusic(indexNumb) {
 	mainAudio.src = `songs/${FavoriteMusic[indexNumb - 1].src}.mp3`;
 }
 
-function loadMusic2(indexNumb2) {
-	musicName.innerText = Welcome[indexNumb2 - 1].name;
-	musicArtist.innerText = Welcome[indexNumb2 - 1].artist;
-	musicImg.src = `images/${Welcome[indexNumb2 - 1].src}.webp`;
-	mainAudio2.aud = `songs/${Welcome[indexNumb2 - 1].src}.mp3`;
-}
+// Tunggu
+// function loadMusic2(indexNumb2) {
+// 	musicName.innerText = Welcome[indexNumb2 - 1].name;
+// 	musicArtist.innerText = Welcome[indexNumb2 - 1].artist;
+// 	musicImg.src = `images/${Welcome[indexNumb2 - 1].src}.webp`;
+// 	mainAudio2.aud = `songs/${Welcome[indexNumb2 - 1].src}.mp3`;
+// }
 
 // Proggress bar update by audio timeupdate event
 mainAudio.addEventListener('timeupdate', (e) => {
@@ -545,19 +651,6 @@ logo2.addEventListener('click', () => {
 	logo2.style.display = 'none';
 });
 
-// navbar border scroll  var prevScrollpos = window.pageYOffset;
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-	var currentScrollPos = window.pageYOffset;
-	if (prevScrollpos > currentScrollPos) {
-		document.getElementById('navbar').style.borderBottom = 'none';
-	} else {
-		document.getElementById('navbar').style.borderBottom =
-			'0.5px solid rgb(41, 39, 39)';
-	}
-	prevScrollpos = currentScrollPos;
-};
-
 // Selecting all required elements Network Status
 const wrapper_network = document.querySelector('.wrapper-network'),
 	toast = wrapper_network.querySelector('.toast-network'),
@@ -566,6 +659,7 @@ const wrapper_network = document.querySelector('.wrapper-network'),
 	wifiIcon = toast.querySelector('.icon-network i'),
 	closeIcon = toast.querySelector('.close-icon');
 
+// networ stats
 window.onload = () => {
 	function ajax() {
 		let xhr = new XMLHttpRequest(); //creating new XML object
@@ -586,7 +680,7 @@ window.onload = () => {
 				setTimeout(() => {
 					//hide the toast notification automatically after 5 seconds
 					wrapper_network.classList.add('hide');
-				}, 4000);
+				}, 10000);
 			} else {
 				offline(); //calling offline function if ajax status is not equal to 200 or not less that 300
 			}
@@ -612,29 +706,23 @@ window.onload = () => {
 	}, 100);
 };
 
-// scroll for hide navbar
-var lastScrollTop;
-navbar = document.querySelector('.top-bar-responsive');
-window.addEventListener('scroll', () => {
-	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	if (scrollTop > lastScrollTop) {
-		navbar.style.top = '-80px';
-		navbar.style.opacity = '0.7';
-	} else {
-		navbar.style.top = '0';
-		navbar.style.opacity = '1';
-	}
-	lastScrollTop = scrollTop;
-});
-
+// navbar scroll
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
+	var navrpsn = document.querySelector('.top-bar-responsive');
 	var moodNav = document.querySelector('.bullet-mood-container');
+	var navmain = document.getElementById('navbar');
 	var currentScrollPos = window.pageYOffset;
 	if (prevScrollpos > currentScrollPos) {
 		moodNav.style.top = '60px';
+		navmain.style.borderBottom = 'none';
+		navrpsn.style.top = '0px';
+		navrpsn.style.opacity = '1';
 	} else {
 		moodNav.style.top = '0px';
+		navmain.style.borderBottom = '0.5px solid rgb(41, 39, 39)';
+		navrpsn.style.top = '-80px';
+		navrpsn.style.opacity = '.7';
 	}
 	prevScrollpos = currentScrollPos;
 };

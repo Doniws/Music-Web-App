@@ -1,6 +1,7 @@
-// Object Music-List digunakan untuk menyimpan daftar lagu. 
+// Object Music-List digunakan untuk menyimpan daftar lagu.
 
-let allMusic = [{
+let allMusic = [
+	{
 		name: ' #1',
 		artist: 'Imagine Dragons',
 		img: 'music-1',

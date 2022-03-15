@@ -15,7 +15,6 @@ const wrapper = document.querySelector('.wrapper'),
 	topMini = document.querySelector('.top .play-pause .mini-play'),
 	lyricsMusic = document.querySelector('.lyrics-content');
 
-
 // navbar bottom
 
 let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
@@ -26,8 +25,6 @@ window.addEventListener('load', () => {
 	playingSong();
 });
 
-
-
 function loadMusic(indexNumb) {
 	musicName.innerText = allMusic[indexNumb - 1].name;
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
@@ -37,15 +34,15 @@ function loadMusic(indexNumb) {
 	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
 }
 
-
-// This Music List of all music in the array
 const ulTag = wrapper.querySelector('.music-list-container ol');
 // let create li tags according to array length for list
 for (let i = 0; i < allMusic.length; i++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<li class="cepat" li-index="${i + 1}" id="main-${i + 1}">
                     <div class="hover-play">
-                        <img src="images/${allMusic[i].src}.webp" alt="" width="40px">
+                        <img src="images/${
+													allMusic[i].src
+												}.webp" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -56,7 +53,9 @@ for (let i = 0; i < allMusic.length; i++) {
                         <p class="name">${allMusic[i].name}</p>
                         <p class="artist">${allMusic[i].artist}</p>
                     </span>
-                    <span id="${allMusic[i].src}" class="audio-duration">0:00</span>
+                    <span id="${
+											allMusic[i].src
+										}" class="audio-duration">0:00</span>
 					<span class="material-icons-outlined more"> more_vert </span>
 					<audio  class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
                 </li>`;
@@ -79,11 +78,10 @@ for (let i = 0; i < allMusic.length; i++) {
 
 // proses error
 // var LoadMusic = document.querySelector(`main-${i + 1}`);
-// LoadMusic.addEventListener('loaddedata', () => { 
+// LoadMusic.addEventListener('loaddedata', () => {
 // 	playMusic();
 // 	loadMusic(index);
 // });
-
 
 // if click li play music
 //play particular song from the list onclick of li tag
@@ -96,10 +94,16 @@ function playingSong() {
 		let Bright = allLiTag[j].querySelector('.middle');
 		let imagePlay = allLiTag[j].querySelector('.hover-play img');
 
-
 		if (allLiTag[j].classList.contains('playing')) {
 			allLiTag[j].classList.remove('playing');
-			paused.innerText = 'play_arrow';
+			// paused.innerText = 'play_arrow';
+			if (paused.innerText == 'play_arrow') {
+				paused.innerText = 'play_arrow';
+				// playMusic();
+			} else {
+				paused.innerText = 'pause';
+				// pauseMusic();
+			}
 			Bright.style.opacity = '0';
 			let adDuration = audioTag.getAttribute('t-duration');
 			audioTag.innerText = adDuration;
@@ -110,11 +114,17 @@ function playingSong() {
 		if (allLiTag[j].getAttribute('li-index') == musicIndex) {
 			allLiTag[j].classList.add('playing');
 			audioTag.innerText = 'Playing';
-			paused.innerText = 'pause';
-			Bright.style.opacity = "1";
-			imagePlay.style.opacity = "0.5";
+			// paused.innerText = 'volume_up';
+			Bright.style.opacity = '1';
+			imagePlay.style.opacity = '0.5';
+			if (paused.innerText == 'pause') {
+				paused.innerText = 'play_arrow';
+				// pauseMusic();
+			} else {
+				paused.innerText = 'pause';
+				// playMusic();
+			}
 		}
-
 
 		allLiTag[j].setAttribute('onclick', 'clicked(this)');
 	}
@@ -122,16 +132,12 @@ function playingSong() {
 
 //particular li clicked function
 function clicked(element) {
-	let getLiIndex = element.getAttribute("li-index");
+	let getLiIndex = element.getAttribute('li-index');
 	musicIndex = getLiIndex; //updating current song index with clicked li index
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
 }
-
-
-
-
 
 // play pause music
 
@@ -167,17 +173,14 @@ imageMusic.addEventListener('click', function () {
 centerPlayPause.addEventListener('click', function () {
 	isMusicPlay = wrapper.classList.contains('paused');
 	isMusicPlay ? pauseMusic() : playMusic();
-
 });
-// next prev button area 
+// next prev button area
 // next prev music area
 //prev music function
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1 ?
-		(musicIndex = allMusic.length) :
-		(musicIndex = musicIndex);
+	musicIndex < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -187,9 +190,7 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > allMusic.length ?
-		(musicIndex = 1) :
-		(musicIndex = musicIndex);
+	musicIndex > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -204,9 +205,6 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
 	nextMusic();
 });
-
-
-
 
 // more play pause
 
@@ -223,7 +221,7 @@ mainAudio.onpause = function () {
 	isPlaying = false;
 };
 
-// imageMusic.addEventListener('click', () => { 
+// imageMusic.addEventListener('click', () => {
 // 	PlayPauseNow();
 // });
 // Proggress bar update by audio timeupdate event
@@ -308,7 +306,6 @@ shuffleBtn.addEventListener('click', () => {
 	playingSong();
 });
 
-
 // volume change button and add listener
 const volumeBtn = document.querySelector('#repeat-plist');
 volumeBtn.addEventListener('click', () => {
@@ -337,7 +334,6 @@ volumeBtn.addEventListener('click', () => {
 			break;
 	}
 });
-
 
 // show search box and hidden link
 var showSrc = document.querySelector('.hidden-input');
@@ -406,8 +402,6 @@ window.onscroll = function () {
 	prevScrollpos = currentScrollPos;
 };
 
-
-
 topFull.addEventListener('click', () => {
 	if (imageMusic.requestFullscreen) {
 		imageMusic.requestFullscreen();
@@ -430,7 +424,7 @@ topMini.addEventListener('click', () => {
 	}
 });
 
-// Jquery Tab / Slide 
+// Jquery Tab / Slide
 $(document).ready(function () {
 	$('.music-link a').click(function () {
 		$('.music-link a').removeClass('active');

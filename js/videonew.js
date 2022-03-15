@@ -29,9 +29,9 @@ function loadMusic(indexNumb) {
 	musicName.innerText = allMusic[indexNumb - 1].name;
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
 	imageMusic.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
+	imageMusic.poster = `images/${allMusic[indexNumb - 1].src}.webp`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
 	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
-	// mainAudio.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
 }
 
 const ulTag = wrapper.querySelector('ol');
@@ -96,7 +96,14 @@ function playingSong() {
 
 		if (allLiTag[j].classList.contains('playing')) {
 			allLiTag[j].classList.remove('playing');
-			paused.innerText = 'play_arrow';
+			// paused.innerText = 'play_arrow';
+			if (paused.innerText == 'play_arrow') {
+				paused.innerText = 'play_arrow';
+				// playMusic();
+			} else {
+				paused.innerText = 'pause';
+				// pauseMusic();
+			}
 			Bright.style.opacity = '0';
 			let adDuration = audioTag.getAttribute('t-duration');
 			audioTag.innerText = adDuration;
@@ -107,9 +114,16 @@ function playingSong() {
 		if (allLiTag[j].getAttribute('li-index') == musicIndex) {
 			allLiTag[j].classList.add('playing');
 			audioTag.innerText = 'Playing';
-			paused.innerText = 'pause';
+			// paused.innerText = 'volume_up';
 			Bright.style.opacity = '1';
 			imagePlay.style.opacity = '0.5';
+			if (paused.innerText == 'pause') {
+				paused.innerText = 'play_arrow';
+				// pauseMusic();
+			} else {
+				paused.innerText = 'pause';
+				// playMusic();
+			}
 		}
 
 		allLiTag[j].setAttribute('onclick', 'clicked(this)');
@@ -300,7 +314,7 @@ volumeBtn.addEventListener('click', () => {
 		case 'volume_up':
 			volumeBtn.innerText = 'volume_down';
 			volumeBtn.setAttribute('title', 'Volume 50%');
-			imageMusic.volume = 0.7;
+			imageMusic.volume = 0.4;
 			break;
 		case 'volume_mute':
 			volumeBtn.innerText = 'volume_off';
@@ -311,12 +325,12 @@ volumeBtn.addEventListener('click', () => {
 			volumeBtn.innerText = 'volume_mute';
 			volumeBtn.setAttribute('title', 'volume 0%');
 			// imageMusic.muted = true;
-			imageMusic.volume = 0.3;
+			imageMusic.volume = 0.2;
 			break;
 		case 'volume_off':
 			volumeBtn.innerText = 'volume_up';
 			volumeBtn.setAttribute('title', 'Volume 100%');
-			imageMusic.volume = 1;
+			imageMusic.volume = 0.8;
 			break;
 	}
 });
@@ -388,9 +402,6 @@ window.onscroll = function () {
 	prevScrollpos = currentScrollPos;
 };
 
-
-
-
 topFull.addEventListener('click', () => {
 	if (imageMusic.requestFullscreen) {
 		imageMusic.requestFullscreen();
@@ -413,7 +424,7 @@ topMini.addEventListener('click', () => {
 	}
 });
 
-// Jquery Tab / Slide 
+// Jquery Tab / Slide
 $(document).ready(function () {
 	$('.music-link a').click(function () {
 		$('.music-link a').removeClass('active');
