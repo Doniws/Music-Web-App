@@ -30,6 +30,8 @@
 	padding-bottom: 100% !important;
 	position: relative;
 	width: 100%;
+	animation: image-scale .4s;
+	transition: 1s all ease-out;
 }
 
 .container-img {
@@ -52,4 +54,27 @@
 /* untuk mengatur besar image  */
 .image-live-hover {
 	width: 70%;
+}
+
+
+/* animation for big image  */
+@keyframes image-scale {
+	25%{
+		transform: scale(.9);
+	}
+	50%{
+		transform: scale(.925);
+	}
+	75%{
+		transform: scale(.95);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+@media only screen and (max-width: 765px) {
+	.right-live-container {
+		height: 73% !important;
+	}
 }

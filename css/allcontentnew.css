@@ -108,6 +108,7 @@ body::-webkit-scrollbar {
 	position: fixed;
 	top: 64px;
 	left: 0;
+	/* height: 100%; */
 	width: 100vw;
 	height: calc(100vh - 64px - 72px);
 	/* transform: translate3d(0,100vh,0); */
@@ -131,7 +132,7 @@ body::-webkit-scrollbar {
 .wrapper-img img {
 	height: 100%;
 	left: 0;
-	object-fit: cover;
+	/* object-fit: cover; */
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -269,9 +270,11 @@ a.active {
 	opacity: 0;
 	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
 }
+
 .middle:hover {
 	opacity: 1;
 }
+
 .middle .play-pause i {
 	position: absolute;
 	top: 50%;
@@ -285,6 +288,7 @@ a.active {
 	position: absolute;
 	/* transition: all ease-out 0.2s; */
 }
+
 .middle .play-pause i:active {
 	background-color: rgba(255, 255, 255, 0.212);
 	transition: background-color 0.4s cubic-bezier(0.4, 0, 1, 1);
@@ -462,7 +466,7 @@ ol:hover::-webkit-scrollbar-thumb,
 	}
 
 	.right-live-container {
-		height: 70%;
+		height: 75%;
 		width: 100%;
 		margin: 0 0 0 0;
 	}
@@ -489,5 +493,17 @@ ol:hover::-webkit-scrollbar-thumb,
 
 	.cepat .text p:nth-child(2) {
 		font-size: 14px;
+	}
+
+	/* image full  */
+	/* .wrapper-img video,
+	.wrapper-img img {
+		object-fit: cover;
+	} */
+
+	/* hidden search button   */
+	span.container-link li:nth-child(5) a {
+		display: none !important;
+
 	}
 }

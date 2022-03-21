@@ -12,6 +12,7 @@
 	user-select: none;
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
+	/* border: .5px solid rgb(255, 0, 0); */
 }
 
 ::selection {
@@ -60,7 +61,7 @@ body {
 	height: 100%;
 	/* position: fixed; */
 	margin: 0 auto;
-	padding: 25px 50px;
+	padding: 100px 50px 25px 50px ;
 	position: relative;
 }
 
@@ -365,7 +366,7 @@ span.container-link a:hover {
 
 	img#logo-1,
 	img#logo-2 {
-		width: 40px !important;
+		width: 50px !important;
 		height: auto;
 	}
 
@@ -575,6 +576,15 @@ span.time-music {
 
 	.profile-name a {
 		font-size: 14px;
+	}
+
+	.profile-img img {
+		width: 46px !important;
+		height: 46px !important;
+	}
+
+	.wrap-play-bottom {
+		height: 75px !important;
 	}
 
 	.hover-play {
