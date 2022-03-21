@@ -7,7 +7,7 @@
 		<meta name="description" content="Music APP Web Modern" />
 		<title>Discover Music</title>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="minify/allnew.min.css"/>
+		<!-- <link rel="stylesheet" href="minify/allnew.min.css"/> -->
 		<link rel="stylesheet" href="css/allnew.css" />
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="swiper/swiper-bundle.css" />
@@ -20,13 +20,40 @@
 	</head>
 
 	<body>
+		<!-- script deaktiveer allert -->
 		<noscript>
 			<div class="noscript">
 				<div class="noscript-content">
-					<h1>Please enable JavaScript</h1>
-					<p>This website works best with JavaScript enabled.</p>
+					<h1>
+						<a href="https://www.google.com/search?q=how+to+enable+javascript">Please enable JavaScript</a>
+					</h1>
+					<p>
+						This Website Uses JavaScript For Showing Content to use this
+						Website.
+					</p>
 				</div>
 			</div>
+			<style>
+				noscript {
+					font-family: 'Roboto', sans-serif;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					text-align: center;
+					height: 100vh;
+					width: 100%;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+
+				.wrapper,
+				.wrapper-network {
+					display: none;
+				}
+			</style>
 		</noscript>
 		<!-- Network Status  -->
 		<div class="wrapper-network">
@@ -66,11 +93,19 @@
 			<!-- Bullet Choose  -->
 			<div class="bullet-mood-container swiper5">
 				<div class="wrapper-mood swiper-wrapper">
-					<a class="swiper-slide" href="#">Sleep</a>
-					<a class="swiper-slide" href="#">Relax</a>
-					<a class="swiper-slide" href="#">Bored</a>
-					<a class="swiper-slide" href="#">Happy</a>
-					<a class="swiper-slide" href="#">Cool</a>
+					<!-- <div class="swiper-slide explore-content">
+						<i href="" class="material-icons-sharp">explore</i>
+						<p>Explore</p>
+					</div>
+					<div class="line-strip">
+						<span></span>
+					</div> -->
+					<a class="swiper-slide nav-mood active-mood" href="#">all</a>
+					<a class="swiper-slide nav-mood" href="#">Sleep</a>
+					<a class="swiper-slide nav-mood" href="#">Relax</a>
+					<a class="swiper-slide nav-mood" href="#">Bored</a>
+					<a class="swiper-slide nav-mood" href="#">Happy</a>
+					<a class="swiper-slide nav-mood" href="#">Cool</a>
 				</div>
 			</div>
 			<!-- Nabar untuk Dekstop/Top dan Mobile/Bottom -->
@@ -253,17 +288,31 @@
 				</div>
 			</div>
 		</div>
-		<!-- <script src="jquery/jquery.js"></script> -->
+		<!-- jquery  -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script> -->
 		<script defer src="js/all.js"></script>
 		<script src="js/discover-list.js"></script>
 		<!-- untuk editing  -->
-		<!-- <script src="js/script-discover.js"></script> -->
+		<script src="js/script-discover.js"></script>
+
+		<!-- <script>
+			$('.lazy').lazyload({
+				effect: 'fadeIn',
+				effectTime: 0,
+				threshold: 0,
+				delay: 0,
+
+			});
+		</script> -->
+
 		<!-- minify  -->
-		<script src="minify/script-discover.min.js"></script> 
+		<!-- <script src="minify/script-discover.min.js"></script>  -->
 		<script src="swiper/swiper-bundle.js"></script>
 		<script>
 			// favorite
 			const swiper1 = new Swiper('.swiper1', {
+				lazy: true,
 				slidesPerView: 3,
 				speed: 200,
 				// Navigation arrows
@@ -332,6 +381,7 @@
 		<script>
 			// card favorite
 			const swiper2 = new Swiper('.swiper2', {
+				lazy: true,
 				// Navigation arrows
 				navigation: {
 					nextEl: '.swiper-button-next2',
@@ -383,6 +433,7 @@
 		<script>
 			// card Artist / Band
 			const swiper3 = new Swiper('.swiper3', {
+				lazy: true,
 				// Navigation arrows
 				navigation: {
 					nextEl: '.swiper-button-next3',
@@ -434,6 +485,7 @@
 		<script>
 			// card Welcome
 			const swiper4 = new Swiper('.swiper4', {
+				lazy: true,
 				// Navigation arrows
 				navigation: {
 					nextEl: '.swiper-button-next4',
@@ -485,19 +537,23 @@
 		<!-- Mood Slide  -->
 		<script>
 			const swiper5 = new Swiper('.swiper5', {
+				lazy: true,
 				freeMode: {
 					enabled: true,
 					sticky: false,
 				},
 				freeModeFluid: true,
 				grabCursor: true,
-				slidesPerView: 4.5,
+				slidesPerView: 4,
+				spaceBetween: 12,
+				// loop: true,
 			});
 		</script>
 		<!-- popular  -->
 		<script>
 			// card Welcome
 			const swiper6 = new Swiper('.swiper6', {
+				lazy: true,
 				// Navigation arrows
 				navigation: {
 					nextEl: '.swiper-button-next6',
