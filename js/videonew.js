@@ -28,7 +28,8 @@ window.addEventListener('load', () => {
 function loadMusic(indexNumb) {
 	musicName.innerText = allMusic[indexNumb - 1].name;
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
-	imageMusic.src = `videos/${allMusic[indexNumb - 1].src}.mp4`;
+	imageMusic.src = `videos/${allMusic[indexNumb - 1].img}.mp4`;
+	// imageMusic.src = allMusic[indexNumb - 1].img;
 	imageMusic.poster = `images/${allMusic[indexNumb - 1].src}.webp`;
 	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
 	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;

@@ -25,9 +25,9 @@ for (let i = 0; i < Popular.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img">
-									<img src="images/${Popular[i].src}.webp" alt="${
+									<img class="swiper-lazy" data-src="images/${Popular[i].src}.webp" alt="${
 		Popular[i].name
-	}" loading="lazy">
+	}">
 								</div>
                             </a>
                             <div class="top">
@@ -114,9 +114,9 @@ for (let i = 0; i < FavoriteMusic.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img">
-									<img src="images/${FavoriteMusic[i].src}.webp" alt="${
+									<img class="swiper-lazy" data-src="images/${FavoriteMusic[i].src}.webp" alt="${
 		FavoriteMusic[i].name
-	}" loading="lazy">
+	}">
 								</div>
                             </a>
                             <div class="top">
@@ -202,11 +202,11 @@ for (let i = 0; i < BestArtist.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img circle-shadow">
-                                	<img src="images/${
+                                	<img class="swiper-lazy" data-src="images/${
 																		BestArtist[i].src
 																	}.webp" alt="" style="border-radius:${
 		BestArtist[i].rds
-	}" loading="lazy">
+	}">
 								</div>
                             </a>
                             <div class="bottom">
@@ -234,9 +234,9 @@ for (let z = 0; z < Welcome.length; z++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img  circle-shadow">
-									<img src="images/${Welcome[z].src}.webp" alt="${
+									<img class="swiper-lazy" data-src="images/${Welcome[z].src}.webp" alt="${
 		Welcome[z].name
-	}" style="border-radius:${Welcome[z].rds}" loading="lazy">
+	}" style="border-radius:${Welcome[z].rds}">
 								</div>
                             </a>
                             <div class="top">
@@ -268,7 +268,7 @@ for (let x = 0; x < Welcome.length; x++) {
 	let liTag = `<div class="container-card-float" li-index-float="${x + 1}">
                     <img src="images/${
 											Welcome[x].src
-										}.webp" alt="" width="64px" loading="lazy">
+										}.webp" alt="" width="64px">
                     <div class="text-play"> 
                         <a>${Welcome[x].artist}</a>
                         <div class="right">
@@ -287,7 +287,7 @@ for (let l = 0; l < 4 && l < FavoriteMusic.length; l++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                     <div class="hover-play  hover-cepat">
-                        <img src="images/${FavoriteMusic[l].src}.webp" alt="" width="50px" loading="lazy">
+                        <img class="swiper-lazy" data-src="images/${FavoriteMusic[l].src}.webp" alt="" width="50px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -311,7 +311,7 @@ for (let p = 4; p < 8 && p < FavoriteMusic.length; p++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[p].src}.webp" alt="" width="50px" loading="lazy">
+                            <img class="swiper-lazy" data-src="images/${FavoriteMusic[p].src}.webp" alt="" width="50px">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -337,7 +337,7 @@ for (let v = 5; v < 10 && v < FavoriteMusic.length; v++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[v].src}.webp" alt="" width="50px" loading="lazy">
+                            <img class="swiper-lazy" data-src="images/${FavoriteMusic[v].src}.webp" alt="" width="50px">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -363,7 +363,7 @@ for (let t = 0; t < 4 && t < FavoriteMusic.reverse().length; t++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<div class="cepat">
                         <div class="hover-play hover-cepat">
-                            <img src="images/${FavoriteMusic[t].src}.webp" alt="" width="50px" loading="lazy">
+                            <img class="swiper-lazy" data-src="images/${FavoriteMusic[t].src}.webp" alt="" width="50px">
                             <div class="middle">
                                 <div class="play-pause">
                                     <i class="material-icons-sharp play">play_arrow</i>
@@ -660,51 +660,53 @@ const wrapper_network = document.querySelector('.wrapper-network'),
 	closeIcon = toast.querySelector('.close-icon');
 
 // networ stats
-window.onload = () => {
-	function ajax() {
-		let xhr = new XMLHttpRequest(); //creating new XML object
-		xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true); //sending get request on this URL
-		xhr.onload = () => {
-			//once ajax loaded
-			//if ajax status is equal to 200 or less than 300 that mean user is getting data from that provided url
-			//or his/her response status is 200 that means he/she is online
-			if (xhr.status == 200 && xhr.status < 300) {
-				toast.classList.remove('offline');
-				title.innerText = "You're online now";
-				subTitle.innerText = 'Hurray! Internet is connected.';
-				wifiIcon.innerText = 'wifi';
-				closeIcon.onclick = () => {
-					//hide toast notification on close icon click
-					wrapper_network.classList.add('hide');
-				};
-				setTimeout(() => {
-					//hide the toast notification automatically after 5 seconds
-					wrapper_network.classList.add('hide');
-				}, 10000);
-			} else {
-				offline(); //calling offline function if ajax status is not equal to 200 or not less that 300
-			}
-		};
-		xhr.onerror = () => {
-			offline(); ////calling offline function if the passed url is not correct or returning 404 or other error
-		};
-		xhr.send(); //sending get request to the passed url
-	}
+// window.onload = () => {
+// 	function ajax() {
+// 		let xhr = new XMLHttpRequest(); //creating new XML object
+// 		var xhrCount = 0;
+// 		xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true); //sending get request on this URL
+// 		xhr.onload = () => {
+// 			//once ajax loaded
+// 			//if ajax status is equal to 200 or less than 300 that mean user is getting data from that provided url
+// 			//or his/her response status is 200 that means he/she is online
+// 			if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 || xhr.status == 400) {
+// 				toast.classList.remove('offline');
+// 				title.innerText = "You're online now";
+// 				subTitle.innerText = 'Hurray! Internet is connected.';
+// 				wifiIcon.innerText = 'wifi';
+// 				closeIcon.onclick = () => {
+// 					//hide toast notification on close icon click
+// 					wrapper_network.classList.add('hide');
+// 				};
+// 				setTimeout(() => {
+// 					xhrCount = ++xhrCount;
+// 					//hide the toast notification automatically after 5 seconds
+// 					wrapper_network.classList.add('hide');
+// 				}, 3000);
+// 			} else {
+// 				offline(); //calling offline function if ajax status is not equal to 200 or not less that 300
+// 			}
+// 		};
+// 		xhr.onerror = () => {
+// 			offline(); ////calling offline function if the passed url is not correct or returning 404 or other error
+// 		};
+// 		xhr.send(); //sending get request to the passed url
+// 	}
 
-	function offline() {
-		//function for offline
-		wrapper_network.classList.remove('hide');
-		toast.classList.add('offline');
-		title.innerText = "You're offline now";
-		subTitle.innerText = 'Opps! Internet is disconnected.';
-		wifiIcon.innerText = 'wifi_off';
-	}
+// 	function offline() {
+// 		//function for offline
+// 		wrapper_network.classList.remove('hide');
+// 		toast.classList.add('offline');
+// 		title.innerText = "You're offline now";
+// 		subTitle.innerText = 'Opps! Internet is disconnected.';
+// 		wifiIcon.innerText = 'wifi_off';
+// 	}
 
-	setInterval(() => {
-		//this setInterval function call ajax frequently after 100ms
-		ajax();
-	}, 100);
-};
+// 	setInterval(() => {
+// 		//this setInterval function call ajax frequently after 100ms
+// 		ajax();
+// 	},1000);
+// };
 
 // navbar scroll
 var prevScrollpos = window.pageYOffset;
@@ -735,3 +737,20 @@ window.addEventListener(
 	},
 	false
 );
+
+const navs = document.querySelectorAll('.nav-mood');
+navs.forEach((nav) => {
+	nav.onclick = () => {
+		navs.forEach((n) => n.classList.remove('active-mood'));
+		nav.classList.add('active-mood');
+	};
+});
+
+// plugin lazy load
+// $(document).ready(function () {
+// 	$('.loader').hide();
+// });
+
+// $('.lazy').lazyload({
+// 	effect: 'fadeIn',
+// });

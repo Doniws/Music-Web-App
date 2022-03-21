@@ -28,8 +28,10 @@ window.addEventListener('load', () => {
 function loadMusic(indexNumb) {
 	musicName.innerText = allMusic[indexNumb - 1].name;
 	musicArtist.innerText = allMusic[indexNumb - 1].artist;
-	imageMusic.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
+	// imageMusic.src = `images/${allMusic[indexNumb - 1].src}.webp`;
+	// musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
+	imageMusic.src = allMusic[indexNumb - 1].img;
+	musicImg.src = allMusic[indexNumb - 1].img;
 	mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
 }
@@ -40,9 +42,7 @@ for (let i = 0; i < allMusic.length; i++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<li class="cepat" li-index="${i + 1}" id="main-${i + 1}">
                     <div class="hover-play">
-                        <img src="images/${
-													allMusic[i].src
-												}.webp" alt="" width="40px">
+                        <img src="${allMusic[i].img}" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
