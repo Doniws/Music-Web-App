@@ -193,7 +193,7 @@ function clicked(element) {
 // 	}
 // }
 
-const olTag = wrapper.querySelector('ol');
+const ulTagBestBand = wrapper.querySelector('ul.best-band-list');
 // let create li tags according to array length for list
 for (let i = 0; i < BestArtist.length; i++) {
 	//let's pass the song name, artist from the array
@@ -202,11 +202,7 @@ for (let i = 0; i < BestArtist.length; i++) {
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img circle-shadow">
-                                	<img class="swiper-lazy" data-src="images/${
-																		BestArtist[i].src
-																	}.webp" alt="" style="border-radius:${
-		BestArtist[i].rds
-	}">
+                                	<img class="swiper-lazy" data-src="images/${BestArtist[i].src}.webp"  alt="${BestArtist[i].artist}" style="border-radius:${BestArtist[i].rds}">
 								</div>
                             </a>
                             <div class="bottom">
@@ -223,20 +219,18 @@ for (let i = 0; i < BestArtist.length; i++) {
 						</div>
                     </div>
                 </li>`;
-	olTag.insertAdjacentHTML('beforeend', liTag);
+	ulTagBestBand.insertAdjacentHTML('beforeend', liTag);
 }
 
-const ddTag = wrapper.querySelector('dl.container-all-card-float-flex');
-for (let z = 0; z < Welcome.length; z++) {
+const ddTag = wrapper.querySelector('dd.container-all-card-float-flex');
+for (let i = 0; i < Welcome.length; i++) {
 	//let's pass the song name, artist from the array
-	let liTag = `<dd class="music swiper-slide" li-index="${z + 1}">
+	let liTag = `<dd class="music swiper-slide" li-index="${i + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img  circle-shadow">
-									<img class="swiper-lazy" data-src="images/${Welcome[z].src}.webp" alt="${
-		Welcome[z].name
-	}" style="border-radius:${Welcome[z].rds}">
+									<img class="swiper-lazy" data-src="images/${Welcome[i].src}.webp" alt="${Welcome[i].name}" style="border-radius:${Welcome[i].rds}">
 								</div>
                             </a>
                             <div class="top">
@@ -246,15 +240,13 @@ for (let z = 0; z < Welcome.length; z++) {
                             </div>
                             <div class="bottom">
                                 <div class="play-pause "  >
-                                    <i  playing-click="${
-																			z + 1
-																		}" class="material-icons-sharp play">play_arrow</i>
+                                    <i  playing-click="${i + 1}" class="material-icons-sharp play">play_arrow</i>
                                 </div>
                             </div>
                         </div>
 						<div class="text-card">
-                        	<p class="artist">${Welcome[z].artist}</p>
-							<p class="name">${Welcome[z].name}</p>
+                        	<p class="artist">${Welcome[i].artist}</p>
+							<p class="name">${Welcome[i].name}</p>
 						</div>
                     </div>
                     

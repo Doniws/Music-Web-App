@@ -143,6 +143,18 @@ h3 {
 	width: 50px;
 	height: 50px;
 	margin-bottom: 0px !important;
+	display: flex;
+	background-image: linear-gradient(90deg,
+			#2a2a2a 0px,
+			#222222 40px,
+			#252424 80px);
+	animation: shine-loading 1.5s infinite ease-out;
+}
+
+.hover-cepat img {
+	width: 50px !important;
+	height: 100% !important;
+	display: flex;
 }
 
 .artist a {
@@ -288,10 +300,14 @@ h3 {
 .hover-play {
 	margin-bottom: 16px;
 	position: relative;
+	/* width: 0px; */
 }
 
 .hover-play img {
 	border-radius: 2.5px;
+	width: 100%;
+
+
 	/* width: 50px; */
 }
 
@@ -319,10 +335,8 @@ h3 {
 	grid-gap: var(--row-gap) var(--column-gap);
 	display: grid;
 	display: -ms-grid;
-	grid-template: auto/repeat(
-		auto-fill,
-		minmax(max(var(--min-column-width), 25%), 1fr)
-	);
+	grid-template: auto/repeat(auto-fill,
+			minmax(max(var(--min-column-width), 25%), 1fr));
 }
 
 .container-all-card-float-flex {
@@ -471,11 +485,9 @@ h3 {
     cursor: pointer;
 } */
 .music .container-img {
-	--card-image-border-radius: clamp(
-		4px,
-		(var(--column-width, 0px) - 32px) * 0.025,
-		8px
-	);
+	--card-image-border-radius: clamp(4px,
+			(var(--column-width, 0px) - 32px) * 0.025,
+			8px);
 	background-color: #333;
 	border-radius: var(--card-image-border-radius);
 	-webkit-box-shadow: 0 8px 24px rgb(0 0 0 / 50%);
@@ -488,18 +500,26 @@ h3 {
 }
 
 .wrapper-img {
-	--card-image-border-radius: clamp(
-		4px,
-		(var(--column-width, 0px) - 32px) * 0.025,
-		8px
-	);
-	background-color: #333;
+	--card-image-border-radius: clamp(4px,
+			(var(--column-width, 0px) - 32px) * 0.025,
+			8px);
+	/* background-color: #333; */
 	border-radius: var(--card-image-border-radius);
 	-webkit-box-shadow: 0 8px 24px rgb(0 0 0 / 50%);
 	box-shadow: 0 8px 24px rgb(0 0 0 / 50%);
 	padding-bottom: 100% !important;
 	position: relative;
 	width: 150px;
+	background-image: linear-gradient(90deg,
+			#2a2a2a 0px,
+			#222222 40px,
+			#252424 80px);
+	animation: shine-loading 1.5s infinite ease-out;
+	text-align: center;
+	font-family: Roboto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .circle-shadow {
@@ -1061,4 +1081,16 @@ h3 {
 
 .close-icon:hover {
 	background: #ffffffb2;
+}
+
+/* Skeleton loader  */
+@keyframes shine-loading {
+	0% {
+		background-position: -100px;
+	}
+
+	40%,
+	100% {
+		background-position: 140px;
+	}
 }
