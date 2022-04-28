@@ -172,9 +172,10 @@ h3 {
     text-overflow: ellipsis;
     display: inline-block;
     /* display: -webkit-box; */
-   -webkit-line-clamp: 1; /* number of lines to show */
-           line-clamp: 1; 
-   -webkit-box-orient: vertical
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical
 }
 
 .artist a:hover {
@@ -465,7 +466,8 @@ h3 {
     position: relative;
     -webkit-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
-    width: auto !important; /* @ ini akan mengatur width card */
+    width: auto !important;
+    /* @ ini akan mengatur width card */
     /* box-shadow: rgba(82, 82, 82, 0.1) 0px 7px 29px 0px; */
 }
 
@@ -739,14 +741,14 @@ h3 {
         padding-bottom: 50px !important;
     }
 
-    /* 
-	.card-container.swiper6 {
-		padding-bottom: 150px !important;
-	} */
-    /* 
-	.container-Welcome {
-		padding-top: 125px !important;
-	} */
+    /* limit-text  */
+    .profile-name p {
+        display: inline-block;
+        width: 160px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+    }
 
     .text-card {
         min-height: 0;
