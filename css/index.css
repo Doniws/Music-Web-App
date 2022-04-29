@@ -528,10 +528,6 @@ h3 {
     justify-content: center;
 }
 
-.circle-shadow {
-    border-radius: 50% !important;
-}
-
 .text-card {
     min-height: 62px;
     display: flex;
@@ -742,12 +738,20 @@ h3 {
     }
 
     /* limit-text  */
+    .profile-name {
+        overflow: hidden;
+        background: linear-gradient(270deg, rgb(29 29 29) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
     .profile-name p {
         display: inline-block;
         width: 160px;
         white-space: nowrap;
         overflow: hidden !important;
         text-overflow: ellipsis;
+        animation: infinite 4s;
+        animation-name: left-infinite;
+        animation-delay: 5s;
     }
 
     .text-card {
@@ -1072,5 +1076,16 @@ h3 {
     40%,
     100% {
         background-position: 140px;
+    }
+}
+
+/* @ Unlimited text loop  */
+@keyframes left-infinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }

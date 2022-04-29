@@ -20,13 +20,13 @@ const wrapper = document.querySelector(".wrapper"),
 // * Welcome Mobile
 const ddTag = wrapper.querySelector("dd.container-all-card-float-flex");
 const dlTag = wrapper.querySelector("dl.container-all-card-float-grid");
-Object.values(Welcome.splice(1,9)).forEach((item, index) => {
+Object.values(Welcome.splice(5, 9)).forEach((item, index) => {
 	let liTag = `
 			<dd class="music container-card-float swiper-slide float-flex" li-index-float="${index + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
-								<div class= "wrapper-img  circle-shadow">
+								<div class= "wrapper-img" style="border-radius:${item.rds}">
 									<img class="swiper-lazy" data-src="${item.img}" alt="${item.name}" style="border-radius:${item.rds}">
 								</div>
                             </a>
@@ -67,7 +67,7 @@ Object.values(Welcome.splice(1,9)).forEach((item, index) => {
 // * welcome for dekstop
 
 // Object.values(Welcome.slice(1,9)).forEach((item, index) => {
-	
+
 // 	Math.random() > 0.5 ? dlTag.insertAdjacentHTML("beforeend", liTag) : dlTag.insertAdjacentHTML("afterbegin", liTag);
 // });
 
@@ -75,7 +75,7 @@ Object.values(Welcome.splice(1,9)).forEach((item, index) => {
 // * Mengganti For dan menggantinnya dengan Object.Values
 // ! wrap 1 
 const doTag = wrapper.querySelector("div.wrapper-content-1");
-Object.values(MusicList.splice(1,4)).forEach((item, index) => {
+Object.values(MusicList.splice(1, 4)).forEach((item, index) => {
 	let liTag = `<div class="cepat" >
 					<div class="hover-play hover-cepat" quick-index=${index + 1}>
 						<img class="swiper-lazy" data-src="${item.img}" alt="" width="50px">
@@ -96,11 +96,11 @@ Object.values(MusicList.splice(1,4)).forEach((item, index) => {
 						more_vert
 					</span>
 				</div>`;
-		Math.random() > 0.5 ? doTag.insertAdjacentHTML("beforeend", liTag) : doTag.insertAdjacentHTML("afterbegin", liTag);
+	Math.random() > 0.5 ? doTag.insertAdjacentHTML("beforeend", liTag) : doTag.insertAdjacentHTML("afterbegin", liTag);
 });
 // ! wrap 2 
 const dxTag = wrapper.querySelector("div.wrapper-content-2");
-Object.values(MusicList.splice(1,4)).forEach((item, index) => {
+Object.values(MusicList.splice(1, 4)).forEach((item, index) => {
 	let liTag = `<div class="cepat">
 					<div class="hover-play hover-cepat" quick-index=${index + 1}>
 						<img class="swiper-lazy" data-src="${item.img}" alt="" width="50px">
@@ -121,15 +121,15 @@ Object.values(MusicList.splice(1,4)).forEach((item, index) => {
 						more_vert
 					</span>
 				</div>`;
-		Math.random() > 0.5 ? dxTag.insertAdjacentHTML("beforeend", liTag) : dxTag.insertAdjacentHTML("afterbegin", liTag);
+	Math.random() > 0.5 ? dxTag.insertAdjacentHTML("beforeend", liTag) : dxTag.insertAdjacentHTML("afterbegin", liTag);
 });
 
 
 
 // ! wrap 3 
 const dcTag = wrapper.querySelector("div.wrapper-content-3");
-Object.values(MusicList.splice(1,4)).forEach(function (item, index) {
-		let liTag = `<div class="cepat">
+Object.values(MusicList.splice(1, 4)).forEach(function (item, index) {
+	let liTag = `<div class="cepat">
 						<div class="hover-play hover-cepat" quick-index=${index + 1}>
 							<img class="swiper-lazy" data-src="${item.img}" alt="" width="50px">
 							<div class="middle">
@@ -149,11 +149,11 @@ Object.values(MusicList.splice(1,4)).forEach(function (item, index) {
 							more_vert
 						</span>
 					</div>`;
-		Math.random() > 0.5 ? dcTag.insertAdjacentHTML("beforeend", liTag) : dcTag.insertAdjacentHTML("afterbegin", liTag);
+	Math.random() > 0.5 ? dcTag.insertAdjacentHTML("beforeend", liTag) : dcTag.insertAdjacentHTML("afterbegin", liTag);
 });
 // ! wrap 4 
 const dwTag = wrapper.querySelector("div.wrapper-content-4");
-Object.values(MusicList.splice(1,4)).forEach(function (item, index) {
+Object.values(MusicList.splice(1, 4)).forEach(function (item, index) {
 	let liTag = `<div class="cepat">
 							<div class="hover-play hover-cepat" quick-index=${index + 1}>
 								<img class="swiper-lazy" data-src="${item.img}" alt="" width="50px">
@@ -185,33 +185,7 @@ Object.values(BestArtist).forEach(function (item, index) {
 		<div class="wrapper-card">
 			<div class="hover-play">
 				<a class="container-img">
-					<div class="wrapper-img circle-shadow">
-						<img class="swiper-lazy" data-src="${item.img}" title="${item.artist}" alt="${item.artist}" style="border-radius:${item.rds}">
-					</div>
-				</a>
-				<div class="bottom">
-					<div class="play-pause">
-						<i class="material-icons-sharp play">play_arrow</i>
-					</div>
-				</div>
-			</div>
-			<div class="text-card">
-				<p class="artist" style="text-align:center;">${item.artist}</p>
-				<p class="name" style="text-align:center;">Artist</p>
-			</div>
-		</div>
-	</li>`; 
-	Math.random() > 0.5 ? ulTagBestBand.insertAdjacentHTML("beforeend", liTag) : ulTagBestBand.insertAdjacentHTML("afterbegin", liTag);
-});
-
-// * Lagu Favorite
-const ulTagFav = wrapper.querySelector("ul.favorite-music-list");
-Object.values(FavoriteMusic).forEach(function (item, index) {
-	let liTag = `<li class="music swiper-slide" li-index="${index + 1}">
-		<div class="wrapper-card">
-			<div class="hover-play">
-				<a class="container-img">
-					<div class="wrapper-img circle-shadow">
+					<div class="wrapper-img" style="border-radius:${item.rds};">
 						<img class="swiper-lazy" data-src="${item.img}" title="${item.artist}" alt="${item.artist}" style="border-radius:${item.rds}">
 					</div>
 				</a>
@@ -227,6 +201,32 @@ Object.values(FavoriteMusic).forEach(function (item, index) {
 			</div>
 		</div>
 	</li>`;
+	Math.random() > 0.5 ? ulTagBestBand.insertAdjacentHTML("beforeend", liTag) : ulTagBestBand.insertAdjacentHTML("afterbegin", liTag);
+});
+
+// * Lagu Favorite
+const ulTagFav = wrapper.querySelector("ul.favorite-music-list");
+Object.values(FavoriteMusic).forEach(function (item, index) {
+	let liTag = `<li class="music swiper-slide" li-index="${index + 1}">
+		<div class="wrapper-card">
+			<div class="hover-play">
+				<a class="container-img">
+					<div class="wrapper-img">
+						<img class="swiper-lazy" data-src="${item.img}" title="${item.artist}" alt="${item.artist}" style="border-radius:${item.rds}">
+					</div>
+				</a>
+				<div class="bottom">
+					<div class="play-pause">
+						<i class="material-icons-sharp play">play_arrow</i>
+					</div>
+				</div>
+			</div>
+			<div class="text-card">
+				<p class="artist">${item.name}</p>
+				<p class="name">${item.artist}</p>
+			</div>
+		</div>
+	</li>`;
 
 	Math.random() > 0.5 ? ulTagFav.insertAdjacentHTML("beforeend", liTag) : ulTagFav.insertAdjacentHTML("afterbegin", liTag);
 });
@@ -234,14 +234,14 @@ Object.values(FavoriteMusic).forEach(function (item, index) {
 
 // * Lagu Popular
 const ulTagPop = document.querySelector("ul.popular-music-list");
-for (let i = 0; i < Popular.length; i++) {
+Object.values(Popular).forEach(function (item, index) {
 	let liTag = `
-		<li class="music swiper-slide" li-index2="${i + 1}">
+		<li class="music swiper-slide" li-index2="${index + 1}">
                     <div class="wrapper-card">
                         <div class="hover-play">
                             <a class="container-img">
 								<div class= "wrapper-img">
-									<img class="swiper-lazy" data-src="${Popular[i].img}" alt="${Popular[i].name}" title="${Popular[i].des}">
+									<img class="swiper-lazy" data-src="${item.img}" alt="${item.name}" title="${item.des}">
 								</div>
                             </a>
                             <div class="top">
@@ -256,14 +256,17 @@ for (let i = 0; i < Popular.length; i++) {
                             </div>
                         </div>
 						<div class="text-card">
-                        	<p class="name">${Popular[i].name}</p>
-                        	<p class="artist">${Popular[i].artist}</p>
+                        	<p class="name">${item.name}</p>
+                        	<p class="artist">${item.artist}</p>
 						</div>
                     </div>
                     
                 </li>`;
-	ulTagPop.insertAdjacentHTML("beforeend", liTag);
-}
+
+	Math.random() > 0.5 ? ulTagPop.insertAdjacentHTML("beforeend", liTag) : ulTagPop.insertAdjacentHTML("afterbegin", liTag);
+
+
+});
 
 // * Area Untuk Feature Music
 
@@ -299,7 +302,7 @@ function loadMusic(indexNumb) {
 function loadMusic2(indexNumb2) {
 	musicName.innerText = Popular[indexNumb2 - 1].name;
 	musicArtist.innerText = Popular[indexNumb2 - 1].artist;
-	musicImg.src =  Popular[indexNumb2 - 1].img;
+	musicImg.src = Popular[indexNumb2 - 1].img;
 	mainAudio.src = `audio/${Popular[indexNumb2 - 1].src}.mp3`;
 }
 // * Welcome
@@ -336,7 +339,7 @@ function playingSongPop() {
 function playingSongFloat() {
 	const allLiTag = dlTag.querySelectorAll(".container-card-float");
 	const allLiTag2 = ddTag.querySelectorAll(".container-card-float");
-	
+
 	for (let j = 0; j < allLiTag.length; j++) {
 		allLiTag[j].setAttribute("onclick", "clicked3(this)");
 	}

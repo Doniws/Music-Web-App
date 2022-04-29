@@ -184,18 +184,14 @@ const ulTag = wrapper.querySelector('ul');
 for (let i = 0; i < allMusic.length; i++) {
 	//let's pass the song name, artist from the array
 	let liTag = `<li li-index="${i + 1}">
-                  <img class="img-container" src="images/${
-										allMusic[i].src
-									}.webp">
-                <div class="row">
-                  <span>${allMusic[i].name}</span>
-                  <p>${allMusic[i].artist}</p>
-                </div>
-                <span id="${allMusic[i].src}" class="audio-duration">0:00</span>
-                <audio class="${allMusic[i].src}" src="songs/${
-		allMusic[i].src
-	}.mp3"></audio>
-              </li>`;
+                	<img class="img-container" src="images/${allMusic[i].src}.webp">
+    		    	<div class="row">
+                	    <span>${allMusic[i].name}</span>
+                	    <p>${allMusic[i].artist}</p>
+                	</div>
+                	<span id="${allMusic[i].src}" class="audio-duration">0:00</span>
+                	<audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
+                </li>`;
 	ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
 
 	let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);

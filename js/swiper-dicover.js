@@ -3,6 +3,9 @@ const swiper1 = new Swiper('.swiper1', {
     lazy: true,
     slidesPerView: 3,
     speed: 200,
+    autoplay: {
+        delay: 3000,
+    },
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next1',
@@ -232,6 +235,9 @@ const swiper5 = new Swiper('.swiper5', {
     slidesPerView: 3.75,
     spaceBetween: 10,
     // loop: true,
+    autoplay: {
+        delay: 10000,
+    }
 });
 
 // card Welcome

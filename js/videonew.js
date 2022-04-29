@@ -3,7 +3,6 @@ const wrapper = document.querySelector('.wrapper'),
 	musicImg = document.querySelector('.profile-img img'),
 	musicName = document.querySelector('.profile-name a'),
 	musicArtist = document.querySelector('.profile-name p'),
-	// mainAudio = document.querySelector('.main-audio-primary'),
 	playPauseBtn = document.querySelector('.play-pause-btn'),
 	nextBtn = document.querySelector('#next'),
 	prevBtn = document.querySelector('#prev'),
@@ -36,14 +35,10 @@ function loadMusic(indexNumb) {
 }
 
 const ulTag = wrapper.querySelector('ol');
-// let create li tags according to array length for list
-for (let i = 0; i < allMusic.length; i++) {
-	//let's pass the song name, artist from the array
-	let liTag = `<li class="cepat" li-index="${i + 1}" id="main-${i + 1}">
+Object.values(allMusic).forEach((music, index) => {
+	let liTag = `<li class="cepat" li-index="${index + 1}" id="main-${index + 1}">
                     <div class="hover-play">
-                        <img src="images/${
-													allMusic[i].src
-												}.webp" alt="" width="40px">
+                        <img src="images/${music.src}.webp" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -51,19 +46,18 @@ for (let i = 0; i < allMusic.length; i++) {
                         </div>
                     </div>
                     <span class="text">
-                        <p class="name">${allMusic[i].name}</p>
-                        <p class="artist">${allMusic[i].artist}</p>
+                        <p class="name">${music.name}</p>
+                        <p class="artist">${music.artist}</p>
                     </span>
-                    <span id="${
-											allMusic[i].src
-										}" class="audio-duration">0:00</span>
+                    <span id="${music.src}" class="audio-duration">0:00</span>
 					<span class="material-icons-outlined more"> more_vert </span>
-					<audio  class="${allMusic[i].src}" src="videos/${allMusic[i].src}.mp4"></audio>
+					<audio  class="${music.src}" src="videos/${music.src}.mp4"></audio>
                 </li>`;
-	ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
 
-	let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
-	let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+		Math.random() > 0.5 ? ulTag.insertAdjacentHTML('afterbegin', liTag) : ulTag.insertAdjacentHTML('beforeend', liTag);
+
+	let liAudioDuartionTag = ulTag.querySelector(`#${music.src}`);
+	let liAudioTag = ulTag.querySelector(`.${music.src}`);
 	liAudioTag.addEventListener('loadeddata', () => {
 		let duration = liAudioTag.duration;
 		let totalMin = Math.floor(duration / 60);
@@ -75,14 +69,8 @@ for (let i = 0; i < allMusic.length; i++) {
 		liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
 		liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
 	});
-}
+});
 
-// proses error
-// var LoadMusic = document.querySelector(`main-${i + 1}`);
-// LoadMusic.addEventListener('loaddedata', () => {
-// 	playMusic();
-// 	loadMusic(index);
-// });
 
 // if click li play music
 //play particular song from the list onclick of li tag
