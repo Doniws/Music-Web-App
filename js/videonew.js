@@ -16,7 +16,7 @@ const wrapper = document.querySelector('.wrapper'),
 
 // navbar bottom
 
-let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
+let musicIndex = Math.floor(Math.random() * MusicList.length + 1);
 isMusicPaused = true;
 
 window.addEventListener('load', () => {
@@ -25,20 +25,20 @@ window.addEventListener('load', () => {
 });
 
 function loadMusic(indexNumb) {
-	musicName.innerText = allMusic[indexNumb - 1].name;
-	musicArtist.innerText = allMusic[indexNumb - 1].artist;
-	imageMusic.src = `videos/${allMusic[indexNumb - 1].img}.mp4`;
-	// imageMusic.src = allMusic[indexNumb - 1].img;
-	imageMusic.poster = `images/${allMusic[indexNumb - 1].src}.webp`;
-	musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
+	musicName.innerText = MusicList[indexNumb - 1].name;
+	musicArtist.innerText = MusicList[indexNumb - 1].artist;
+	imageMusic.src = `videos/${MusicList[indexNumb - 1].src}.mp4`;
+	// imageMusic.src = MusicList[indexNumb - 1].img;
+	imageMusic.poster = MusicList[indexNumb - 1].img;
+	musicImg.src = MusicList[indexNumb - 1].img;
+	lyricsMusic.innerText = MusicList[indexNumb - 1].lyrics;
 }
 
 const ulTag = wrapper.querySelector('ol');
-Object.values(allMusic).forEach((music, index) => {
+Object.values(MusicList).forEach((music, index) => {
 	let liTag = `<li class="cepat" li-index="${index + 1}" id="main-${index + 1}">
                     <div class="hover-play">
-                        <img src="images/${music.src}.webp" alt="" width="40px">
+                        <img src="${music.img}" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -169,7 +169,7 @@ centerPlayPause.addEventListener('click', function () {
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
+	musicIndex < 1 ? (musicIndex = MusicList.length) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -179,7 +179,7 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
+	musicIndex > MusicList.length ? (musicIndex = 1) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -285,9 +285,9 @@ imageMusic.addEventListener('ended', () => {
 });
 // shuffleBtn change
 shuffleBtn.addEventListener('click', () => {
-	let randIndex = Math.floor(Math.random() * allMusic.length + 1); //genereting random index/numb with max range of array length
+	let randIndex = Math.floor(Math.random() * MusicList.length + 1); //genereting random index/numb with max range of array length
 	do {
-		randIndex = Math.floor(Math.random() * allMusic.length + 1);
+		randIndex = Math.floor(Math.random() * MusicList.length + 1);
 	} while (musicIndex == randIndex); //this loop run until the next random number won't be the same of current musicIndex
 	musicIndex = randIndex; //passing randomIndex to musicIndex
 	loadMusic(musicIndex);

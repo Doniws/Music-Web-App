@@ -591,7 +591,25 @@ span.time-music {
 		margin-bottom: 8px;
 	}
 }
+@media only screen and (max-width: 440px){
+	/* limit-text  */
+    .profile-name {
+        overflow: hidden;
+    }
 
+    .profile-name p {
+        display: inline-block;
+        width: 160px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        animation: infinite 4s;
+        animation-name: left-infinite;
+        animation-delay: 10s;
+		animation-direction: alternate-reverse;
+		animation-play-state: running;
+    }
+}
 /* size font  */
 .md-18 {
 	font-size: 18px !important;
@@ -607,4 +625,14 @@ span.time-music {
 
 .md-48 {
 	font-size: 48px !important;
+}
+/* @ Unlimited text loop  */
+@keyframes left-infinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }

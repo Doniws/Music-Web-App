@@ -737,22 +737,7 @@ h3 {
         padding-bottom: 50px !important;
     }
 
-    /* limit-text  */
-    .profile-name {
-        overflow: hidden;
-        background: linear-gradient(270deg, rgb(29 29 29) 0%, rgba(0, 0, 0, 0) 100%);
-    }
-
-    .profile-name p {
-        display: inline-block;
-        width: 160px;
-        white-space: nowrap;
-        overflow: hidden !important;
-        text-overflow: ellipsis;
-        animation: infinite 4s;
-        animation-name: left-infinite;
-        animation-delay: 5s;
-    }
+    
 
     .text-card {
         min-height: 0;
@@ -793,6 +778,7 @@ h3 {
         overflow: hidden;
         white-space: nowrap;
         width: 140px;
+        /* text-align: left; */
     }
 
     .artist a {
@@ -1079,13 +1065,3 @@ h3 {
     }
 }
 
-/* @ Unlimited text loop  */
-@keyframes left-infinite {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}

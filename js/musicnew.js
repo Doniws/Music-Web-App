@@ -17,7 +17,7 @@ const wrapper = document.querySelector('.wrapper'),
 
 // navbar bottom
 
-let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
+let musicIndex = Math.floor(Math.random() * MusicList.length + 1);
 isMusicPaused = true;
 
 window.addEventListener('load', () => {
@@ -26,23 +26,19 @@ window.addEventListener('load', () => {
 });
 
 function loadMusic(indexNumb) {
-	musicName.innerText = allMusic[indexNumb - 1].name;
-	musicArtist.innerText = allMusic[indexNumb - 1].artist;
-	// imageMusic.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	// musicImg.src = `images/${allMusic[indexNumb - 1].src}.webp`;
-	imageMusic.src = allMusic[indexNumb - 1].img;
-	musicImg.src = allMusic[indexNumb - 1].img;
-	mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
-	lyricsMusic.innerText = allMusic[indexNumb - 1].lyrics;
+	musicName.innerText = MusicList[indexNumb - 1].name;
+	musicArtist.innerText = MusicList[indexNumb - 1].artist;
+	imageMusic.src = MusicList[indexNumb - 1].img;
+	musicImg.src = MusicList[indexNumb - 1].img;
+	mainAudio.src = `audio/${MusicList[indexNumb - 1].src}.mp3`;
+	lyricsMusic.innerText = MusicList[indexNumb - 1].lyrics;
 }
 
 const ulTag = wrapper.querySelector('.music-list-container ol');
-// let create li tags according to array length for list
-for (let i = 0; i < allMusic.length; i++) {
-	//let's pass the song name, artist from the array
-	let liTag = `<li class="cepat" li-index="${i + 1}" id="main-${i + 1}">
+Object.values(MusicList).forEach(function (music, index){
+	let liTag = `<li class="cepat" li-index="${index + 1}" id="main-${index + 1}">
                     <div class="hover-play">
-                        <img src="${allMusic[i].img}" alt="" width="40px">
+                        <img src="${music.img}" alt="" width="40px">
                         <div class="middle">
                             <div class="play-pause">
                                 <i class="material-icons-sharp play">play_arrow</i>
@@ -50,38 +46,31 @@ for (let i = 0; i < allMusic.length; i++) {
                         </div>
                     </div>
                     <span class="text">
-                        <p class="name">${allMusic[i].name}</p>
-                        <p class="artist">${allMusic[i].artist}</p>
+                        <p class="name">${music.name}</p>
+                        <p class="artist">${music.artist}</p>
                     </span>
-                    <span id="${
-											allMusic[i].src
-										}" class="audio-duration">0:00</span>
+                    <span id="${music.src}" class="audio-duration">0:00</span>
 					<span class="material-icons-outlined more"> more_vert </span>
-					<audio  class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
+					<audio  class="${music.src}" src="audio/${music.src}.mp3"></audio>
                 </li>`;
-	ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
+	// ulTag.insertAdjacentHTML('beforeend', liTag); //inserting the li inside ul tag
 
-	let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
-	let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+	Math.random() > 0.5 ? ulTag.insertAdjacentHTML('afterbegin', liTag) : ulTag.insertAdjacentHTML('beforeend', liTag);
+
+	let liAudioDuartionTag = ulTag.querySelector(`#${music.src}`);
+	let liAudioTag = ulTag.querySelector(`.${music.src}`);
 	liAudioTag.addEventListener('loadeddata', () => {
 		let duration = liAudioTag.duration;
 		let totalMin = Math.floor(duration / 60);
 		let totalSec = Math.floor(duration % 60);
 		if (totalSec < 10) {
-			//if sec is less than 10 then add 0 before it
 			totalSec = `0${totalSec}`;
 		}
 		liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-		liAudioDuartionTag.setAttribute('t-duration', `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
+		liAudioDuartionTag.setAttribute(`t-duration`, `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
 	});
-}
+});
 
-// proses error
-// var LoadMusic = document.querySelector(`main-${i + 1}`);
-// LoadMusic.addEventListener('loaddedata', () => {
-// 	playMusic();
-// 	loadMusic(index);
-// });
 
 // if click li play music
 //play particular song from the list onclick of li tag
@@ -180,7 +169,7 @@ centerPlayPause.addEventListener('click', function () {
 function prevMusic() {
 	musicIndex--; //decrement of musicIndex by 1
 	//if musicIndex is less than 1 then musicIndex will be the array length so the last music play
-	musicIndex < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
+	musicIndex < 1 ? (musicIndex = MusicList.length) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -190,7 +179,7 @@ function prevMusic() {
 function nextMusic() {
 	musicIndex++; //increment of musicIndex by 1
 	//if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-	musicIndex > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
+	musicIndex > MusicList.length ? (musicIndex = 1) : (musicIndex = musicIndex);
 	loadMusic(musicIndex);
 	playMusic();
 	playingSong();
@@ -206,8 +195,6 @@ nextBtn.addEventListener('click', () => {
 	nextMusic();
 });
 
-// more play pause
-
 var isPlaying = false;
 
 function PlayPauseNow() {
@@ -221,9 +208,6 @@ mainAudio.onpause = function () {
 	isPlaying = false;
 };
 
-// imageMusic.addEventListener('click', () => {
-// 	PlayPauseNow();
-// });
 // Proggress bar update by audio timeupdate event
 mainAudio.addEventListener('timeupdate', (e) => {
 	const currentTimes = e.target.currentTime;
@@ -296,9 +280,9 @@ mainAudio.addEventListener('ended', () => {
 });
 // shuffleBtn change
 shuffleBtn.addEventListener('click', () => {
-	let randIndex = Math.floor(Math.random() * allMusic.length + 1); //genereting random index/numb with max range of array length
+	let randIndex = Math.floor(Math.random() * MusicList.length + 1); //genereting random index/numb with max range of array length
 	do {
-		randIndex = Math.floor(Math.random() * allMusic.length + 1);
+		randIndex = Math.floor(Math.random() * MusicList.length + 1);
 	} while (musicIndex == randIndex); //this loop run until the next random number won't be the same of current musicIndex
 	musicIndex = randIndex; //passing randomIndex to musicIndex
 	loadMusic(musicIndex);

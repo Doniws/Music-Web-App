@@ -235,9 +235,6 @@ const swiper5 = new Swiper('.swiper5', {
     slidesPerView: 3.75,
     spaceBetween: 10,
     // loop: true,
-    autoplay: {
-        delay: 10000,
-    }
 });
 
 // card Welcome
