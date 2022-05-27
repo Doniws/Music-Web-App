@@ -1,7 +1,7 @@
 # Music-Web-App
 
-**MUSIC WEB APP BY DONIWS**
-**Suka Dengan Project Yang saya buat beri dukungan dengan memberi star di repositori project nya**
+**MUSIC WEB APP BY DONIWS**<br>
+**Suka Dengan Project Yang saya buat beri dukungan dengan memberi star di repositori project nya**<br>
 Music yang di tampilkan adalah music ncs <br>
 
 Masih Diperbaharui dan penambahan fitur-fitur
