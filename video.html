@@ -1,142 +1,175 @@
 <!DOCTYPE html>
-<html lang="en" lang="id">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Music Doniws</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Personal Website Article">
-        <meta name="keyword" content="Doni music">
-        <meta name="author" content="Doni Wahyu Saputra">
-        <!-- icondan impor -->
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://doniws.github.io/Font-Text/Roboto/Roboto.css">
-        <link rel="stylesheet" href="https://doniws.github.io/FontAwesome6Pro/pro/css/all.css">
-        <link rel="stylesheet" href="css/all.css">
-        <link rel="stylesheet" href="css/video.css">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Music New Page" />
+    <title>Music New</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/allcontent.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/video.css" />
+    <link rel="stylesheet" href="swiper/swiper-bundle.css" />
+    <link rel="stylesheet" crossorigin="anonymous" href="font/Roboto/Roboto.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet" />
+</head>
 
-    <body class="body" id="body">
-        <!-- <div id="preloader"></div> -->
-        <div class="wrapper" id="wrapper">
-            <div class="top-bar">
-                <a id="fullscr"><i class="material-icons-outlined" class="material-icons">expand_more</i> </a>
-                <!-- untuk toggle -->
-                <span>
-                    <div class="list-container">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="music.html">Music</a></li>
-                        <li><a href="video.html">Video</a></li>
+<body>
+    <!-- * main area  -->
+    <main class="wrapper">
+        <nav class="top-bar" id="navbar">
+            <span class="logo left-nav">
+                <img id="logo-1" class="logo-1" src="images/loadersuper.png" width="55px" alt="logo">
+                <img id="logo-2" class="logo-2" src="images/logoutama.webp" width="55px" alt="logo">
+                <h1 class="discover">Music</h1>
+            </span>
+            <span class="container-link center-nav">
+                <ul id="link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a class="active" href="video.html">Video</a></li>
+                    <li><a href="">Explore</a></li>
+                    <div class="open-input">
+                        <button type="submit"><span class="material-icons-sharp">search</span></button>
+                        <a>Search</a>
                     </div>
-                    <div class="btn-container">
-                        <label class="switch btn-color-mode-switch" id="toggle" onclick="toogle()">
-                            <input type="checkbox" name="color_mode" id="color_mode" value="1" checked>
-                            <label for="color_mode" data-on="Video" data-off="Music"
-                                class="btn-color-mode-switch-inner"> </label>
-                        </label>
-                    </div>
-                </span>
-                <a href="javascript:alert('Music app by Doniws 2021-2022')" onclick="Darkmode()">
-                    <i><img class="imghead" src="images/logoutama.webp" style="width: 50px;"></i></a>
-            </div>
-            <div class="flex-main">
-                <div class="flex-img-detail transition-swipe">
-                    <div class="img-area">
-                        <video poster="" src="" alt="">
+                </ul>
+                <ul id="link-icon">
+                    <li><a href="index.html" class="material-icons-sharp">home</a></li>
+                    <li><a href="music.html" class="material-icons-sharp">library_music</a></li>
+                    <li><a href="#" class="material-icons-sharp active">video_library</a></li>
+                    <li><a href="" class="material-icons-sharp">explore</a></li>
+                    <li><a href="" class="material-icons-sharp">search</a></li>
+                </ul>
+                <div class="container-searchbox " id="container-searchbox">
+                    <div class="wrapper-input" id="input">
+                        <div class="wrapper-back hidden-input">
+                            <a class="material-icons-sharp back">arrow_back</a>
+                        </div>
+                        <input type="search" placeholder="Search" />
                     </div>
                 </div>
-                <div class="flex-progress-control">
-                    <div class="song-details">
-                        <p class="name"></p>
-                        <p class="artist"></p>
-                    </div>
-                    <div class="progress-area" id="progress-area">
-                        <div class="progress-bar" id="progsess-bar">
-                            <!-- <audio id="main-audio" src=""></audio> -->
-                        </div>
-                        <div class="song-timer">
-                            <span class="current-time">0:00</span>
-                            <span class="max-duration">0:00</span>
-                        </div>
-                    </div>
-                    <div class="controls" id="controls">
-                        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
-                        <i id="prev" class="material-icons">skip_previous</i>
-                        <div class="play-pause">
-                            <i class="material-icons play">play_arrow</i>
-                        </div>
-                        <i id="next" class="material-icons">skip_next</i>
-                        <i id="more-music" class="material-icons">queue_music</i>
-                    </div>
-                    <div id="music-list">
-                        <div class="header">
-                            <div class="row">
-                                <i class="list material-icons">queue_music</i>
-                                <span>Music list</span>
+            </span>
+            <span class="right-nav account">
+                <a class="material-icons-sharp md-24">cast</a>
+                <a class="material-icons-sharp md-24">account_circle</a>
+                <!-- <a href="" class="profile-account"><img src="images/img.png" alt="Image Profile" ></a> -->
+            </span>
+            <!-- </div> -->
+        </nav>
+        <!-- * Left Container -->
+        <div class="all-flex-container">
+            <div class="all-flex-wrapper">
+                <!-- left contant  -->
+                <div class="left-live-container">
+                    <!-- hover show tool  -->
+                    <div class="wrapper-left-container">
+                        <div class="image-live-hover">
+                            <a class="container-img">
+                                <div class="wrapper-img">
+                                    <video src="" alt="Image Music">
+                                </div>
+                            </a>
+                            <div class="top">
+                                <div class="play-pause top-flex">
+                                    <a class="material-icons-sharp mini-play">picture_in_picture</a>
+                                    <a class="material-icons-sharp full">fullscreen</a>
+                                </div>
                             </div>
-                            <i id="close" class="material-icons">close</i>
+                            <div class="center">
+                                <div class="play-pause">
+                                    <i class="material-icons-sharp play">play_arrow</i>
+                                </div>
+                            </div>
                         </div>
-                        <ul>
-                            <!-- here li list are coming from js -->
-                        </ul>
+                    </div>
+                </div>
+                <div class="right-live-container">
+                    <div class="wrapper-right-container">
+                        <div class="music-link-container">
+                            <div class="music-link-wrapper">
+                                <ul class="music-link">
+                                    <a data-id='1' class="active">UP NEXT</a>
+                                    <a data-id='2'>LIRICS</a>
+                                    <a data-id='3'>RELATED</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- slide ke 1  -->
+                        <!-- list music diisi js  -->
+                        <div class="tab-content active music-list-container" data-content='1'>
+                            <!-- ol is list music this write on java script  -->
+                            <ol>
+
+                            </ol>
+                        </div>
+                        <!-- slide ke 2 -->
+                        <!-- Lyrics diisi js  -->
+                        <div class="tab-content lyrics-container" data-content='2'>
+                            <span class="lyrics-wrapper">
+                                <p class="lyrics-content"></p>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/video-list.js"></script>
-        <script src="js/script-video.js"></script>
-        <!-- Disini untuk java scripnya -->
-        <!-- dark mode -->
-        <!-- untuk boody dark -->
-        <script>
-            function Darkmode() {
-                var element = document.getElementById("wrapper");
-                element.classList.toggle("wrapper-dark");
+    </main>
 
-                var element = document.getElementById("body");
-                element.classList.toggle("body-dark");
-
-                var element = document.getElementById("progress-area");
-                element.classList.toggle("progress-area-dark");
-            }
-            // progress-area
-        </script>
-
-        <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
-        <script>
-            /*     Fullscreen btn     */
-            let fullscreen;
-            let fsEnter = document.getElementById('fullscr');
-            fsEnter.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (!fullscreen) {
-                    fullscreen = true;
-                    document.documentElement.requestFullscreen();
-                } else {
-                    fullscreen = false;
-                    document.exitFullscreen();
-
-                }
-            });
-        </script>
-        <!--------------------------- ini buat Fullscreen-------------------------------------------- -->
-        <script>
-            function toogle() {
-                var log_out = confirm;
-                var bx =
-                    document.getElementById("toggle");
-                if (window.open("music.html", "_top"));
-            }
-        </script>
-        <script defer src="js/all.js"></script>
-    </body>
+    <!-- bottom bar  -->
+    <div class="container-play-bottom" id="play-bottom">
+        <div class="wrap-play-bottom">
+            <div class="flex-left">
+                <div class="profile-music">
+                    <div class="profile-img">
+                        <img src="" width="50px" alt="">
+                    </div>
+                    <div class="profile-name">
+                        <a></a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="controller-music">
+                <div class="flex-center">
+                    <div class="button-play-pause">
+                        <i class="material-icons-sharp" id="repeat">repeat</i>
+                        <i class="material-icons-sharp prev" id="prev">skip_previous</i>
+                        <div class="play-pause-btn">
+                            <i class="material-icons-sharp play">play_arrow</i>
+                        </div>
+                        <i class="material-icons-sharp next" id="next">skip_next</i>
+                        <i class="material-icons-sharp" id="shuffle">shuffle</i>
+                    </div>
+                    <div class="progress-music">
+                        <span class="current-time time-music">00:00</span>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill">
+                                <!-- <video class="main-audio-primary" src=""></video> -->
+                            </div>
+                        </div>
+                        <span class="max-duration time-music">00:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-right">
+                <div class="more-control">
+                    <a id="repeat-plist" class="material-icons" title="Volume 100%">volume_up</a>
+                    <a class="material-icons-sharp">devices</a>
+                    <a class="material-icons-sharp">queue_music</a>
+                    <a class="material-icons-sharp">picture_in_picture_alt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- javascript -->
+    <script src="js/list/video-list.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/video.js"></script>
+</body>
 
 </html>
